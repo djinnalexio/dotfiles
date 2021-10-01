@@ -1,0 +1,4230 @@
+#1633033438
+nano .bashrc 
+#1630345683
+sudo dnf install   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+#1630345693
+sudo dnf install   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+#1630345719
+sudo dnf upgrade --refresh -y && sudo dnf group update core -y && sudo dnf autoremove -y
+#1630345747
+sudo dnf install keepassxc
+#1630345764
+sudo dnf install gnome-tweaks
+#1630345844
+nano .bash_history 
+#1630345962
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+#1630345986
+sudo dnf install lame\* --exclude=lame-devel
+#1630345991
+sudo dnf group upgrade --with-optional Multimedia
+#1630346071
+sudo dnf install timeshift -y
+#1630346871
+sudo dnf install -y flatpak
+#1630346896
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#1630346907
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#1630362358
+sudo dnf install fuse-exfat exfat-utils -y
+#1630362560
+cat /etc/fstac
+#1630362562
+cat /etc/fstab
+#1630362622
+cd OneTouch/
+#1630362627
+pwd
+#1630362905
+sudo chown djinnalexio:djinnalexio * -r
+#1630362912
+chown --help
+#1630362921
+sudo chown djinnalexio:djinnalexio * -R
+#1630362944
+chown djinnalexio:djinnalexio * -R
+#1630363148
+ls -l
+#1630363155
+cd S
+#1630363162
+cd SJBreferences/
+#1630363167
+ls -l
+#1630363361
+pwd
+#1630371586
+systemctl list-unit-files
+#1630371643
+systemctl list-unit-files | grep nouveau
+#1630371652
+systemctl list-unit-files | grep xorg
+#1630371737
+touch touch.pdf
+#1630371950
+sudo systemctl -t service | grep abrt
+#1630371997
+sudo systemctl disable abrt-xorg.service 
+#1630372007
+sudo systemctl stop abrt-xorg.service 
+#1630372015
+sudo systemctl -t service | grep abrt
+#1630372038
+sudo systemctl list-unit-files | grep abrt
+#1630372521
+mkdir Applications
+#1630372981
+dnf search a[ppimagelauncher
+#1630373026
+dnf search appimagelauncher
+#1630373036
+dnf search appimag
+#1630373114
+cd Downloads/
+#1630373152
+sudo dnf localinstall ./appimagelauncher-2.2.0-travis995.0f91801.x86_64.rpm 
+#1630373253
+systemctl status apparmor.service 
+#1630374136
+cd
+#1630374144
+ls Applications/
+#1630374153
+exit
+#1630374237
+cd .local/share/applications/
+#1630374253
+gedit appimagekit_abdf0de167c7c5b68ef91530f5067600-osu_.desktop 
+#1630374442
+gedit appimagekit_abdf0de167c7c5b68ef91530f5067600-osu_.desktop &
+#1630374463
+gedit appimagekit_0bfe2464ac4085c4873082960b37c8c6-eDEX-UI.desktop &
+#1630374505
+gedit appimagekit_7b765c8b4ec911ed8eab5c13b13226fb-Joplin.desktop 
+#1630374620
+/home/djinnalexio/Applications/osu_af95c2a3a1088734dcd96c60f78f1bec.AppImage
+#1630374746
+nano appimagekit_abdf0de167c7c5b68ef91530f5067600-osu_.desktop 
+#1630374795
+./appimagekit_abdf0de167c7c5b68ef91530f5067600-osu_.desktop 
+#1630374814
+sudo reboot
+#1630380612
+history | grp xorg
+#1630380617
+history | grep xorg
+#1630380649
+systemctl -t service
+#1630380694
+sudo systemctl disable abrt-oops.service
+#1630380700
+systemctl -t service
+#1630380715
+sudo systemctl stop abrt-oops.service
+#1630380726
+sudo systemctl status abrt-oops.service
+#1630380749
+sudo systemctl disable abrt-oops.service
+#1630380752
+sudo systemctl status abrt-oops.service
+#1630383929
+pwd
+#1630384949
+exit
+#1630385476
+cd ~/Downloads/
+#1630385592
+bash install_synology_drive_on_fedora.sh 
+#1630385618
+nano install_synology_drive_on_fedora.sh 
+#1630385681
+sudo ./install_synology_drive_on_fedora.sh 
+#1630385725
+nano install_synology_drive_on_fedora.sh 
+#1630385780
+sudo ./install_synology_drive_on_fedora.sh 
+#1630385823
+sudo rm synology-drive -Rf
+#1630386216
+exit
+#1630387168
+readlink -f Drive_512.png 
+#1630387609
+cd Synology/
+#1630387617
+touch 123.lol
+#1630387647
+rm 123.lol 
+#1630388724
+sudo dnf install kdeconnect
+#1630388735
+sudo dnf search kdeconnect
+#1630388742
+sudo dnf install kdeconnectd -y
+#1630389085
+exit
+#1630389229
+dnf search bash
+#1630390249
+sudo dnf search cmatrix
+#1630390270
+sudo dnf install cmatrix
+#1630390287
+sudo dnf install cmatrix-X11-fonts
+#1630390378
+sudo dnf install -y icedtea-web java-openjdk java-devel terminator bash-completion neofetch dnfdrogona variety cmatrix cmatrix-x11-fonts bashtop pdfsam
+#1630390413
+sudo dnf install -y icedtea-web java-openjdk java-devel terminator bash-completion neofetch dnfdragona variety cmatrix cmatrix-x11-fonts
+#1630390423
+sudo dnf install -y icedtea-web java-openjdk java-devel terminator bash-completion neofetch dnfdragora variety cmatrix cmatrix-x11-fonts
+#1630390442
+neofetch
+#1630390587
+df -h
+#1630390319
+sudo dnf install cmatrix-x11-fonts
+#1630390603
+sudo reboot
+#1630409063
+dnfdragora 
+#1630409076
+sudo dnfdragora 
+#1630412526
+sudo dnf groupupdate multimedia –setop=“install_weak_deps=False” –exclude=PackageKit-gstreamer-plugin
+#1630412528
+sudo dnf groupupdate sound-and-video
+#1630412686
+history | grep bash
+#1630412703
+dnf list installed | grep bash
+#1630412755
+cmatrix
+#1630413310
+sudo dnf install woeusb
+#1630413325
+sudo dnf install WoeUSB -y 
+#1630415483
+sudo systemctl restart bluetooth.service
+#1630415637
+systemctl status bluetooth
+#1630415650
+systemctl kill bluetooth
+#1630415657
+sudo systemctl kill bluetooth
+#1630415665
+sudo systemctl disable bluetooth
+#1630415670
+systemctl status bluetooth
+#1630415685
+sudo systemctl stop bluetooth
+#1630415688
+systemctl status bluetooth
+#1630415704
+sudo systemctl enable bluetooth
+#1630415711
+sudo systemctl start bluetooth
+#1630416005
+bluetoothctl 
+#1630416236
+exit
+#1630458875
+sudo baobab
+#1630459459
+baobab &
+#1630460638
+flatpak list
+#1630460671
+flatpak list | less
+#1630460913
+dnf search spotify
+#1630461462
+cd /var/lib/flatpak/
+#1630461478
+ls *
+#1630461510
+flatpak list
+#1630461684
+cd ~/.local/share/flatpak/
+#1630461693
+cd ~/.local/share/flatpak/ *
+#1630461711
+ls *
+#1630461912
+cd /var/lib/flatpak/exports/share/applications/
+#1630461932
+ls -halF
+#1630462396
+cd
+#1630462406
+ls -halF
+#1630462945
+sudo vi /etc/dnf/dnf.conf 
+#1630463001
+cat /etc/dnf/dnf.conf 
+#1630466978
+ls -l
+#1630467022
+sudo chown djinnalexio:djinnalexio * -r
+#1630467029
+sudo chown djinnalexio:djinnalexio *
+#1630467041
+ls -l
+#1630467084
+mv -r myfedora33-2021-08-28-18-img/ ../system_images/
+#1630467089
+mv myfedora33-2021-08-28-18-img/ ../system_images/
+#1630467114
+exit
+#1630541231
+pwd
+#1630541252
+cat Warehouse/.bash_history 
+#1630541262
+less Warehouse/.bash_history 
+#1630541408
+dnf list installed
+#1630541466
+dnf list installed | grep nau
+#1630541682
+sudo dnf install -y progress
+#1630541707
+sudo dnf upgrate -y
+#1630541711
+sudo dnf upgrade -y
+#1630541764
+sudo systemctl daemon-reload
+#1630541784
+cat /etc/dnf/dnf.conf 
+#1630541552
+vi
+#1630542060
+cat lo.txt 
+#1630542101
+progress -w
+#1630542109
+sudo progress -w
+#1630542142
+sudo watch progress -w
+#1630542096
+sudo mv /var/lib/flatpak /home/djinnalexio/.flatpak
+#1630542185
+cd /var/lib
+#1630542185
+sudo ln -s /home/djinnalexio/.flatpak flatpak
+#1630542351
+exit
+#1630542359
+exit
+#1630542626
+sudo dnf update
+#1630542635
+sudo dnf update --refresh
+#1630542648
+sudo dnf upgrade --refresh
+#1630544333
+sudo dnf install libreoffice
+#1630544453
+dnf list installed | grep libreoffice
+#1630544548
+sudo dnf install libreoffice
+#1630544827
+sudo dnf remove libreoffice
+#1630544893
+sudo dnf remove libreoffice-core-1:7.1.5.2-5.fc34.x86_64 
+#1630544939
+sudo dnf autoremove
+#1630545180
+exit
+#1630545238
+history 
+#1630546712
+exit
+#1630548675
+sudo dnf remove kdeconnectd
+#1630548873
+sudo ifconfig
+#1630560005
+sudo dnf install openssl -y
+#1630587455
+cd Synology/
+#1630587466
+vi My\ Setup\ Steps\ -\ Fedora.md 
+#1630590557
+exit
+#1630590559
+exit
+#1630592418
+dnf list installed 
+#1630592440
+dnf list installed  | grep evo
+#1630592457
+sudo dnf remove evo*
+#1630592474
+sudo dnf remove evolution-data-server
+#1630592482
+exit
+#1630593164
+sudo dnf install -y tlp tuned-gui
+#1630593178
+sudo dnf search tuned-gui
+#1630593183
+sudo dnf search tuned
+#1630593202
+sudo dnf install -y tlp tuned-gtk
+#1630593215
+sudo dnf update -y
+#1630593231
+systemctl status tlp
+#1630593248
+sudo systemctl enable tlp
+#1630593255
+sudo systemctl start tlp
+#1630593259
+systemctl status tlp
+#1630593286
+systemctl status tune
+#1630593353
+systemctl status tunded
+#1630593358
+systemctl status tuned
+#1630593369
+sudo systemctl enable tuned
+#1630593483
+exit
+#1630604027
+groups djinnalexio
+#1630604077
+sudo dnf group install –with-optional virtualization
+#1630604079
+Start and enable the service
+#1630604079
+sudo systemctl start libvirtd
+#1630604079
+sudo systemctl enable libvirtd
+#1630604079
+Add your user to the group libvirt
+#1630604079
+sudo usermod -a -G libvirt $(whoami)
+#1630604097
+[200~sudo dnf group install –with-optional virtualization
+#1630604097
+Start and enable the service
+#1630604097
+sudo systemctl start libvirtd
+#1630604097
+sudo systemctl enable libvirtd
+#1630604098
+Add your user to the group libvirt
+#1630604098
+sudo usermod -a -G libvirt $(whoami)
+#1630604116
+~sudo dnf group install -–with-optional virtualization
+#1630604116
+Start and enable the service
+#1630604116
+sudo systemctl start libvirtd
+#1630604116
+sudo systemctl enable libvirtd
+#1630604116
+Add your user to the group libvirt
+#1630604116
+sudo usermod -a -G libvirt $(whoami)
+#1630604161
+sudo group install virtualization --with-optional
+#1630604167
+sudo dnf group install virtualization --with-optional
+#1630604224
+vi Synology/My\ Setup\ Steps\ -\ Fedora.md 
+#1630604297
+exit
+#1630604315
+sudo systemctl start libvirtd
+#1630604320
+sudo systemctl enable libvirtd
+#1630604340
+groups djinnalexio
+#1630604348
+exit
+#1630604401
+dnf search adb
+#1630604479
+sudo dnf install android-tools
+#1630604519
+cmatrix
+#1630604546
+sudo dnf install nmap
+#1630604667
+nmap scan
+#1630604687
+nmap scan 10.0.0.0
+#1630604699
+nmap scan 10.0.0.1
+#1630604722
+ifconfig
+#1630604735
+nmap scan 10.0.0.8
+#1630604988
+sudo dnf install unzip
+#1630605075
+sudo dnf install ranger youtube-dl htop bpytop anydesk
+#1630605104
+sudo dnf install ranger youtube-dl htop bpytop 
+#1630605816
+sudo dnf install ranger youtube-dl htop bpytop android-tools
+#1630607757
+ktouch
+#1630607842
+sudo flatpak uninstall org.kde.ktouch
+#1630607877
+sudo dnf remove ktouch
+#1630607887
+sudo dnf autoremove
+#1630607928
+exit
+#1630610201
+chmod +x build-install-run 
+#1630610204
+./build-install-run 
+#1630610216
+sudo dnf install cmake
+#1630610226
+./build-install-run 
+#1630610369
+sudo dnf install g++
+#1630610380
+sudo dnf install build-esstentials
+#1630610391
+sudo dnf search build-esstentials
+#1630610398
+sudo dnf search build-essentials
+#1630610415
+sudo dnf search build-essential
+#1630610420
+sudo dnf install g++
+#1630610429
+./build-install-run 
+#1630610462
+sudo dnf search ecm
+#1630610645
+./build-install-run 
+#1630610685
+exit
+#1630642039
+dnf search ffmpeg
+#1630642059
+exit
+#1630672195
+dnf list installed | grep google
+#1630672217
+cd .config/
+#1630672248
+cd ytdl-gui/
+#1630672261
+dnf list installed | grep vi*
+#1630672280
+sudo dnf install vim
+#1630672314
+vim 
+#1630672328
+vi
+#1630672356
+vimtutor 
+#1630672371
+which vim
+#1630672378
+cd /usr/bin/
+#1630672462
+cd 
+#1630672469
+cd .config/ytdl-gui/
+#1630672577
+cat /etc/youtube-dl.conf 
+#1630672473
+vim ytdl-gui.conf 
+#1630673434
+exit
+#1630673435
+exit
+#1630674214
+cd Videos/YouTube/
+#1630675054
+youtube-dl -F google.com
+#1630675082
+youtube-dl -F https://youtu.be/M7r80-yhDh4?list=PL_U9c8Fj19td8_MSJx6xgpCibRvwI-xrQ
+#1630674224
+vim list.txt
+#1630675208
+exit
+#1630675262
+youtube-dl -F https://www.youtube.com/watch?v=M7r80-yhDh4
+#1630675616
+gedit list.txt 
+#1630676044
+rm *.mp4
+#1630676050
+rm *.mkv
+#1630676060
+exit
+#1630676063
+exit
+#1630677580
+which zoom
+#1630680860
+dnf search git
+#1630680874
+dnf search git-lfs
+#1630680906
+sudo dnf install git git-lfs
+#1630680933
+git-lfs install
+#1630680940
+git
+#1630680960
+exit
+#1630682118
+firefox -safe-mode
+#1630682665
+cd
+#1630682671
+rm .mozilla/ -r
+#1630682680
+cd .config/
+#1630684215
+neofetch
+#1630684236
+exit
+#1630691434
+which gnome-terminal
+#1630691440
+which terminator
+#1630692104
+exit
+#1630694219
+cd /usr/bin
+#1630694219
+sudo dnf remove -y gnome-terminal && sudo ln -s terminator gnome-terminal
+#1630694292
+which gnome-terminal 
+#1630694312
+cd /usr/bin/
+#1630694378
+gnome-terminal 
+#1630694382
+lo
+#1630694384
+exit
+#1630694396
+sudo dnf install gnome-terminal
+#1630694458
+gnome-terminal 
+#1630694639
+nautilus-actions-config-tool
+#1630694647
+dnf search nautilus
+#1630694774
+sudo dnf install -y sushi gnome-terminal-nautilus nautilus-extensions nautilus-search-tool
+#1630694789
+nautilus -q
+#1630694955
+nautilus-open-terminal
+#1630695003
+sudo dnf install -y filemanager-actions
+#1630695014
+sudo dnf search filemanager-actions
+#1630695254
+hostname
+#1630695397
+exit
+#1630696220
+gksudo nautilus
+#1630696232
+sudo dnf install gksudo
+#1630696255
+sudo gksudo nautilus
+#1630696334
+cd
+#1630698668
+exit
+#1630698720
+nautilus-autorun-software 
+#1630698748
+exit
+#1630712710
+ct
+#1630712736
+exit
+#1630713824
+sudo update-alternatives --config x-terminal-emulator
+#1630713845
+sudo su
+#1630714169
+echo $PATH
+#1630714312
+terminator &
+#1630714381
+terminator --working-directory=$PWD
+#1630714401
+$PWD
+#1630714468
+terminator --working-directory=$PWD
+#1630714478
+cd Videos/YouTube/
+#1630714482
+terminator --working-directory=$PWD
+#1630714507
+terminator --working-directory=$PWD && exit
+#1630714553
+lol
+#1630714563
+terminator --working-directory=$PWD && exit
+#1630714569
+lol
+#1630715018
+touch .local/bin/change_terminal.sh
+#1630715040
+mkdir .local/bin
+#1630715043
+touch .local/bin/change_terminal.sh
+#1630715048
+echo $path
+#1630715055
+echo $PATH
+#1630714231
+vim .local/bin/change_terminal.sh
+#1630715153
+cat $
+#1630715222
+cat .local/bin/change_terminal.sh
+#1630715229
+vim .local/bin/change_terminal.sh
+#1630715283
+chmod +x .local/bin/change_terminal.sh 
+#1630715295
+change_terminal.sh 
+#1630715334
+exit
+#1630715337
+exit
+#1630715436
+ps ax | grep terminal
+#1630715488
+pgrep terminator
+#1630715510
+kill $(pgrep terminator)
+#1630715362
+vim .local/bin/change_terminal.sh 
+#1630715551
+pgrep gnome-terminal
+#1630715565
+kill $(pgrep gnome-terminal)
+#1630715595
+sudo dnf install   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+#1630715608
+vim .local/bin/change_terminal.sh 
+#1630715845
+exit
+#1630715854
+change_terminal.sh 
+#1630715883
+cd Synology/Drive-Box/Apps/Joplin/.resource/
+#1630715915
+gnome-terminal --working-directory=$PWD
+#1630715922
+change_terminal.sh 
+#1630716016
+cd
+#1630716022
+cd .local/bin/
+#1630716232
+pkill terminator
+#1630716286
+pkill -n terminator
+#1630716320
+pgrep terminator 
+#1630716331
+pgrep -l terminator 
+#1630716347
+pgrep -l gnome-terminal
+#1630716371
+vim .local/bin/change_terminal.sh 
+#1630716580
+exit
+#1630716583
+pkill terminator
+#1630716607
+change_terminal.sh 
+#1630716661
+vim .local/bin/change_terminal.sh 
+#1630716706
+exit
+#1630716711
+change_terminal.sh 
+#1630716737
+vi ~/.local/bin/change_terminal.sh 
+#1630716762
+exit
+#1630716768
+change_terminal.sh 
+#1630716847
+vi ~/.local/bin/change_terminal.sh 
+#1630716884
+exit
+#1630716889
+change_terminal.sh 
+#1630716911
+cd Fall\ 2021/
+#1630716918
+$PATH
+#1630716924
+cd $PATH
+#1630716932
+echo $PATH
+#1630716949
+echo $PWD
+#1630716955
+cd $PWD
+#1630717161
+cd "$PWD"
+#1630717179
+echo "$PWD"
+#1630717189
+vi ~/.local/bin/change_terminal.sh 
+#1630717213
+exit
+#1630717223
+change_terminal.sh 
+#1630717354
+vim ~/.bashrc 
+#1630717686
+cd
+#1630717692
+source .bashrc 
+#1630717700
+vim ~/.bashrc 
+#1630717715
+source .bashrc 
+#1630717718
+ct
+#1630717740
+source .bashrc 
+#1630717743
+vim ~/.bashrc 
+#1630717784
+less /etc/bashrc 
+#1630717853
+exit
+#1630718019
+change_terminal.sh 
+#1630718069
+history 
+#1630718091
+exit
+#1630718338
+cd Synology/
+#1630718343
+vim My\ Setup\ Steps\ -\ Fedora.
+#1630718578
+cd
+#1630718585
+cat .local/bin/change_terminal.sh 
+#1630718655
+cat .bashrc
+#1630718356
+vim My\ Setup\ Steps\ -\ Fedora.md 
+#1630718766
+exit
+#1630718768
+exit
+#1630724984
+youtube-dl -F https://www.youtube.com/watch?v=xUbXnLPhbSk
+#1630725055
+youtube-dl -F https://www.youtube.com/watch?v=hFZCdFYgI3s
+#1630725226
+vim /etc/youtube-dl.conf 
+#1630725251
+cd
+#1630725409
+youtube-dl -i --buffer-size 16k -w --get-duration --get-filename --get-format -a list.txt 
+#1630725470
+youtube-dl -i --buffer-size 16k -w --get-duration -a list.txt 
+#1630725679
+youtube-dl -i --buffer-size 16k -w --get-format -a list.txt 
+#1630725824
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height=1080]" -a list.txt 
+#1630725902
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height=720]"                -a list.txt 
+#1630725925
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height=1080]"                -a list.txt 
+#1630725948
+youtube-dl -i --buffer-size 16k -w --get-format -f -a list.txt 
+#1630725955
+youtube-dl -i --buffer-size 16k -w --get-format -a list.txt 
+#1630726018
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height>=1080]" -a list.txt 
+#1630726039
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height<=1080]" -a list.txt 
+#1630726076
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height<=1080?]" -a list.txt 
+#1630726090
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height<=?1080]" -a list.txt 
+#1630726101
+youtube-dl -i --buffer-size 16k -w --get-format -f "best[height=?1080]" -a list.txt 
+#1630725291
+sudo vim /etc/youtube-dl.conf 
+#1630726253
+cd Videos/YouTube/
+#1630726257
+less list.txt 
+#1630726282
+cat list.txt  | grep "=-"
+#1630726504
+exit
+#1630726513
+exit
+#1630726588
+youtube-dl -a list.txt -i --list-extractors 
+#1630726951
+youtube-dl -a list.txt -i -w -s -g --get-format --console-title
+#1630727030
+youtube-dl -a list.txt -i -w -s --get-format --console-title
+#1630727085
+youtube-dl -a list.txt -i -w --get-format --console-title--max-downloads 3
+#1630727093
+youtube-dl -a list.txt -i -w --get-format --console-title --max-downloads 3
+#1630727142
+youtube-dl -a list.txt -i -w --newline --max-downloads 3
+#1630727959
+youtube-dl -a list.txt -i -w --get-format --console-title --max-downloads 3
+#1630727983
+cd Videos/YouTube/
+#1630727984
+youtube-dl -a list.txt -i -w --get-format --console-title --max-downloads 3
+#1630728036
+youtube-dl -a list.txt -i -w -f 'best[width<=1920,height<=1080]' --console-title --max-downloads 3
+#1630728235
+read list.txt 
+#1630728240
+read list.txt [0]
+#1630728256
+more list.txt 
+#1630728370
+youtube-dl -a list.txt -i -w -F
+#1630728452
+youtube-dl -a list.txt -i -w -F | grep "video Only"
+#1630728575
+youtube-dl -a list.txt -i -w -F
+#1630728732
+youtube-dl -a list.txt -i -w -f 299/137 --max-downloads 3
+#1630729068
+youtube-dl -a list.txt -i -w -f 299/137 --max-downloads 3 --newline
+#1630729682
+youtube-dl -a list.txt -i -w -F --max-downloads 3
+#1630730123
+youtube-dl -a list.txt -i --get-id
+#1630730470
+youtube-dl -a list.txt -i --get-thumbnail
+#1630729321
+vim list.txt 
+#1630731735
+youtube-dl --get-filename -a list.txt 
+#1630731779
+youtube-dl --get-filename -a list.txt -o %(uploader)s/%(title)s_%(id)s.%(ext)s
+#1630731796
+youtube-dl --get-filename -a list.txt -o '%(uploader)s/%(title)s_%(id)s.%(ext)s'
+#1630731851
+youtube-dl --get-filename -a list.txt -o '%(uploader)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames 
+#1630731900
+youtube-dl --get-filename -a list.txt -o '%(creator)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames 
+#1630731946
+youtube-dl --get-filename -a list.txt -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames 
+#1630732462
+cat list.txt 
+#1630732471
+exit
+#1630732474
+exit
+#1630732476
+exit
+#1630732530
+more list.txt --lines 10
+#1630732704
+exit
+#1630732563
+youtube-dl -i -w -f 299/137 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630733452
+vim list.txt 
+#1630733502
+youtube-dl -i -w -f 299/137 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630733842
+youtube-dl -F -i -a list.txt
+#1630733962
+vim list.txt 
+#1630734647
+youtube-dl -i -w -f 299/137/303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630735222
+gedit list.txt 
+#1630735469
+youtube-dl -i -w -f 299/137/303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630735492
+vim list.txt 
+#1630735519
+youtube-dl -i -w -f 299/137/303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630736048
+youtube-dl -i -w -f 299/137/303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames https://www.youtube.com/watch?v=oU5oYfHVFpQ
+#1630736122
+vim list.txt 
+#1630736894
+youtube-dl -i -w -f 299/137/303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630737808
+less list.txt 
+#1630737838
+gedit list.txt 
+#1630739690
+exit
+#1630777324
+mkdir .themes
+#1630779824
+cd MacOS-3D-Shell-40-blue-dark
+#1630779846
+cd /usr/share/applications/
+#1630782266
+mkdir hidden
+#1630782270
+sudo mkdir hidden
+#1630782305
+mv hidden .hidden
+#1630782311
+sudo mv hidden .hidden
+#1630782330
+mv java* .hidden/
+#1630782334
+sudo mv java* .hidden/
+#1630782484
+cd /usr/share/applications/
+#1630782502
+rm -r .hidden/
+#1630782510
+sudo rm -r .hidden/
+#1630782632
+exit
+#1630786310
+neofetch
+#1630786318
+cmatrix
+#1630787108
+exit
+#1630787121
+which ct
+#1630787132
+ctl
+#1630787203
+htpo
+#1630787205
+htpop
+#1630787207
+htop
+#1630787274
+cd .local/share/gnome-shell/
+#1630787283
+cd extensions/
+#1630787297
+exit
+#1630787920
+df -h
+#1630787981
+hdparm -tT /dev/sda2
+#1630787985
+sudo hdparm -tT /dev/sda2
+#1630788127
+touch ~/Documents/OneTouch_read_performance.txt
+#1630788193
+for run in {1..10}; do sudo hdparm -tT /dev/sda2 >> ~/Documents/OneTouch_read_performance.txt; done &
+#1630788246
+touch ~/Documents/OneTouch_write_performance.txt
+#1630788473
+pgrep firefox
+#1630788779
+dd if=/dev/zero of=./lol bs=8k count=1k > lolreprot.txt
+#1630788787
+cat lolreprot.txt 
+#1630788831
+dd if=/dev/zero of=./lol bs=8k count=1k 2> lolreprot.txt
+#1630788832
+cat lolreprot.txt 
+#1630788842
+exit
+#1630789336
+pgrep ddterm
+#1630789340
+top
+#1630789363
+exit
+#1630789777
+neofetch 
+#1630789834
+uname -a
+#1630790470
+dnf list installed | grep ff
+#1630790436
+sudo dnf update -y
+#1630790590
+sudo dnf install youtube-dl ffmpeg
+#1630790659
+cd Downloads/
+#1630790662
+git clone https://github.com/Ninlives/animated-wallpaper
+#1630790663
+cd animated-wallpaper
+#1630790663
+cmake . && make && make install
+#1630790819
+cd
+#1630790836
+git clone https://github.com/Truemmerer/animated_wallpaper_helper
+#1630790841
+cd animated_wallpaper_helper/
+#1630790914
+chmod +x install.sh 
+#1630790927
+sudo ./install.sh 
+#1630790986
+vim install.sh 
+#1630791014
+sudo ./install.sh 
+#1630791108
+less awp.desktop 
+#1630791133
+cd
+#1630791147
+rm -r animated_wallpaper_helper/ Animated_Wallpapers/
+#1630791324
+cd Videos/
+#1630791346
+mkdir LiveWallpapers
+#1630791402
+mkdir LiveWallpapers/MP4_1080 LiveWallpapers/WEBM_1080
+#1630791423
+rm LiveWallpapers/MP4_1080/
+#1630791425
+rm LiveWallpapers/MP4_1080/ -r
+#1630791443
+mv YouTube/ LiveWallpapers/MP4_1080
+#1630791574
+cd WEBM_1080/
+#1630791490
+vim list.txt 
+#1630791646
+youtube-dl -i -w -f 303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a ../list.txt 
+#1630791673
+exit
+#1630791675
+exit
+#1630791683
+exit
+#1630791693
+cd Videos/LiveWallpapers/WEBM_1080/
+#1630791724
+youtube-dl -i -w -f 303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a ../list.txt &
+#1630792162
+animated-wallpaper Artemis/Animated_Wallpaper_-_Nier_Automata_-_2B_2kEPrFp5c0Y.webm 
+#1630792178
+animated-wallpaper Artemis/Animated_Wallpaper_-_Nier_Automata_-_2B_2kEPrFp5c0Y.webm &
+#1630793073
+exit
+#1630793109
+kill 43818
+#1630793127
+vim ../list.txt 
+#1630793221
+cd ..
+#1630793271
+mkdir PNGs
+#1630793291
+cd /usr/share/applications/
+#1630793307
+cat awp.desktop 
+#1630793321
+cd /usr/local/share/awp/
+#1630793343
+cd ..
+#1630793352
+cd applications/
+#1630793363
+cd ..
+#1630793375
+cd awp/
+#1630793417
+cd ..
+#1630793469
+mv LiveWallpapers/ ~/.local/share/backgrounds/
+#1630793498
+cd ~/.local/share/backgrounds/LiveWallpapers
+#1630793504
+$PWD
+#1630793389
+vim awp.sh 
+#1630793579
+.local/share/backgrounds/LiveWallpapers
+#1630793582
+cd .local/share/backgrounds/LiveWallpapers
+#1630793593
+cd ~/.local/share/backgrounds/LiveWallpapers
+#1630793657
+cd PNGs/
+#1630793663
+echo $PWD
+#1630793822
+cd ..
+#1630793944
+ffmpeg -i MP4_1080/*/* -frames:v 1 ./PNGs/*.png
+#1630794041
+ffmpeg -i MP4_1080/_/demon_slayer_kimetsu_no_yaiba_live_wallpaper_YZD-ztQjrtA.mp4 -frames:v 1 ./PNGs/demon_slayer_kimetsu_no_yaiba_live_wallpaper_YZD-ztQjrtA.png
+#1630794148
+gsettings set org.gnome.desktop.background picture-uri file://$PWD/PNGs/demon_slayer_kimetsu_no_yaiba_live_wallpaper_YZD-ztQjrtA.png
+#1630794250
+more -l 10 list.txt 
+#1630794262
+more -l=10 list.txt 
+#1630794268
+more -10 list.txt 
+#1630794366
+cd ~/.local/share/backgrounds/LiveWallpapers/MP4_1080/
+#1630794371
+youtube-dl -i -w -f 299/137 --buffer-size 16K -o 'MP4_1080/%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630794547
+ffmpeg -i MP4_1080/*/* -frames:v 1 ./PNGs/*/*.png
+#1630794644
+history | grep you
+#1630794713
+youtube-dl -i -w -f 303/248 --buffer-size 16K -o 'WEBM_1080/%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630794819
+exit
+#1630794846
+youtube-dl -i -w -f 299/137 --buffer-size 16K -o 'MP4_1080/%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames https://www.youtube.com/watch?v=JXNwrqw7NjA
+#1630794981
+which animated-wallpaper 
+#1630795010
+vim &(which animated-wallpaper )
+#1630795018
+vim &(which animated-wallpaper)
+#1630795030
+vim /usr/local/bin/animated-wallpaper
+#1630795362
+$PWD
+#1630795507
+cd ..
+#1630795522
+mv PNGs/ Idles
+#1630795635
+echo #PWD
+#1630795642
+echo $PWD
+#1630795831
+youtube-dl -i -w -f 299/137 --buffer-size 16K -o 'MP4_1080/%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630795967
+youtube-dl -i -w -f 303/248 --buffer-size 16K -o 'WEBM_1080/%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames -a list.txt
+#1630793557
+sudo vim awp.sh 
+#1630796043
+awp
+#1630796047
+./awp
+#1630796129
+cd /home/djinnalexio/.local/share/backgrounds/LiveWallpapers/WEBM_1080
+#1630796199
+/home/djinnalexio/.local/share/backgrounds/LiveWallpapers/MP4_1080/
+#1630796209
+cd /home/djinnalexio/.local/share/backgrounds/LiveWallpapers/MP4_1080/
+#1630796379
+for file in {ls}; do ls -l | grep -v ^d | wc -l; done
+#1630796392
+for file in {eval ls}; do ls -l | grep -v ^d | wc -l; done
+#1630796401
+for file in {$(ls)}; do ls -l | grep -v ^d | wc -l; done
+#1630796414
+for file in {$(ls)}; do ls -l file | grep -v ^d | wc -l; done
+#1630796423
+for file in {$(ls)}; do ls -l $file | grep -v ^d | wc -l; done
+#1630796437
+cd _
+#1630796462
+for file in {$(ls)}; do ls -l $file | grep -v ^d | wc -l; done
+#1630796490
+cd ..
+#1630796495
+for file in {$(ls)}; do ls -l $file | grep -v ^d | wc -l; done
+#1630796864
+youtube-dl -i -w -f 303/248 --buffer-size 16K -o '%(channel)s/%(title)s_%(id)s.%(ext)s' --restrict-filenames https://www.youtube.com/watch?v=prnoRbJVU1s
+#1630796964
+exit
+#1630796966
+exit
+#1630797033
+cd ..
+#1630797071
+touch download_list_from_youtube.sh
+#1630797086
+chmod +x download_list_from_youtube.sh 
+#1630796054
+./awp.sh
+#1630797130
+sudo vim awp.sh 
+#1630797197
+'#!/usr/bin/bash' >> download_list_from_youtube.sh 
+#1630797205
+echo '#!/usr/bin/bash' >> download_list_from_youtube.sh 
+#1630797231
+echo 'terminator &' >> download_list_from_youtube.sh 
+#1630797248
+echo 'terminator & exit 0' >> download_list_from_youtube.sh 
+#1630797395
+history | grep youtube-dl
+#1630797269
+vim download_list_from_youtube.sh 
+#1630797631
+pgrep download
+#1630797643
+kill 61530
+#1630797596
+./download_list_from_youtube.sh 
+#1630797670
+pgrep download
+#1630797820
+for D in *; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630797933
+for D in {MP4_1080 WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630797945
+*
+#1630797952
+echo *
+#1630797992
+for D in {MP4_1080:WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630797998
+for D in {MP4_1080;WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1630798007
+for D in {MP4_1080,WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1630798062
+for D in {1 2 3}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1630798085
+for D in {MP4_1080:WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798092
+for D in {MP4_1080;WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1630798112
+for D in {MP4_1080 WEBM_1080}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798155
+echo *
+#1630798160
+echo */*
+#1630798274
+for D in {*/*}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798288
+for D in {*}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798295
+for D in {ls */*}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798303
+for D in {echo */*}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798320
+for D in {ls *}; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798384
+for D in */*; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630798818
+cd WEBM_1080/DaRkNesS/
+#1630798948
+file='demon_slayer_kimetsu_no_yaiba_live_wallpaper_YZD-ztQjrtA.webm'
+#1630798961
+echo "${FILE%%.*}"
+#1630798967
+echo "${file%%.*}"
+#1630799021
+echo *
+#1630801036
+for fine in *; do     echo "lol";     fi; done
+#1630801053
+for fine in *; do     echo "lol"     fi; done
+#1630801094
+for fine in *; do echo ${fine}; done
+#1630801115
+for fine in *; do echo ${fine%%.*}; done
+#1630801119
+for fine in *; do echo ${fine%%}; done
+#1630801125
+for fine in *; do echo ${fine%%.}; done
+#1630801133
+for fine in *; do echo ${fine%%.*}; done
+#1630801314
+for D in */*; do     if [ -d "${D}" ]; then         echo "${D}"   # your processing here
+#1633033438
+    fi; done
+#1630801322
+history | grep ff
+#1630801339
+ffmpeg --help
+#1630801524
+echo $(history ffmpeg -i MP4_1080/*/* -frames:v 1 ./PNGs/*.png)
+#1630801540
+echo $(ffmpeg -i MP4_1080/*/* -frames:v 1 ./PNGs/*.png)
+#1630797721
+vim download_list_from_youtube.sh 
+#1630802202
+./download_list_from_youtube.sh 
+#1630802236
+vim download_list_from_youtube.sh 
+#1630802276
+./download_list_from_youtube.sh 
+#1630802395
+cd
+#1630802419
+/home/djinnalexio/.local/share/backgrounds/LiveWallpapers
+#1630802423
+cd /home/djinnalexio/.local/share/backgrounds/LiveWallpapers
+#1630802361
+vim download_list_from_youtube.sh 
+#1630802476
+./download_list_from_youtube.sh 
+#1630802481
+vim download_list_from_youtube.sh 
+#1630802504
+./download_list_from_youtube.sh 
+#1630802541
+vim download_list_from_youtube.sh 
+#1630802602
+./download_list_from_youtube.sh 
+#1630802633
+vim download_list_from_youtube.sh 
+#1630802954
+./download_list_from_youtube.sh 
+#1630802959
+vim download_list_from_youtube.sh 
+#1630802983
+./download_list_from_youtube.sh 
+#1630802994
+vim download_list_from_youtube.sh 
+#1630803024
+./download_list_from_youtube.sh 
+#1630803031
+vim download_list_from_youtube.sh 
+#1630803081
+./download_list_from_youtube.sh 
+#1630803175
+vim download_list_from_youtube.sh 
+#1630803222
+./download_list_from_youtube.sh 
+#1630803259
+vim download_list_from_youtube.sh 
+#1630803352
+exit
+#1630803357
+./download_list_from_youtube.sh 
+#1630803433
+vim download_list_from_youtube.sh 
+#1630805500
+top
+#1630805517
+htop
+#1630805707
+exit
+#1630805713
+exit
+#1630806654
+which aws
+#1630806691
+history | grep aws
+#1630806703
+history | grep animated
+#1630806723
+history | grep awh
+#1630806892
+sudo gedit awp-autostart.sh 
+#1630807166
+sudo reboot
+#1630808139
+cmatrix
+#1630808961
+history | grep sda2
+#1630809082
+for run in {1..30}; do sudo hdparm -tT /dev/sda2 >> ~/Documents/OneTouch_read_performance.txt; done
+#1630811322
+cat ~/Documents/OneTouch_read_performance.txt
+#1630811327
+vls &
+#1630811333
+vlc &
+#1630811371
+flatpak run org.videolan.VLC &
+#1630851313
+exit
+#1630851321
+dnf search libreoofice
+#1630851333
+dnf search libreoffice
+#1630851506
+sudo dnf install -y libreoffice-help-en libreoffice-help-fr
+#1630851886
+which thunderbird 
+#1630852122
+sudo dnf remove -y libreoffice-help-en libreoffice-help-fr
+#1630852263
+flatpak info org.libreoffice.LibreOffice
+#1630852268
+flatpak info org.libreoffice.LibreOffice.Locale 
+#1630852433
+flatpak install org.libreoffice.LibreOffice.Help
+#1630852454
+sudo flatpak install org.libreoffice.LibreOffice.Help
+#1630852562
+exit
+#1630862985
+sudo dnf upgrade -y
+#1630882597
+df -h
+#1630882705
+exit
+#1630940325
+dnf search alacri
+#1630940338
+exi
+#1630940339
+exit
+#1630940370
+cd .config/gtk-4.0/
+#1630940389
+exit
+#1630954039
+dnf search wallpaper
+#1630954182
+dnf list installed wallpaper
+#1630954195
+dnf list installed | grep wallpaper
+#1630954211
+dnf list installed gnome
+#1630954222
+dnf list installed | grep gnome
+#1630954261
+cd /usr/share/
+#1630954344
+sudo dnf install -y f34-backgrounds-extras-*
+#1630954376
+cd
+#1630954408
+cd /usr/share/
+#1630954417
+cd backgrounds/f34/
+#1630954422
+cd extras/
+#1630954606
+vtop
+#1630958376
+pip install
+#1630958389
+pip install unimatrix
+#1630958406
+unimatrix
+#1630958411
+python unimatrix
+#1630958419
+python
+#1630958599
+cmatrix -c
+#1630961673
+exit
+#1630961677
+exit
+#1630961679
+exit
+#1630969720
+cp index.theme index.theme2 
+#1630969723
+exit
+#1630969873
+cp status/ status2/
+#1630969878
+cp status/ status2/ -r
+#1630982578
+htop
+#1630984895
+thunderbird --version
+#1630991996
+not-font-emoji --version
+#1630992000
+noto-font-emoji --version
+#1630992006
+noto-fonts-emoji --version
+#1630992026
+sudo dnf search emoji
+#1630992136
+sudo dnf install gnome-shell-extension-emoji-seclector google-noto-emoji-color-fonts google-noto-emoji-fonts
+#1630992148
+sudo dnf install gnome-shell-extension-emoji-selector google-noto-emoji-color-fonts google-noto-emoji-fonts
+#1630992501
+sudo dnf remove gnome-shell-extension-emoji-selector-20-2.fc34.noarch
+#1630992630
+sudo dnf install gnome-shell-extension-emoji-selector google-noto-emoji-color-fonts google-noto-emoji-fonts
+#1630992645
+exit
+#1630954613
+htop
+#1630992766
+sudo dnf copr enable dawid/better_fonts -y
+#1630992766
+sudo dnf install fontconfig-font-replacements -y
+#1630992777
+sudo dnf install fontconfig-enhanced-defaults -y
+#1630993098
+sudo dnf search ms-fonts
+#1630993104
+sudo dnf search ms-font
+#1630993113
+sudo dnf search font
+#1630993246
+fc list
+#1630993270
+fc-list
+#1630993303
+lf
+#1630993312
+sudo dnf search lf
+#1630993325
+ranger
+#1631020175
+sudo dnf remove gnome-shell-extension-emoji-selector-20-2.fc34.noarch
+#1631031030
+neofetch
+#1631119925
+sudo rm 2021-0* -rF
+#1631119927
+sudo rm 2021-0* -r
+#1631119939
+exit
+#1631132311
+sudo bleachbit 
+#1631133375
+rm *
+#1631133378
+exit
+#1631146864
+cd /etx
+#1631146867
+cd /etc
+#1631147020
+cd X1
+#1631147024
+cd X11/
+#1631147038
+cd xorg.conf.d/
+#1631147637
+sudo dnf install -y dnf-plugins-core
+#1631147991
+cd ls -a
+#1631147997
+cd; ls -a
+#1631148423
+pip install git+https://github.com/sezanzeb/key-mapper.git
+#1631148444
+sudo pip3 install git+https://github.com/sezanzeb/key-mapper.git
+#1631148465
+systemctl status key-mapper.service 
+#1631148475
+sudo systemctl status key-mapper.service 
+#1631148483
+sudo systemctl enable key-mapper.service 
+#1631148490
+sudo systemctl start key-mapper.service 
+#1631148492
+sudo systemctl status key-mapper.service 
+#1631149277
+sudo systemctl restart key-mapper.service 
+#1631193789
+exit
+#1631214050
+uname -a
+#1631214063
+exit
+#1631282686
+mv osu.AppImage ../Applications/osu_af95c2a3a1088734dcd96c60f78f1bec.AppImage 
+#1631282805
+exit
+#1631282923
+neofetch
+#1631282929
+exit
+#1631376955
+neofetch 
+#1631379746
+sudo dnf update --refresh -y && sudo dnf upgrade -y
+#1631379919
+sudo reboot
+#1631393561
+sudo dnf update --refresh -y && sudo dnf upgrade -y
+#1631393595
+sudo reboot
+#1631394137
+neofetch 
+#1631394205
+exit
+#1631394217
+neofetch 
+#1631394263
+gjs
+#1631394288
+exit
+#1631394804
+cd Documents/
+#1631394820
+cat OneTouch_read_performance.txt 
+#1631394842
+gedit OneTouch_read_performance.txt 
+#1631394882
+for run in {1..30}; do sudo hdparm -tT /dev/sda2 >> ~/Documents/OneTouch_read_performance.txt; done
+#1631395691
+cat OneTouch_read_performance.txt 
+#1631395779
+touch writeTest.sh
+#1631395791
+vim
+#1631395959
+exit
+#1631395878
+vim writeTest.sh 
+#1631396314
+exit
+#1631396317
+exit
+#1631396372
+cat OneTouch_read_performance.txt 
+#1631396562
+cd
+#1631396493
+for run in {1..30}; do sudo hdparm -tT /dev/sda3 >> ~/Documents/OneTouch_read_performance2.txt; done
+#1631397335
+chmod +x writeTest.sh 
+#1631397338
+./writeTest.sh 
+#1631397347
+vim writeTest.sh 
+#1631397363
+./writeTest.sh 
+#1631397420
+vim writeTest.sh 
+#1631397585
+exit
+#1631397577
+./writeTest.sh 
+#1631397610
+cat OneTouch_write_performance.txt 
+#1631397622
+cat writeTest.sh 
+#1631397841
+vim writeTest.sh 
+#1631397864
+./writeTest.sh 
+#1631397890
+cat OneTouch_write_performance.txt 
+#1631397948
+vim writeTest.sh 
+#1631398026
+./writeTest.sh 
+#1631398061
+cat OneTouch_write_performance.txt 
+#1631400075
+cd Documents/
+#1631400112
+mv OneTouch_read_performance2.txt OneTouch_read_performance.txt 
+#1631400143
+echo lol
+#1631400152
+echo lol >> OneTouch_write_performance.txt 
+#1631400162
+cat OneTouch_write_performance.txt 
+#1631400197
+vim writeTest.sh 
+#1631400224
+./writeTest.sh 
+#1631400234
+vim writeTest.sh 
+#1631400242
+./writeTest.sh 
+#1631400249
+cat OneTouch_write_performance.txt 
+#1631400275
+vim writeTest.sh 
+#1631400513
+./writeTest.sh 
+#1631400523
+vim writeTest.sh 
+#1631400557
+./writeTest.sh 
+#1631400610
+exit
+#1631400662
+mv OneTouch_read_performance.txt ../
+#1631400669
+./writeTest.sh 
+#1631400681
+cat OneTouch_write_performance.txt 
+#1631400703
+vim OneTouch_write_performance.txt 
+#1631400742
+./writeTest.sh 
+#1631400744
+cat OneTouch_write_performance.txt 
+#1631400750
+./writeTest.sh 
+#1631400752
+cat OneTouch_write_performance.txt 
+#1631400575
+vim writeTest.sh 
+#1631400839
+./writeTest.sh 
+#1631400881
+./writeTest.sh 
+#1631400883
+cat OneTouch_write_performance.txt 
+#1631401779
+./writeTest.sh && cat OneTouch_write_performance.txt 
+#1631401907
+vim ../OneTouch_read_performance.txt 
+#1631401981
+rm OneTouch_write_performance.txt 
+#1631401996
+touch 
+#1631401999
+touch OneTouch_write_performance.txt
+#1631402017
+vim OneTouch_write_performance.txt 
+#1631402095
+touch OneTouch_read_performance.txt
+#1631402116
+history | grep for
+#1631402100
+vim touch OneTouch_read_performance.txt
+#1631402178
+cat touch 
+#1631402187
+cat OneTouch_read_performance.txt 
+#1631402200
+mv touch OneTouch_read_performance.txt 
+#1631402215
+cat OneTouch_read_performance.txt 
+#1631402229
+nano OneTouch_read_performance.txt 
+#1631402243
+cat OneTouch_read_performance.txt 
+#1631400848
+vim writeTest.sh 
+#1631402307
+for run in {1..30};         do sync;         echo "" >> ~/Documents/OneTouch_write_performance.txt;         echo "Pass ${run}" >> ~/Documents/OneTouch_write_performance.txt;         touch tempfile.txt;         dd if=/dev/zero of=/home/djinnalexio/OneTouch/tmp.bin bs=8k count=1K conv=fdatasync 2> tempfile.txt;         cat tempfile.txt >> ~/Documents/OneTouch_write_performance.txt;         rm /home/djinnalexio/OneTouch/tmp.bin;         rm tempfile.txt;         sync; done
+#1631407196
+cat OneTouch_write_performance.txt 
+#1631407376
+gedit OneTouch_write_performance.txt 
+#1631407438
+exit
+#1631407425
+for run in {1..30};         do sync;         echo "" >> ~/Documents/OneTouch_write_performance.txt;         echo "Pass ${run}" >> ~/Documents/OneTouch_write_performance.txt;                touch tempfile.txt;         dd if=/dev/zero of=/home/djinnalexio/OneTouch/tmp.bin bs=1M count=1024 conv=fdatasync 2> tempfile.txt;         cat tempfile.txt >> ~/Documents/OneTouch_write_performance.txt;         rm /home/djinnalexio/OneTouch/tmp.bin;         rm tempfile.txt;         sync; done
+#1631409177
+cat OneTouch_write_performance.txt 
+#1631409200
+cat OneTouch_read_performance.txt 
+#1631409233
+do sudo hdparm -tT /dev/sda2>> ~/Documents/OneTouch_read_performance2.txt; done && do sudo hdparm -tT /dev/sda3>> ~/Documents/OneTouch_read_performance2.txt; done
+#1631409259
+for run in {1..30}; do sudo hdparm -tT /dev/sda2>> ~/Documents/OneTouch_read_performance2.txt; done && for run in {1..30}; do sudo hdparm -tT /dev/sda3>> ~/Documents/OneTouch_read_performance2.txt; done
+#1631411929
+exit
+#1631413459
+for run in {1..30}; do echo "Pass ${run}" >> ~/Documents/OneTouch_read_performance.txt; sudo hdparm -tT /dev/sda2>> ~/Documents/OneTouch_read_performance.txt; done
+#1631413925
+exit
+#1631419806
+uname -
+#1631419808
+uname -a
+#1631541814
+which bash
+#1631542124
+exit
+#1631541801
+bash
+#1631542126
+exit
+#1631542140
+lol
+#1631542167
+exit
+#1631544108
+java
+#1631544132
+which java
+#1631544142
+exit
+#1631545598
+vim /home/djinnalexio/Synology/Drive-Ubalt/Fall 2021/AITC 251 - Tanisha Faulkner/IdeaProjects/Assignment1/src/com/company/Main.java
+#1631545614
+vim "/home/djinnalexio/Synology/Drive-Ubalt/Fall 2021/AITC 251 - Tanisha Faulkner/IdeaProjects/Assignment1/src/com/company/Main.java"
+#1631545726
+exit
+#1631563134
+a
+#1631563135
+b
+#1631563135
+x
+#1631563169
+q
+#1631563170
+w
+#1631563174
+e
+#1631563178
+r
+#1631563178
+t
+#1631563179
+y
+#1631563216
+exit
+#1631563217
+exit
+#1631563219
+exit
+#1631632535
+htop
+#1631662683
+history | git
+#1631662688
+history | grep git
+#1631662699
+git-lfs install
+#1631666204
+cd Synology/Drive-Ubalt/Fall\ 2021/AITC\ 251\ -\ Tanisha\ Faulkner/IdeaProjects/Assignment1/src/com/company/
+#1631666207
+vim Main.java 
+#1631844001
+nmap
+#1631844009
+ping 10.0.0.16
+#1631844033
+nmap ::1
+#1631844042
+nmap 10.0.0.7
+#1631844049
+nmap 10.0.0.1
+#1631844069
+cd
+#1632144698
+sudo dnf -y upgrade
+#1632238132
+mv Downloads/302signupFall21WithNames.docx Synology/Drive-Ubalt/Fall\ 2021/MGMT\ 302\ -\ Ven\ Sriram/Topic\ Report\ Sign-up\ Sheet.docx 
+#1632256449
+neofetch 
+#1632268801
+vim
+#1632330355
+sudo dnf update
+#1632494699
+cd Synology/
+#1632494723
+touch java.md
+#1632494729
+vim java.md 
+#1632499703
+gedit $$
+#1632499711
+gedit java.md 
+#1632502589
+vim java.md 
+#1632677082
+vim ~/.vimrc
+#1632677111
+vim
+#1632677135
+vim java.md 
+#1632764240
+echo $PWD
+#1632764262
+cd out/
+#1632764267
+cd production/
+#1632764272
+cd java/
+#1632764277
+cd com/
+#1632764281
+cd company/
+#1632764282
+la
+#1632764289
+java FirstProgram.class 
+#1632764293
+java FirstProgram
+#1632764297
+exit
+#1632764301
+java
+#1632764327
+java Synology.Drive-Ubalt.
+#1632764370
+cd Synology/Drive-Ubalt/Fall\ 2021/AITC\ 251\ -\ Tanisha\ Faulkner/IdeaProjects/SessionThird/out/production/SessionThird/com/company/
+#1632764376
+jave ClassThird.class 
+#1632764383
+java ClassThird.class 
+#1632764426
+/home/djinnalexio/.jdks/openjdk-16.0.2/bin/java ClassThird 
+#1632764472
+which java
+#1632764481
+which java
+#1632764484
+exit
+#1632764486
+exit
+#1632764506
+cd out/
+#1632764515
+cd production/java/com/company
+#1632764520
+java FirstProgram.class 
+#1632764524
+java FirstProgram
+#1632764612
+exit
+#1632764660
+java -version
+#1632764710
+java --version
+#1632764759
+cd java/
+#1632764772
+cd out/
+#1632764778
+cd production/java/com/company/
+#1632764783
+java FirstProgram 
+#1632764822
+sudo dnf update
+#1632764880
+sudo dnf search java
+#1632764917
+sudo dnf install java
+#1632764952
+sudo dnf install java-1.8.0-openjdk-
+#1632764978
+sudo dnf install java-1.8.0-openjdk
+#1632765011
+cd ..
+#1632765018
+cd src/
+#1632765024
+cd com/company/
+#1632765032
+javac FirstProgram.java 
+#1632765036
+java FirstProgram 
+#1632765177
+mv FirstProgram.class cd ~/Synology/java/out/production/java/com/company/FirstProgram.class 
+#1632765192
+mv FirstProgram.class ~/Synology/java/out/production/java/com/company/FirstProgram.class 
+#1632765202
+cd ~/Synology/java/out/production/java/com/company/FirstProgram.class 
+#1632765240
+cd ~/Synology/java/out/production/java/com/company
+#1632765244
+java FirstProgram 
+#1632765287
+/home/djinnalexio/.jdks/openjdk-16.0.2/bin/java -javaagent:/app/extra/idea-IU/lib/idea_rt.jar=37167:/app/extra/idea-IU/bin -Dfile.encoding=UTF-8 -classpath /home/djinnalexio/Synology/java/out/production/java com.company.FirstProgram
+#1632765294
+cd
+#1632765296
+/home/djinnalexio/.jdks/openjdk-16.0.2/bin/java -javaagent:/app/extra/idea-IU/lib/idea_rt.jar=37167:/app/extra/idea-IU/bin -Dfile.encoding=UTF-8 -classpath /home/djinnalexio/Synology/java/out/production/java com.company.FirstProgram
+#1632765693
+java --version
+#1632775355
+exit
+#1632845315
+cat /etc/shells 
+#1632845333
+neofetch 
+#1632845349
+exit
+#1632845325
+tmux
+#1632845351
+exit
+#1632845481
+cat /etc/hostname 
+#1632845485
+cat /etc/hosts
+#1632845513
+cat /etc/host.conf 
+#1632845516
+exit
+#1632878312
+ssh bandit@bandit.lab
+#1632926009
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+#1632932979
+PS1=">"
+#1632933480
+dnf search powerline
+#1632933713
+echo $0
+#1632933722
+echo
+#1632933726
+exit
+#1632933862
+sudo dnf install -y powerline-fonts
+#1632933964
+neofetch
+#1632934019
+sudo pip3 install powerline-shell
+#1632932997
+sudo su
+#1632934328
+powerline-shell --generate-config > ~/.powerline-shell.json
+#1632934358
+exit
+#1632935606
+vim .bashrc 
+#1632935643
+vim .bash_profile 
+#1632935699
+sudo su
+#1632935721
+exit
+#1632935680
+bash
+#1632935725
+exit
+#1632935740
+exit
+#1632935760
+vim .bash_profile 
+#1632935781
+su -l
+#1632935812
+whoami
+#1632935817
+su -l
+#1632935835
+exit
+#1632935962
+sudo su
+#1632936119
+mkdir -p .config/powerline-shell
+#1632936150
+cd .config/powerline-shell/
+#1632936195
+powerline-shell --generate-config > config.json
+#1632936203
+vim config.json 
+#1632936219
+cd
+#1632936228
+vim .powerline-shell.json 
+#1632936239
+rm .powerline-shell.json 
+#1632936241
+exit
+#1632936270
+bbb
+#1632936291
+PS1=">"
+#1632936309
+which powerline-shell 
+#1632936317
+echo $PATH
+#1632936340
+$PWD
+#1632936345
+whoami
+#1632936396
+echo $PATH
+#1632936413
+which bash
+#1632936418
+which bash
+#1632936461
+/usr/local/bin/powerline-shell
+#1632936473
+sudo /usr/local/bin/powerline-shell
+#1632936484
+cd /
+#1632936492
+cd usr/
+#1632936497
+cd local/
+#1632936514
+cd /usr/local/
+#1632936624
+echo $PATH
+#1632936633
+cd
+#1632936426
+bash
+#1632936698
+vim ~/.config/powerline-shell/config.json
+#1632936734
+neofetch 
+#1632936785
+dnf search nerd-font
+#1632936794
+dnf search nerd
+#1632936885
+git init lol
+#1632936896
+cd lol/
+#1632936909
+git checkout 
+#1632936926
+git commit -m "lol"
+#1632937014
+cd
+#1632937025
+rm -r lol/
+#1632937034
+cmatrix
+#1632937076
+dnf search powerline
+#1632937182
+sudo dnf install -y vim-powerline
+#1632937189
+vim
+#1632937376
+sudo pip3 uninstall powerline-shell
+#1632937433
+dnf list-installed | grep powerline
+#1632937443
+dnf list installed | grep powerline
+#1632937458
+vim .bash_profile 
+#1632937475
+vim .bashrc 
+#1632937580
+cd
+#1632937597
+vim .bash_profile 
+#1632937604
+vim .bashrc
+#1632936613
+/bin/bash
+#1632937714
+powerline
+#1632937725
+powerline .config/powerline-shell/config.json 
+#1632937865
+pip show powerline
+#1632937870
+pip show powerline*
+#1632937882
+pip show python
+#1632937889
+pip show *
+#1632937942
+cd /usr/local/lib/python3.9/site-packages/
+#1632938085
+sudo dnf remove *powerline*
+#1632938112
+sudo dnf remove powerline vim-powerline-2.8.2-1.fc34.noarch 
+#1632938138
+git status
+#1632938233
+git ls -a
+#1632938258
+vim ~/.bashrc
+#1632938280
+la
+#1632938289
+source .bashrc
+#1632938294
+source ~/.bashrc
+#1632938297
+la
+#1632938311
+cd
+#1632938321
+la
+#1632938330
+cd .ssh/
+#1632938331
+la
+#1632938335
+cat known_hosts 
+#1632938426
+ssh-keygen -t ed25519 -C "pakueamb@gmail.com"
+#1632938741
+ssh-agent -s && &
+#1632938752
+ssh-agent -s &
+#1632938816
+ssh-add -K githubKey
+#1632938843
+eval "$(ssh-agent -s)"
+#1632938845
+ssh-add -K githubKey
+#1632938899
+ssh-add githubKey
+#1632938920
+cat known_hosts 
+#1632938943
+cat githubKey.pub 
+#1632939085
+git clone git@github.com:pakueamb/DeepLearningAZcourse.git
+#1632939118
+cd DeepLearningAZcourse/
+#1632939130
+la
+#1632939135
+vim README.md 
+#1632939172
+git commit -m "changes to README"
+#1632939225
+git config --global user.name "pakueamb"
+#1632939239
+git config --global user.email "pakueamb@gmail.com"
+#1632939242
+git commit -m "changes to README"
+#1632939269
+git commit -ma "changes to README"
+#1632939277
+git status
+#1632939285
+git push
+#1632939299
+git commit -a -m "changes to README"
+#1632939306
+git push
+#1632939343
+cd
+#1632939344
+la
+#1632939378
+cd .ssh
+#1632939389
+rm -r DeepLearningAZcourse/ -f
+#1632939405
+rm githubKey.pub 
+#1632939412
+rm known_hosts.old 
+#1632939447
+rm known_hosts.old | powerline
+#1632939467
+history | powerline
+#1632939474
+history | grep powerline
+#1632939502
+vim /etc/bashrc 
+#1632939619
+cd
+#1632939667
+echo $PATH
+#1632939706
+la
+#1632939871
+sudo dnf -y update
+#1632939988
+sudo pip3 install powerline-shell
+#1632940006
+which powerline-shell 
+#1632939629
+vim .bashrc
+#1632940192
+source .bashrc
+#1632940206
+echo PATH
+#1632940211
+echo $PATH
+#1632940232
+vim .bashrc
+#1632940248
+exit
+#1632940249
+exit
+#1632940259
+echo $PATH
+#1632940365
+powerline-shell $?
+#1632940386
+vim .bashrc 
+#1632940465
+source .bashrc 
+#1632940472
+cd
+#1632940528
+cd .config/
+#1632940680
+cd powerline-shell/
+#1632940767
+vim config.json 
+#1632940845
+cp config.json config.json.old
+#1632940849
+vim config.json 
+#1632940867
+cd
+#1632940872
+cd /
+#1632940890
+cd
+#1632940994
+vim config.json 
+#1632941003
+cd
+#1632941044
+cd Synology/
+#1632941119
+cd
+#1632941179
+git clone git@github.com:pakueamb/My-New-Setup-Steps.git
+#1632941222
+history | grep eval
+#1632941229
+eval "$(ssh-agent -s)"
+#1632941232
+git clone git@github.com:pakueamb/My-New-Setup-Steps.git
+#1632941423
+vim .ssh/githubKey.pub
+#1632941452
+rm .ssh/githubKey 
+#1632941470
+la .ssh/
+#1632941548
+ssh-keygen -t ed25519 -C "pakueamb@gmail.com"
+#1632941619
+eval "$(ssh-agent -s)"
+#1632941648
+ssh-add ~/.ssh/hubKey
+#1632941689
+cat .ssh/hubKey.pub 
+#1632941706
+la
+#1632941725
+history | grep git
+#1632941734
+git clone git@github.com:pakueamb/My-New-Setup-Steps.git
+#1632941785
+git clone git@github.com:pakueamb/DeepLearningAZcourse.git
+#1632941808
+rm -fr DeepLearningAZcourse/ My-New-Setup-Steps/
+#1632941811
+exit
+#1632941825
+git clone git@github.com:pakueamb/DeepLearningAZcourse.git
+#1632941014
+vim .config/powerline-shell/config.json
+#1632941861
+exit
+#1632941882
+git clone git@github.com:pakueamb/My-New-Setup-Steps.git
+#1632941890
+rm -fr DeepLearningAZcourse/ My-New-Setup-Steps/
+#1632942105
+git clone git@github.com:pakueamb/My-New-Setup-Steps.git
+#1632942110
+cd My-New-Setup-Steps/
+#1632942122
+touch lol
+#1632942142
+git commit -a -m "lol"
+#1632942157
+git commit -a
+#1632942164
+git add lol 
+#1632942175
+git commit -m "lol"
+#1632942189
+git tree
+#1632942204
+git worktree 
+#1632942210
+git worktree list
+#1632942229
+git worktree log
+#1632942237
+git log
+#1632942380
+sudo su
+#1632942410
+source .bashrc
+#1632942422
+cd
+#1632942438
+source .bashrc
+#1632942446
+echo $PATH
+#1632942632
+which bash
+#1632942661
+which $PATH
+#1632942786
+which powerline-shell 
+#1632942825
+PATH="/usr/local/bin:$PATH"
+#1632942835
+PATH="/usr/local/bin/:$PATH"
+#1632942846
+echo $PATH
+#1632942858
+cd /usr/
+#1632942862
+cd local/
+#1632942969
+$pwd
+#1632942974
+echo $PWD
+#1632943003
+cd
+#1632943079
+hostname
+#1632943083
+hostnamectl
+#1632943087
+exit
+#1632943089
+exit
+#1632943090
+exit
+#1632942401
+bash
+#1632943092
+exit
+#1632942397
+sh
+#1632943094
+exit
+#1632943527
+vim lol 
+#1632943579
+mkdir -p eabtsdgfsd/rfasdcfvdveb/dfsvdvdvdf/fsavsdv\ fd/dsv\ faedsfvdf
+#1632943586
+cd eabtsdgfsd/
+#1632943589
+cd rfasdcfvdveb/
+#1632943592
+cd dfsvdvdvdf/
+#1632943600
+cd fsavsdv\ fd/dsv\ faedsfvdf/
+#1632942042
+vim .bash_profile 
+#1632943806
+cd
+#1632943884
+cd My-New-Setup-Steps/
+#1632943955
+cd
+#1632944053
+cd My-New-Setup-Steps/eabtsdgfsd/rfasdcfvdveb/dfsvdvdvdf/fsavsdv\ fd/dsv\ faedsfvdf/
+#1632944129
+cd /
+#1632944132
+cd
+#1632945680
+! type "powerline-shell" > /dev/null
+#1632945685
+echo ! type "powerline-shell" > /dev/null
+#1632945700
+echo $(! type "powerline-shell" > /dev/null)
+#1632946810
+if ! type "$foobar_command_name" > /dev/null; then
+#1633033438
+fi
+#1632946833
+which $0
+#1632946826
+bash
+#1632947249
+exit
+#1632947251
+exit
+#1632947274
+type ls
+#1632947281
+type la
+#1632947285
+type which
+#1632947325
+type which > /dev/null
+#1632947465
+echo $(type which > /dev/null)
+#1632947477
+echo $(type whicfh > /dev/null)
+#1632947488
+echo $(type whicfh &> /dev/null)
+#1632947492
+echo $(type which &> /dev/null)
+#1632947500
+type which &> /dev/null
+#1632947514
+echo $(type which &> /dev/null)
+#1632947601
+type $cmd &>/dev/null
+#1632947615
+type ls &>/dev/null
+#1632947653
+exit
+#1632943696
+vim .config/powerline-shell/config.json
+#1632947711
+if [ true ] && [ true ] then; echo "lol"; else
+#1632947736
+if [ true ] && [ true ] then; echo "lol" else; echo "not lol" fi fi
+#1632947761
+if [ true ] && [ true ] then; echo "lol" else; echo "not lol" fi; ;
+#1632947781
+if [ true ] && [ true ] then; echo "lol" else; fi
+#1632947835
+which powerline-shell 
+#1632942009
+vim .bashrc 
+#1632947948
+exit
+#1632947950
+exit
+#1632947952
+exit
+#1632948144
+vim .bashrc 
+#1632948188
+exit
+#1632948190
+exit
+#1632948209
+which powerline-shell 
+#1632948220
+cd /usr/local/bin/
+#1632948226
+la
+#1632948236
+la -l
+#1632948247
+la -lF
+#1632949405
+echo #PWD
+#1632949409
+echo #pwd
+#1632949413
+echo $pwd
+#1632949417
+echo $PWD
+#1632949821
+cd
+#1632950387
+cd Synology/Drive-Ubalt/Fall\ 2021/AITC\ 251\ -\ Tanisha\ Faulkner/
+#1632950420
+cd IdeaProjects/
+#1632950485
+cd /etc/
+#1632950515
+cd /usr/share/wallpapers/F34_dark-blue/contents/images/
+#1632950659
+cd Synology/Drive-Ubalt/Fall\ 2021/AITC\ 251\ -\ Tanisha\ Faulkner/
+#1632950672
+cd
+#1632950674
+cd Synology/Drive-Ubalt/Fall\ 2021/AITC\ 251\ -\ Tanisha\ Faulkner/
+#1632950705
+cd Slides/
+#1632951407
+cd
+#1632951413
+vim .bash
+#1632951441
+powerline-daemon -q
+#1632951463
+POWERLINE_BASH_CONTINUATION=1
+#1632951463
+POWERLINE_BASH_SELECT=1
+#1632951463
+. {repository_root}/powerline/bindings/bash/powerline.sh
+#1632951473
+echo $POWERLINE_BASH_CONTINUATION
+#1632951492
+echo $POWERLINE_BASH_CONTINUATION
+#1632951501
+exit
+#1632951502
+exit
+#1632951419
+vim .bashrc 
+#1632951514
+exit
+#1632951973
+cd /usr/lib/python3.9/site-packages/powerline/config_files/colorschemes
+#1632951984
+cd /usr/lib/python3.9/site-packages/powerline/
+#1632952021
+cd /usr/lib/python3.9/site-packages/
+#1632952031
+la
+#1632952069
+sudo pip3 install powerline-shell
+#1632952093
+cd /usr/local/lib/python3.9/site-packages/
+#1632952387
+dnf search powerline
+#1632953089
+sudo pip3 install powerline-status
+#1632953129
+cd
+#1632953145
+powerline-daemon -q
+#1632953149
+powerline-daemonh -q
+#1632953539
+vim .bashrc
+#1632953791
+vim .vimrc
+#1632953833
+vim
+#1632953846
+vim .vimrc
+#1632953862
+vim
+#1632953870
+vim .vimrc
+#1632953912
+vim
+#1632956665
+cd /usr/local/bin/
+#1632947983
+vim .config/powerline-shell/config.json
+#1632956765
+vim .bashrc
+#1632956377
+vim .vimrc
+#1632956848
+vim
+#1632956950
+powerline-shell
+#1632956959
+vim .bashrc
+#1632957097
+which powerline-shell
+#1632957202
+exit
+#1632957336
+exit
+#1632957664
+cp .bashrc bashrc
+#1632957669
+sudo dnf install   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+#1632957700
+echo $TERM
+#1632957679
+vim .bashrc
+#1632957926
+exit
+#1632958109
+source .bashrc
+#1632958540
+echo $?
+#1632958763
+exir
+#1632958772
+exit
+#1632958751
+bash
+#1632958559
+bash
+#1632958734
+bash
+#1632958738
+bash
+#1632958794
+sudo pip install powerline
+#1632958823
+sudo pip install powerline-shell
+#1632958840
+cd /usr/local/lib/python3.9/site-packages
+#1632958859
+cd powerline
+#1632958894
+cd bindings/
+#1632959031
+cd ..
+#1632959037
+la
+#1632959050
+cd config_files/
+#1632959052
+la
+#1632959071
+less colors.json 
+#1632959111
+vim ~/.vimrc 
+#1632959227
+cd ..
+#1632959234
+cd bindings/vim/
+#1632959242
+echo $pwd
+#1632959250
+echo $PWD
+#1632959297
+vim
+#1632959321
+exit
+#1632959561
+cd ..
+#1632959851
+cd config_files/
+#1632959855
+la
+#1632959859
+cd themes/
+#1632959860
+la
+#1632959928
+cd shell/
+#1632959931
+la
+#1632960010
+cat *
+#1632960443
+cd ..
+#1632960445
+cat *
+#1632960450
+cd ..
+#1632960471
+cd powerline_shell
+#1632960488
+cd themes/
+#1632960515
+la
+#1632960667
+cd
+#1632960788
+mv My-New-Setup-Steps/ Synology/
+#1632960798
+cd Synology/
+#1632960800
+cd My-New-Setup-Steps/
+#1632960811
+rm lol 
+#1632960822
+git add 
+#1632960829
+git add .
+#1632960840
+git status
+#1632960863
+git commit -a
+#1632960886
+git push
+#1632960893
+git status
+#1632961180
+less default.py 
+#1632961231
+exit
+#1632961241
+less basic
+#1632961243
+less basic.py 
+#1632961289
+cp default.py ~/
+#1632961294
+cd
+#1632961296
+exit
+#1632961298
+cd
+#1632961572
+cd /usr/local/bin/powerline
+#1632961579
+cd /usr/local/bin/powerline-shell
+#1632961614
+cd /usr/local/bin/python3.9/
+#1632961633
+cd /usr/local/lib/python3.9/site-packages/powerline_shell
+#1632961638
+cd themes/
+#1632961646
+cat washed.py 
+#1632961681
+exit
+#1632961710
+cat basic.py 
+#1632961718
+cat solarized_dark.py 
+#1632961770
+cat default.py 
+#1632961814
+ssh
+#1632961873
+hh
+#1632961878
+egrfb
+#1632961995
+cd ..
+#1632962020
+cd ../powerline/
+#1632962030
+cd config_files/
+#1632962213
+cd
+#1632962253
+cd Synology/My-New-Setup-Steps/
+#1632962265
+git f
+#1632962572
+rm -r eabtsdgfsd/
+#1632962576
+cd .. 
+#1632962686
+cd My-New-Setup-Steps/
+#1632962750
+exit
+#1632962040
+less colors.json 
+#1632964231
+less ../../powerline_shell/themes/default.py 
+#1632964709
+cd
+#1632964717
+cd Synology/My-New-Setup-Steps/
+#1632964944
+cd ..
+#1632964953
+cd powerline_shell
+#1632964959
+cd segments/
+#1632965020
+ggggg
+#1632965022
+ssdf
+#1632965050
+df
+#1632965057
+gggg
+#1632965608
+cd ..
+#1632965616
+cd
+#1632965687
+exit
+#1632965708
+l
+#1632966510
+l
+#1632971913
+cd ~/Synology/My-New-Setup-Steps/
+#1632971921
+cd
+#1632972038
+cd Synology/Drive-Ubalt/
+#1632972058
+cd Fall\ 2021/AITC\ 251\ -\ Tanisha\ Faulkner/
+#1632972120
+cd IdeaProjects/SessionFourthPerson/src/com/company/
+#1632972132
+cd ..
+#1632972372
+cd
+#1632972538
+cd Downloads/
+#1632972561
+rm net.downloadhelper.coapp-1.6.3-1_amd64.tar.gz 
+#1632972656
+tar xf net.downloadhelper.coapp-1.6.3-1_amd64-glibc-2.23.tar.gz -C ~
+#1632972924
+./net.downloadhelper.coapp-1.6.3-1_amd64-glibc-2.23/net.downloadhelper.coapp-1.6.3/bin/net.downloadhelper.coapp-linux-64 install --user
+#1632973706
+cd
+#1632973717
+rm net.downloadhelper.coapp-1.6.3/ -rf
+#1632974704
+./net.downloadhelper.coapp-linux-64 install --user
+#1632976561
+..
+#1632976580
+cd Synology/
+#1632976582
+..
+#1632976597
+source ~/.bashrc
+#1632976600
+..
+#1632976739
+ll
+#1632976811
+type ll
+#1632976927
+type grep
+#1632976944
+bc
+#1632977052
+type vi
+#1632977058
+vi
+#1632977208
+source ~/.bashrc
+#1632977209
+ll
+#1632977278
+find . -name
+#1632977282
+find . -name 
+#1632977369
+pydf
+#1632977404
+dnf search pydf
+#1632977422
+pydf
+#1632977442
+df
+#1632978213
+nvim
+#1632976465
+vim .bashrc 
+#1632978409
+sudo dnf install bash-completion
+#1632978461
+cat /etc/bash.bashrc
+#1632978548
+cat /etc/profile.d/bash_completion.sh 
+#1632978684
+vim .inputrc
+#1632978709
+source .inputrc 
+#1632978830
+rm .inputrc 
+#1632978838
+ll
+#1632978850
+rm .inputrc 
+#1632978917
+cat /etc/bashrc
+#1632978995
+dnf info bash-completion
+#1632979043
+source /etc/profile.d/bash_completion.sh
+#1632979055
+vim /etc/profile.d/bash_completion.sh
+#1632979205
+sudo dnf install bash-completion-extras
+#1632979643
+touch .inputrc
+#1632979651
+vim .inputrc
+#1632979746
+source .inputrc 
+#1632979759
+exit
+#1632979927
+menu-complete
+#1632979932
+complete
+#1632979952
+dnf search menu-complete
+#1632980005
+sudo su
+#1632980185
+sudo dnf install -y cowsay fortune
+#1632980205
+dnf search fortune
+#1632980315
+sudo dnf install -y cowsay fortune-mod
+#1632980324
+cowsay
+#1632980344
+fortune | cowsay
+#1632980505
+man cowsay
+#1632980618
+fortune | cowsay -f tux
+#1632980712
+fortune | cowsay -f tux -p
+#1632980715
+fortune | cowsay -f tux 
+#1632980723
+fortune | cowsay 
+#1632980727
+fortune | cowsay -p
+#1632980747
+fortune | cowsay -g
+#1632980753
+fortune | cowsay -d
+#1632980760
+fortune | cowsay -s
+#1632980766
+fortune | cowsay -st
+#1632980770
+fortune | cowsay -t
+#1632980780
+fortune | cowsay -tw
+#1632980786
+fortune | cowsay -y
+#1632980810
+fortune | cowsay -y -e -O
+#1632980823
+fortune | cowsay -y -e `O
+#1633033438
+q
+#1632980837
+fortune | cowsay -y -e \`O
+#1632980971
+sudo dnf install figlet
+#1632980981
+figlet love
+#1632980994
+figlet djinnalexio
+#1632981006
+figlet DjinnAlexio
+#1632980671
+man cowsay
+#1632981173
+echo $RANDOM
+#1632981371
+messageType=$[ $RANDOM % 2 + 1 ]
+#1632981382
+echo $messageType 
+#1632981385
+messageType=$[ $RANDOM % 2 + 1 ]
+#1632981386
+echo $messageType 
+#1632981398
+messageType=$[ $RANDOM % 2 + 1 ] && echo $messageType 
+#1632981628
+messageType=$[ $RANDOM % 2 + 1 ]
+#1632981630
+echo "hello, world" | cowsay
+#1632981653
+echo "hello, world" | cowsay -d
+#1632981659
+cowsay -l
+#1632981686
+echo "hello, world" | cowsay -t www
+#1632981707
+echo "hello, world" | cowsay -f tux
+#1632981711
+echo "hello, world" | cowsay -f www
+#1632981723
+echo "hello, world" | cowsay -f vader-koala
+#1632981739
+echo "hello, world" | cowsay -f super-milker
+#1632981762
+cd /usr/share/cowsay
+#1632981795
+cowsay -f .www.cow wow
+#1632981800
+cowsay -f www.cow wow
+#1632981895
+vim ~/file.txt 
+#1632982059
+cowsay "meannn" -f beavis.zen.cow
+#1632982059
+cowsay "meannn" -f blowfish.cow
+#1632982059
+cowsay "meannn" -f bud-frogs.cow
+#1632982059
+cowsay "meannn" -f bunny.cow
+#1632982059
+cowsay "meannn" -f cheese.cow
+#1632982059
+cowsay "meannn" -f cower.cow
+#1632982059
+cowsay "meannn" -f default.cow
+#1632982059
+cowsay "meannn" -f dragon-and-cow.cow
+#1632982059
+cowsay "meannn" -f DragonAndCow.pm
+#1632982059
+cowsay "meannn" -f dragon.cow
+#1632982059
+cowsay "meannn" -f elephant.cow
+#1632982059
+cowsay "meannn" -f elephant-in-snake.cow
+#1632982059
+cowsay "meannn" -f Example.pm
+#1632982059
+cowsay "meannn" -f eyes.cow
+#1632982059
+cowsay "meannn" -f flaming-sheep.cow
+#1632982059
+cowsay "meannn" -f fox.cow
+#1632982059
+cowsay "meannn" -f Frogs.pm
+#1632982059
+cowsay "meannn" -f ghostbusters.cow
+#1632982059
+cowsay "meannn" -f head-in.cow
+#1632982059
+cowsay "meannn" -f hellokitty.cow
+#1632982059
+cowsay "meannn" -f kiss.cow
+#1632982059
+cowsay "meannn" -f kitty.cow
+#1632982059
+cowsay "meannn" -f koala.cow
+#1632982059
+cowsay "meannn" -f kosh.cow
+#1632982059
+cowsay "meannn" -f luke-koala.cow
+#1632982059
+cowsay "meannn" -f mech-and-cow.cow
+#1632982059
+cowsay "meannn" -f MechAndCow.pm
+#1632982059
+cowsay "meannn" -f meow.cow
+#1632982059
+cowsay "meannn" -f milk.cow
+#1632982060
+cowsay "meannn" -f moofasa.cow
+#1632982060
+cowsay "meannn" -f moose.cow
+#1632982060
+cowsay "meannn" -f mutilated.cow
+#1632982060
+cowsay "meannn" -f ren.cow
+#1632982060
+cowsay "meannn" -f sheep.cow
+#1632982060
+cowsay "meannn" -f skeleton.cow
+#1632982060
+cowsay "meannn" -f small.cow
+#1632982060
+cowsay "meannn" -f stegosaurus.cow
+#1632982060
+cowsay "meannn" -f Stegosaurus.pm
+#1632982060
+cowsay "meannn" -f stimpy.cow
+#1632982060
+cowsay "meannn" -f supermilker.cow
+#1632982060
+cowsay "meannn" -f surgery.cow
+#1632982060
+cowsay "meannn" -f telebears.cow
+#1632982060
+cowsay "meannn" -f TextBalloon.pm
+#1632982060
+cowsay "meannn" -f three-eyes.cow
+#1632982060
+cowsay "meannn" -f turkey.cow
+#1632982060
+cowsay "meannn" -f turtle.cow
+#1632982060
+cowsay "meannn" -f tux.cow
+#1632982060
+cowsay "meannn" -f TuxStab.pm
+#1632982060
+cowsay "meannn" -f udder.cow
+#1632982060
+cowsay "meannn" -f vader.cow
+#1632982060
+cowsay "meannn" -f vader-koala.cow
+#1632982060
+cowsay "meannn" -f www.cow
+#1632982123
+cowsay "meannn" -f beavis.zen
+#1632982123
+cowsay "meannn" -f blowfish
+#1632982123
+cowsay "meannn" -f bud-frogs
+#1632982123
+cowsay "meannn" -f bunny
+#1632982123
+cowsay "meannn" -f cheese
+#1632982123
+cowsay "meannn" -f cower
+#1632982123
+cowsay "meannn" -f default
+#1632982123
+cowsay "meannn" -f dragon-and-cow
+#1632982123
+cowsay "meannn" -f DragonAndCow
+#1632982123
+cowsay "meannn" -f dragon
+#1632982123
+cowsay "meannn" -f elephant
+#1632982123
+cowsay "meannn" -f elephant-in-snake
+#1632982123
+cowsay "meannn" -f Example
+#1632982123
+cowsay "meannn" -f eyes
+#1632982123
+cowsay "meannn" -f flaming-sheep
+#1632982124
+cowsay "meannn" -f fox
+#1632982124
+cowsay "meannn" -f Frogs
+#1632982124
+cowsay "meannn" -f ghostbusters
+#1632982124
+cowsay "meannn" -f head-in
+#1632982124
+cowsay "meannn" -f hellokitty
+#1632982124
+cowsay "meannn" -f kiss
+#1632982124
+cowsay "meannn" -f kitty
+#1632982124
+cowsay "meannn" -f koala
+#1632982124
+cowsay "meannn" -f kosh
+#1632982124
+cowsay "meannn" -f luke-koala
+#1632982124
+cowsay "meannn" -f mech-and-cow
+#1632982124
+cowsay "meannn" -f MechAndCow
+#1632982124
+cowsay "meannn" -f meow
+#1632982124
+cowsay "meannn" -f milk
+#1632982124
+cowsay "meannn" -f moofasa
+#1632982124
+cowsay "meannn" -f moose
+#1632982124
+cowsay "meannn" -f mutilated
+#1632982124
+cowsay "meannn" -f ren
+#1632982124
+cowsay "meannn" -f sheep
+#1632982124
+cowsay "meannn" -f skeleton
+#1632982124
+cowsay "meannn" -f small
+#1632982124
+cowsay "meannn" -f stegosaurus
+#1632982124
+cowsay "meannn" -f Stegosaurus
+#1632982124
+cowsay "meannn" -f stimpy
+#1632982124
+cowsay "meannn" -f supermilker
+#1632982124
+cowsay "meannn" -f surgery
+#1632982124
+cowsay "meannn" -f telebears
+#1632982124
+cowsay "meannn" -f TextBalloon
+#1632982124
+cowsay "meannn" -f three-eyes
+#1632982124
+cowsay "meannn" -f turkey
+#1632982124
+cowsay "meannn" -f turtle
+#1632982124
+cowsay "meannn" -f tux
+#1632982124
+cowsay "meannn" -f TuxStab
+#1632982124
+cowsay "meannn" -f udder
+#1632982124
+cowsay "meannn" -f vader
+#1632982124
+cowsay "meannn" -f vader-koala
+#1632982124
+cowsay "meannn" -f www
+#1632982134
+cowsay "meannn" -f tux
+#1632982143
+cowsay -f tux "l"
+#1632982282
+cowsay -f beavis.zen
+#1632982242
+cowsay -f beavis.zen
+#1632982248
+cowsay -f blowfish
+#1632982256
+cowsay -f bud-frogs
+#1632982324
+cowsay -f tux
+#1632982331
+cowsay -f tux "lol"
+#1632982448
+cowsay -f beavis.zen "lol"
+#1632982448
+cowsay -f blowfish "lol"
+#1632982448
+cowsay -f bud-frogs "lol"
+#1632982448
+cowsay -f bunny "lol"
+#1632982448
+cowsay -f cheese "lol"
+#1632982448
+cowsay -f cower "lol"
+#1632982449
+cowsay -f default "lol"
+#1632982449
+cowsay -f dragon-and-cow "lol"
+#1632982449
+cowsay -f DragonAndCow "lol"
+#1632982449
+cowsay -f dragon "lol"
+#1632982449
+cowsay -f elephant "lol"
+#1632982449
+cowsay -f elephant-in-snake "lol"
+#1632982449
+cowsay -f Example "lol"
+#1632982449
+cowsay -f eyes "lol"
+#1632982449
+cowsay -f flaming-sheep "lol"
+#1632982449
+cowsay -f fox "lol"
+#1632982449
+cowsay -f Frogs "lol"
+#1632982449
+cowsay -f ghostbusters "lol"
+#1632982449
+cowsay -f head-in "lol"
+#1632982449
+cowsay -f hellokitty "lol"
+#1632982449
+cowsay -f kiss "lol"
+#1632982449
+cowsay -f kitty "lol"
+#1632982449
+cowsay -f koala "lol"
+#1632982449
+cowsay -f kosh "lol"
+#1632982449
+cowsay -f luke-koala "lol"
+#1632982449
+cowsay -f mech-and-cow "lol"
+#1632982449
+cowsay -f MechAndCow "lol"
+#1632982449
+cowsay -f meow "lol"
+#1632982449
+cowsay -f milk "lol"
+#1632982449
+cowsay -f moofasa "lol"
+#1632982449
+cowsay -f moose "lol"
+#1632982449
+cowsay -f mutilated "lol"
+#1632982449
+cowsay -f ren "lol"
+#1632982449
+cowsay -f sheep "lol"
+#1632982449
+cowsay -f skeleton "lol"
+#1632982449
+cowsay -f small "lol"
+#1632982449
+cowsay -f stegosaurus "lol"
+#1632982449
+cowsay -f Stegosaurus "lol"
+#1632982449
+cowsay -f stimpy "lol"
+#1632982449
+cowsay -f supermilker "lol"
+#1632982449
+cowsay -f surgery "lol"
+#1632982449
+cowsay -f telebears "lol"
+#1632982449
+cowsay -f TextBalloon "lol"
+#1632982449
+cowsay -f three-eyes "lol"
+#1632982449
+cowsay -f turkey "lol"
+#1632982449
+cowsay -f turtle "lol"
+#1632982449
+cowsay -f tux "lol"
+#1632982449
+cowsay -f TuxStab "lol"
+#1632982449
+cowsay -f udder "lol"
+#1632982449
+cowsay -f vader "lol"
+#1632982449
+cowsay -f vader-koala "lol"
+#1632982449
+cowsay -f www  "lol"
+#1632982620
+neofetch | cowsay
+#1632982630
+neofetch | cowsay -n
+#1632982659
+exit
+#1632982949
+figlet "djinnalexio" | cowsay -n
+#1632983085
+qwerty=(we wre wtt)
+#1632983102
+qwerty=(default cower tux)
+#1632983124
+cowsay -f $qwerty[0]
+#1632983138
+cowsay -f $qwerty[0] "lol"
+#1632983155
+cowsay -f $($qwerty[0]) "lol"
+#1632983211
+cowsay -f ${$qwerty[0]} "lol"
+#1632983224
+cowsay -f ${qwerty[0]} "lol"
+#1632983261
+cowsay -f ${qwerty[$RANDOM % 2 + 0]} "lol"
+#1632983282
+cowsay -f ${qwerty[$RANDOM % 3 + 0]} "lol"
+#1632981905
+gedit ~/file.txt 
+#1632983619
+cowsay "meannn" -f beavis.zen.cow
+#1632983619
+cowsay "meannn" -f blowfish.cow
+#1632983619
+cowsay "meannn" -f bud-frogs.cow
+#1632983619
+cowsay "meannn" -f bunny.cow
+#1632983619
+cowsay "meannn" -f cheese.cow
+#1632983619
+cowsay "meannn" -f cower.cow
+#1632983619
+cowsay "meannn" -f default.cow
+#1632983620
+cowsay "meannn" -f dragon-and-cow.cow
+#1632983620
+cowsay "meannn" -f DragonAndCow.pm
+#1632983620
+cowsay "meannn" -f dragon.cow
+#1632983620
+cowsay "meannn" -f elephant.cow
+#1632983620
+cowsay "meannn" -f elephant-in-snake.cow
+#1632983620
+cowsay "meannn" -f Example.pm
+#1632983620
+cowsay "meannn" -f eyes.cow
+#1632983620
+cowsay "meannn" -f flaming-sheep.cow
+#1632983620
+cowsay "meannn" -f fox.cow
+#1632983620
+cowsay "meannn" -f Frogs.pm
+#1632983620
+cowsay "meannn" -f ghostbusters.cow
+#1632983620
+cowsay "meannn" -f head-in.cow
+#1632983621
+cowsay "meannn" -f hellokitty.cow
+#1632983621
+cowsay "meannn" -f kiss.cow
+#1632983621
+cowsay "meannn" -f kitty.cow
+#1632983621
+cowsay "meannn" -f koala.cow
+#1632983621
+cowsay "meannn" -f kosh.cow
+#1632983621
+cowsay "meannn" -f luke-koala.cow
+#1632983621
+cowsay "meannn" -f mech-and-cow.cow
+#1632983621
+cowsay "meannn" -f MechAndCow.pm
+#1632983621
+cowsay "meannn" -f meow.cow
+#1632983621
+cowsay "meannn" -f milk.cow
+#1632983621
+cowsay "meannn" -f moofasa.cow
+#1632983621
+cowsay "meannn" -f moose.cow
+#1632983622
+cowsay "meannn" -f mutilated.cow
+#1632983622
+cowsay "meannn" -f ren.cow
+#1632983622
+cowsay "meannn" -f sheep.cow
+#1632983622
+cowsay "meannn" -f skeleton.cow
+#1632983622
+cowsay "meannn" -f small.cow
+#1632983622
+cowsay "meannn" -f stegosaurus.cow
+#1632983622
+cowsay "meannn" -f Stegosaurus.pm
+#1632983622
+owsay "meannn" -f stimpymessageType=$[ $RANDOM % 2 + 1 ] && echo $messageType
+#1632983628
+"messageType=$[ $RANDOM % 2 + 1 ] && echo $messageType
+#1632983636
+messageType=$[ $RANDOM % 2 + 1 ] && echo $messageType
+#1632983650
+cd
+#1632983654
+messageType=$[ $RANDOM % 2 + 1 ] && echo $messageType
+#1632983670
+messageType=$[ $RANDOM % 3 + 1 ] && echo $messageType
+#1632983684
+messageType=$[ $RANDOM % 3 + 0 ] && echo $messageType
+#1632983783
+${#messageType[@]}
+#1632983790
+echo ${#messageType[@]}
+#1632983822
+message=( we fre fdsv dbvsbt vs)
+#1632983824
+echo ${#messageType[@]}
+#1632983835
+echo ${#message[@]}
+#1632983855
+messageType=$[ $RANDOM % ${#message[@]} ] && echo $messageType
+#1632983861
+echo ${#message[@]}
+#1632983868
+messageType=$[ $RANDOM % ${#message[@]} ] && echo $messageType
+#1632983903
+for i in {1..30}; do messageType=$[ $RANDOM % ${#message[@]} ] && echo $messageType; done
+#1632984000
+for i in {1..30}; do echo $[ $RANDOM % 5 + 1 ]; done
+#1632984011
+for i in {1..30}; do echo $[ $RANDOM % 5 ]; done
+#1632984368
+exit
+#1632984387
+messageType=$[ $RANDOM % 5 + 1 ] # fortune-mod one out of 5, figlet A'          
+#1632984387
+cowfiles=(cower default dragon elephant eyes fox hellokitty kitty koala meow     sheep small stegosaurus turtle tux)                                             
+#1632984387
+currentCowfile=cowfiles[ $[ $RANDOM % ${#cowfiles[@]} ] ]                       
+#1632984410
+messageType=$[ $RANDOM % 5 + 1 ] # fortune-mod one out of 5, figlet A'          
+#1632984431
+cowfiles=(cower default dragon elephant eyes fox hellokitty kitty koala meow     sheep small stegosaurus turtle tux)
+#1632984440
+echo $cowfiles 
+#1632984454
+echo $cowfiles[1] 
+#1632984475
+echo ${cowfiles[1]} 
+#1632984481
+echo ${cowfiles[6]} 
+#1632984484
+echo ${cowfiles} 
+#1632984509
+currentCowfile=cowfiles[ $[ $RANDOM % ${#cowfiles[@]} ] ]
+#1632984526
+echo ${#cowfiles[@]}
+#1632984555
+echo $[ $RANDOM % ${#cowfiles[@]} ]
+#1632984561
+echo ${#cowfiles[@]}
+#1632984567
+echo $[ $RANDOM % ${#cowfiles[@]} ]
+#1632984624
+echo ${cowfiles[ $[ $RANDOM % ${#cowfiles[@]} ] ]}
+#1632984701
+fortune 
+#1632984735
+exit
+#1632984740
+exit
+#1632984744
+exit
+#1632981069
+vim .bashrc
+#1632984875
+exit
+#1632984890
+vim .bashrc
+#1632984931
+exit
+#1632984986
+exit
+#1632985016
+cd
+#1632985020
+exit
+#1632985044
+h
+#1632985257
+cd /usr/local/lib/python3.9/site-packages/powerline_shell
+#1632985263
+cd segments/
+#1632985273
+less time.py 
+#1632985291
+sudo vim time.py 
+#1632985317
+exit
+#1632985366
+cd /usr/local/lib/python3.9/site-packages/powerline_shell/segments/
+#1632985371
+vim time.py 
+#1632985490
+sudo vim time.py 
+#1632985567
+exit
+#1632985637
+cmatrix --help
+#1632985643
+cmatrix -c
+#1632985719
+dnf search japan
+#1632985738
+sudo dnf install -y japanese-bitmap-fonts.noarch
+#1632985745
+cmatrix -c
+#1632985833
+sudo dnf install adobe-source-han-*
+#1632985867
+cmatrix -c
+#1632985913
+locale -a
+#1633009478
+vim .inputrc 
+#1633009967
+exit
+#1633009846
+sed -n l
+#1633009997
+exit
+#1633010435
+sudo dnf install pfetch
+#1633010497
+neofetch
+#1633010504
+terminator &
+#1633010507
+exit
+#1633010519
+terminator &
+#1633010523
+exit
+#1633010552
+neofetch
+#1633011661
+ranger
+#1633017131
+whoami
+#1633017150
+echo $host
+#1633017154
+echo $HOST
+#1633017157
+echo $HOSTNAME
+#1633017162
+echo $USER
+#1633016657
+vim .bashrc 
+#1633017210
+source .bashrc 
+#1633017222
+vim .bashrc 
+#1633017240
+source .bashrc 
+#1633017292
+exit
+#1633017425
+vim
+#1633017437
+vim .bashrc 
+#1633017555
+exit
+#1633017608
+ranger
+#1633017909
+ranger --help
+#1633017932
+/home/djinnalexio/.config/ranger
+#1633017948
+cd /home/djinnalexio/.config/ranger
+#1633018132
+ranger
+#1633018164
+source ~/.bashrc
+#1633018168
+ranger
+#1633019763
+sudo su
+#1633020731
+exit
+#1633020777
+.bashrc
+#1633020793
+sudo su
+#1633020782
+less .bashrc
+#1633017673
+vim .bashrc 
+#1633021238
+mkdir .bashrc.d
+#1633021252
+cd .bashrc.d/
+#1633021266
+vim alias.sh
+#1633021313
+vim historysettings.sh
+#1633021479
+vim enable-powerline.sh
+#1633021507
+vim welcometext.sh
+#1633022795
+echo $currentCowfile
+#1633022642
+vim *
+#1633022949
+mv enable-powerline.sh customprompt.sh
+#1633022957
+vim *
+#1633022885
+sudo su
+#1633023714
+exit
+#1633023716
+exit
+#1633011417
+htop
+#1633021223
+vim .bashrc 
+#1633023927
+sudo su
+#1633023939
+exit
+#1633023946
+ranger
+#1633023963
+cd .bashrc.d/
+#1633023966
+ranger
+#1633024006
+echo $PROMPT_COMMAND 
+#1633024030
+exit
+#1633024074
+sudo su
+#1633024316
+cd
+#1633025474
+sudo su
+#1633025504
+hg cowsay
+#1633025619
+$COWPATH
+#1633025648
+cd /usr/share/config/
+#1633025657
+cd ../cowsay/
+#1633025667
+wget -O amogus.cow http://0x0.st/-Y29.cow
+#1633025671
+ll
+#1633025692
+sudo wget -O amogus.cow http://0x0.st/-Y29.cow
+#1633025730
+"lol" | cowsay -f amogus
+#1633025737
+"lol" | cowsay -f sheep
+#1633025754
+vim amogus.cow 
+#1633025778
+"lol" | cowsay -f sheep
+#1633025782
+"lol" | cowsay -f amogus
+#1633026302
+exit
+#1633026371
+..
+#1633026395
+vim .bashrc 
+#1633024017
+sudo su
+#1633026429
+exit
+#1633026433
+exit
+#1633026495
+cd
+#1633026504
+vim .bashrc
+#1633026616
+exit
+#1633026633
+ll
+#1633026655
+ll .bashrc.d/
+#1633026685
+cd .bashrc.d/
+#1633026691
+rm =\=~ 
+#1633026695
+rm =~ 
+#1633026720
+exit
+#1633026733
+vim ../.bashrc
+#1633026743
+vim customprompt.sh 
+#1633025807
+sudo su
+#1633026884
+sudo su
+#1633026990
+exit
+#1633027006
+echo $PS1
+#1633027025
+echo $PROMPT_COMMAND 
+#1633027038
+vim .bashrc
+#1633027046
+cd
+#1633027049
+vim .bashrc
+#1633027074
+cd .bashrc.d/
+#1633027083
+vim check.sh
+#1633027133
+source ../.bashrc
+#1633027158
+vim customprompt.sh 
+#1633027283
+exit
+#1633027461
+nn
+#1633027465
+cd
+#1633027486
+exit
+#1633027489
+source ../.bashrc
+#1633027494
+cd
+#1633027502
+source .bashrc
+#1633027508
+cd Desktop/
+#1633027517
+vim customprompt.sh 
+#1633027540
+vim .bashrc.d/customprompt.sh 
+#1633027559
+cd
+#1633027565
+vim .bashrc.d/customprompt.sh 
+#1633027653
+cd Desktop/
+#1633027687
+cd
+#1633027696
+vim .bashrc.d/check.sh 
+#1633027736
+cp .bashrc.d/check.sh .bashrc.d/check2.sh 
+#1633027740
+vim .bashrc.d/check2.sh 
+#1633027763
+source .bashrc
+#1633027798
+vim .bashrc.d/customprompt.sh 
+#1633027946
+vim .bashrc
+#1633028086
+vim .bashrc.d/*
+#1633028310
+gedit .bashrc.d/* &
+#1633028328
+rm .bashrc.d/check*
+#1633028568
+source .bashrc
+#1633028587
+sudo su
+#1633028736
+source .bashrc
+#1633029011
+cd Desktop/
+#1633029037
+echo $PS1
+#1633029037
+echo $PROMPT_COMMAND
+#1633029443
+cd
+#1633029511
+echo $PROMPT_COMMAND 
+#1633029528
+exit
+#1633029627
+cd Desktop/
+#1633029628
+cd
+#1633029636
+cd /usr/local/bin/
+#1633029648
+exit
+#1633029871
+neofetch 
+#1633029888
+hg gedit
+#1633029901
+gedit .bashrc.d/* &
+#1633029946
+cd /etc/
+#1633030518
+cd
+#1633030536
+cd /usr/local/lib/python3.9/site-packages/
+#1633030539
+cd
+#1633030553
+sudo su
+#1633030613
+cd Synology/
+#1633030619
+cd Drive-Ubalt/
+#1633030628
+exit
+#1633029954
+sudo su
+#1633030732
+cd
+#1633030737
+gedit .bashrc.d/* &
+#1633030847
+export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "
+#1633031123
+cd
+#1633031158
+export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "
+#1633031231
+prompt
+#1633031243
+promptfix
+#1633031407
+ps1fix 
+#1633031411
+cd
+#1633031359
+ps1fix 
+#1633031383
+ps1fix 
+#1633031508
+echo $PROMPT_COMMAND 
+#1633031622
+ps1fix 
+#1633031968
+exit
+#1633031997
+sudo vim /etc/profile.d/customprompt.sh 
+#1633032011
+sudo gedit /etc/profile.d/customprompt.sh 
+#1633032061
+sudo gedit /etc/profile.d/alias.sh 
+#1633032086
+exit
+#1633032118
+ps1fix 
+#1633032358
+cmatrix
+#1633032365
+cmatrix -a
+#1633032424
+echo $HISTSIZE
+#1633032433
+export $HISTSIZE=-1
+#1633032441
+export HISTSIZE=-1
+#1633032471
+echo $HISTSIZE
+#1633032483
+export HISTFILESIZE=-1
+#1633032607
+man h
+#1633032765
+cp .bash_history bash_hs
+#1633032795
+vim .bashrc.d/historysettings.sh 
+#1633032809
+exit
+#1633032998
+exit
+#1633032610
+man history
+#1633033005
+exit
+#1633033213
+exit
+#1633033240
+vim .bashrc.d/historysettings.sh 
+#1633033452
+exit
+#1633033457
+exit
+#1633033488
+echo $PROMPT_COMMAND 
+#1633033488
+echo $PROMPT_COMMAND 
+#1633033497
+exit
+#1633033719
+gedit .config/powerline-shell/themes/purple_neo.py 
+#1633033735
+..
+#1633033752
+cd
+#1633033762
+gedit .config/powerline-shell/config.json 
+#1633033903
+gedit .config/powerline-shell/config.json ~
+#1633033719
+gedit .config/powerline-shell/themes/purple_neo.py 
+#1633033735
+..
+#1633033752
+cd
+#1633033762
+gedit .config/powerline-shell/config.json 
+#1633033903
+gedit .config/powerline-shell/config.json ~
+#1633035390
+ranger
+#1633035477
+cd /etc/
+#1633035557
+sudo gedit profile.d/alias.sh &
+#1633035658
+cd
+#1633035672
+gedit .bashrc.d/alias.sh 
+#1633035689
+sudo su
+#1633035390
+ranger
+#1633035477
+cd /etc/
+#1633035557
+sudo gedit profile.d/alias.sh &
+#1633035658
+cd
+#1633035672
+gedit .bashrc.d/alias.sh 
+#1633035689
+sudo su
+#1633036276
+exit
+#1633037699
+sudo su
+#1633042606
+exit
+#1633042629
+ps1fix 
+#1633042983
+neofetch 
+#1633042629
+ps1fix 
+#1633042983
+neofetch 
+#1633048352
+exit
+#1633049850
+sudo dnf install -y sl
+#1633049860
+sl
+#1633049905
+~sudo dnf group install -–with-optional virtualization
+#1633049907
+sl
+#1633050221
+lolcat
+#1633050238
+sudo dnf install lolcat
+#1633050258
+sudo dnf -y remove sl
+#1633050294
+sudo vim .bashrc.d/welcometext.sh 
+#1633049850
+sudo dnf install -y sl
+#1633049860
+sl
+#1633049905
+~sudo dnf group install -–with-optional virtualization
+#1633049907
+sl
+#1633050338
+figlet "$USER" | cowsay | lolcat
+#1633050345
+figlet "$USER" | cowsay -n | lolcat
+#1633050355
+figlet "$USER" | cowsay -n | lolcat -hh
+#1633050358
+figlet "$USER" | cowsay -n | lolcat -h
+#1633050368
+figlet "$USER" | cowsay -n | lolcat -h 1
+#1633050376
+figlet "$USER" | cowsay -n | lolcat -h 20
+#1633050384
+figlet "$USER" | cowsay -n | lolcat
+#1633050403
+figlet "$USER" | cowsay -n | lolcat -h 1
+#1633050418
+figlet "$USER" | cowsay -n | lolcat -h 0.1
+#1633050426
+figlet "$USER" | cowsay -n | lolcat -h 0.01
+#1633050432
+figlet "$USER" | cowsay -n | lolcat -h 0.5
+#1633050438
+figlet "$USER" | cowsay -n | lolcat -h 0.4
+#1633050443
+figlet "$USER" | cowsay -n | lolcat -h 0.3
+#1633050447
+figlet "$USER" | cowsay -n | lolcat -h 0.2
+#1633050221
+lolcat
+#1633050238
+sudo dnf install lolcat
+#1633050258
+sudo dnf -y remove sl
+#1633050294
+sudo vim .bashrc.d/welcometext.sh 
+#1633050752
+exit
+#1633051649
+confid
+#1633051657
+config
+#1633053357
+gedit .bashrc .bashrc.d/*
+#1633054381
+sudo dnf install -y yadm
+#1633054389
+sudo dnf search yadm
+#1633061462
+$ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply pakueamb
+#1633061506
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply pakueamb
+#1633061614
+sudo dnf install chezmoi
+#1633061685
+chezmoi --version
+#1633061694
+ll
+#1633061808
+chezmoi update
+#1633061898
+chezmoi init
+#1633061944
+ll
