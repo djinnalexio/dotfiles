@@ -1,0 +1,29 @@
+{
+  "segments": [
+    "time",
+    "virtual_env",
+    "ssh",
+    "cwd",
+    "git",
+    "hg",
+    "jobs",
+    "root"
+  ],
+
+  "cwd": {
+    "_mode": "nothing for expanded, 'plain' for simple path, 'dironly' for the last directory",
+    "mode": "flat",
+ 
+    "_maxdepth": "number of directories in the middle",
+    "maxdepth": 3,
+
+    "_max_dir_size": "numbers of characters per directories",
+    "max_dir_size": 12,
+
+    "_full_cwd": "set to true so that the last directory is not shorten by max_dir_size",
+    "full_cwd": true
+  },
+  
+  "theme": "~/.config/powerline-shell/themes/purple_neo.py"
+
+}

@@ -1,0 +1,26 @@
+[global_config]
+  title_transmit_bg_color = "#813d9c"
+  title_receive_bg_color = "#e5a50a"
+  suppress_multiple_term_dialog = True
+[keybindings]
+  split_horiz = <Shift><Super>h
+  split_vert = <Shift><Super>v
+[profiles]
+  [[default]]
+    background_darkness = 0.8
+    background_type = transparent
+    cursor_color = "#cfb6ff"
+    cursor_color_fg = False
+    font = Cascadia Code PL Semi-Bold 12
+    scrollback_infinite = True
+    use_system_font = False
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
