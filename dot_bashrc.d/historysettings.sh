@@ -1,6 +1,6 @@
 # Bash history settings                                                         
 
-export HISTSIZE=-1         # set the limit of commands shown by the history command to unlimited
+export HISTSIZE=300        # set the limit of commands shown by the history command to unlimited
 export HISTFILESIZE=-1        # set the limit of commands saved in .bash_history to unlimited
 export HISTTIMEFORMAT="%F %T -> "    # enable the recoding of the timestamp and format it as "YYYY-MM-DD HH:MM:SS -> "
 export HISTCONTROL=ignoreboth    # set to omit lines that start by a space or that match the previous command
