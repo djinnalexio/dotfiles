@@ -8,3 +8,7 @@
 	email = pakueamb@gmail.com
 [alias]
 	co = checkout
+	s = status
+	cob = checkout -b
+	del = branch -D
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
