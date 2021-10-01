@@ -6,3 +6,5 @@
 [user]
 	name = pakueamb
 	email = pakueamb@gmail.com
+[alias]
+	co = checkout
