@@ -1,17 +1,34 @@
 # Bash history settings                                                         
 
-export HISTSIZE=300        # set the limit of commands shown by the history command to unlimited
-export HISTFILESIZE=-1        # set the limit of commands saved in .bash_history to unlimited
-export HISTTIMEFORMAT="%F %T -> "    # enable the recoding of the timestamp and format it as "YYYY-MM-DD HH:MM:SS -> "
+export HISTSIZE=300        # set the limit of commands shown by the history command, -1 for unlimited
+export HISTFILESIZE=-1        # set the limit of commands saved in .bash_history, -1 for unlimited
+export HISTTIMEFORMAT="%F %T -> "    # enable the recoding and formatting of timestamps
 export HISTCONTROL=ignoreboth    # set to omit lines that start by a space or that match the previous command
-export HISTIGNORE="ls*:la*:history:clear:ct:h:c"    # set to ignore specific commands
+export HISTIGNORE="ls*:la*:ll:history:clear:ct:h:c"    # set to ignore specific commands
                                                                                 
 # To make bash append lines to the history rather than overwrite it             
 shopt -s histappend                                                             
                                                                                 
 # By default, the history is kept only in memory while a session is running and is saved on exit
 if [[ ! $PROMPT_COMMAND =~ 'history -a' ]]; then
-    # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"    # will immediately append new lines to the history file that were not already saved
-    PROMPT_COMMAND="history -w; $PROMPT_COMMAND"    # will overwrite the history in the HISTFILE with the list from memory. 
+    # The history command gets the last $HISTSIZE into memory. Those lines will be displayed when using the history command
+    # by default, the new commands from the current session are only in memory and are saved on exit
+    # with multiple sessions open at the same time, you need to close a session to find those lines in a newly started session after
+
+    # immediately append new lines to the history file that were not already saved
+    # with multiple sessions, a newly started session can find the commands from other open sessions but they won't be synced from there
+    PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+    # will overwrite the history in the HISTFILE with the list from memory. 
+    # WARNING: only the lines currently in memory as limited by $HISTFILE will be saved and prior lines will be lost
+    #PROMPT_COMMAND="history -w; $PROMPT_COMMAND"
+
+    # immediately append new lines and keeps all sessions synced
+    # 1) append the line to the history file
+    # 2) clear the history in memory
+    # 3) re-read the history from file
+    #PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+
 fi
 
