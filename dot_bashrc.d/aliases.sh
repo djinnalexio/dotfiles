@@ -16,8 +16,8 @@ alias ....="cd ../../../.."
 alias hg="history | grep"                                                       
 alias df="pydf"                                                                 
                                                                                 
-alias update="dnf update"                                                       
-alias updatey="dnf update -y"                                                   
+alias update="sudo dnf update"                                                       
+alias updatey="sudo dnf update -y"                                                   
                                                                                 
 alias rm='rm -iv'
 
