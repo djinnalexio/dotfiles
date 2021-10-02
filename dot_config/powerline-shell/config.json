@@ -24,6 +24,9 @@
     "full_cwd": true
   },
   
-  "theme": "~/.config/powerline-shell/themes/purple_neo.py"
-
+  "theme": "~/.config/powerline-shell/themes/purple_neo.py",
+  
+  "vcs": {
+    "show_symbol": true
+  }
 }
