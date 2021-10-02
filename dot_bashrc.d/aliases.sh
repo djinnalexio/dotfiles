@@ -27,5 +27,7 @@ alias ps1fix='export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e
 
 alias cz='chezmoi'
 alias cza='chezmoi re-add'
+alias czm='chezmoi managed'
+alias czg='chezmoi git'
 
 alias vim='nvim'
