@@ -38,3 +38,6 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 set number
+
+" Source configs
+source $HOME/.config/nvim/themes/airline.vim
