@@ -29,5 +29,6 @@ alias cz='chezmoi'
 alias cza='chezmoi re-add'
 alias czm='chezmoi managed'
 alias czg='chezmoi git'
+alias czd='chezmoi diff'
 
 alias vim='nvim'
