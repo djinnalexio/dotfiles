@@ -1,5 +1,14 @@
+# To Ignore
+
 README.md
 
-
-# ignore plugin files for neovim
+# plugin files for neovim
 .config/nvim/plugged
+
+# swap files
+*.swp
+.config/nvim/swap
+
+# backups
+*.bak
+.config/nvim/backup
