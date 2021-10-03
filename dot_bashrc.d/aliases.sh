@@ -20,10 +20,10 @@ alias update="sudo dnf update"
 alias updatey="sudo dnf update -y"                                                   
                                                                                 
 alias rm='rm -iv'
+alias rmy='rm -v'
 
 # in case I need to manually fix the prompt format
 alias ps1fix='export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "; clear'
-
 
 alias cz='chezmoi'
 alias cza='chezmoi re-add'
