@@ -43,7 +43,7 @@ set clipboard+=unnamedplus              " using system clipboard
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set updatetime=300                      " Faster completion
 set timeoutlen=200                      " By default timeoutlen is 1000 ms
-set encoding-UTF-8                      " set the default encoding
+set encoding=UTF-8                      " set the default encoding
 
 
 
