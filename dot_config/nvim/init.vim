@@ -1,43 +1,74 @@
 
+"" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+filetype off                            " we don't want it on before loading the plugins
 
-set nocompatible			" don't attempt to be compatible with vi/vim
-filetype off				" we don't want it on before loading the plugins
-
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
+" Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim/plugged')
 
-" Add plugins below
+Plug 'vim-airline/vim-airline'          " status bar format
+Plug 'vim-airline/vim-airline-themes'   " additional themes for status bar
 
-Plug 'vim-airline/vim-airline'		" status bar format
-Plug 'vim-airline/vim-airline-themes'
-
-" Plug 'tpope/vim-fugitive'		" git plugin
-
-" Plug 'preservim/nerdtree'		" file explorer
-
-" Plug 'ctrlpvim/ctrlp.vim'		" fuzzy file searcher
-
+" Plug 'tpope/vim-fugitive'             " git plugin
+" Plug 'preservim/nerdtree'             " file explorer
+" Plug 'ctrlpvim/ctrlp.vim'             " fuzzy file searcher
 " Plug 'sensible.vim'
-
-
-" Plugins for code completion
-
-
-
-" Plugins for appearance
-"
-"
-"
-" Plugins for extra tools
-
 
 " Initialize plugin system
 call plug#end()
 
-set number
 
-" Source configs
-source $HOME/.config/nvim/themes/airline.vim
+
+"" General 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible			" don't attempt to be compatible with vi/vim
+
+
+
+"" Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+"" Format
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+
+
+
+"" Visual
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set number			" shows lines numbers on the left
+set showtabline=2		" Always show tabs
+set noshowmode			" We don't need to see things like -- INSERT -- anymore
+
+
+
+"" Plugin Configurations
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+    " airline
+    """""""""
+
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
+" enable powerline fonts
+let g:airline_powerline_fonts = 1
+" let g:airline_left_sep = ''
+" let g:airline_right_sep = ''
+
+" Switch to your current theme
+let g:airline_theme = 'violet'
+
+
+
