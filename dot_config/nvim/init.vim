@@ -10,23 +10,42 @@
 
 " This is my Nvim configuration for Linux.
 
-au! BufWritePost $MYVIMRC source %      " this file is automatically sourced when saved
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype off                            " we don't want it on before loading the plugins
+filetype off                                            " we don't want it on before loading the plugins
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'vim-airline/vim-airline'          " status bar format
-Plug 'vim-airline/vim-airline-themes'   " additional themes for status bar
+" status bar
+Plug 'vim-airline/vim-airline' |
+    \ Plug 'vim-airline/vim-airline-themes'
 
-" Plug 'tpope/vim-fugitive'             " git plugin
-" Plug 'preservim/nerdtree'             " file explorer
-" Plug 'ctrlpvim/ctrlp.vim'             " fuzzy file searcher
-" Plug 'sensible.vim'
+" highlight yanked area
+Plug 'machakann/vim-highlightedyank'
+
+" git plugins
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+
+" themes
+Plug 'morhetz/gruvbox'
+Plug 'wadackel/vim-dogrun'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'rigellute/shades-of-purple.vim'
+Plug 'dracula/vim'
+
+" file explorer & icons & highlighting | use fonts from https://www.nerdfonts.com/font-download
+Plug 'preservim/nerdtree' | 
+    \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
+    \ Plug 'PhilRunninger/nerdtree-visual-selection' |
+    \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+    \ Plug 'ryanoasis/vim-devicons'
+
+" comments
+Plug 'tpope/vim-commentary'
 
 " Initialize plugin system
 call plug#end()
@@ -39,10 +58,11 @@ call plug#end()
 
 set nocompatible			            " don't attempt to be compatible with vi/vim
 set clipboard+=unnamedplus              " using system clipboard
-"set confirm                            " ask for confirmation when saving
+" set confirm                             " ask for confirmation when saving
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set updatetime=300                      " Faster completion
-set timeoutlen=200                      " By default timeoutlen is 1000 ms
+set timeoutlen=1500                     " timeout on default shortcuts (ms)
+" set notimeout                           " ... or get rid of the timeout on custom shortcuts
 set encoding=UTF-8                      " set the default encoding
 
 
@@ -55,7 +75,7 @@ set incsearch                           " increamental search
 set ignorecase                          " search is case insensitive
 set smartcase                           " ... becomes sensitive if an uppercase letter is entered
 
-"set wildmode=longest,list               " get bash-like tab completions
+" set wildmode=longest,list               " get bash-like tab completions
 set wildignore=*.swp,*.bak,*.pyc,*.class    " things to exclude from completion
 
 
@@ -73,46 +93,17 @@ set autoindent                          " indent a new line the same amount as t
 
 
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Swap & Backup 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:enableswap = 1                    " enable the use of swap files when editing
-let g:enablebackup = 0                  " enable backups of files (not recommended for coc)
-
-" those options may not be that useful when VCS is present
-
-if enableswap
-    if !isdirectory('./swap')           " create a swap directory if necessary
-        call mkdir('./swap', 'p')
-    endif
-    set directory=./swap//              " make it the default localtion for swap files
-else
-    set noswapfile                      " disable swapfiles
-endif
-
-if enablebackup
-    if !isdirectory('./backup')         " create a backup directory if necessary
-        call mkdir('./backup', 'p')
-    endif
-    set backupdir=./backup//            " make it the default localtion for backup files
-else
-    set nobackup                        " disable backups
-    set nowritebackup
-endif
-
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Visual
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                               " syntax highlighting
 set title                               " have the name of the file as window title
 set number                              " shows lines numbers on the left
+set relativenumber                      " display numbers away from current line
 set showtabline=2		                " Always show tabs
 set noshowmode			                " We don't need to see things like -- INSERT -- anymore
 set cursorline                          " highlight current cursorline
-"set cc=80                               " set an 80 column border
+set cc=80                               " set an 80 column border
 set splitbelow                          " Horizontal split below current
 set splitright                          " Vertical split to right of current
 set scrolloff=10                        " rows above/below cursor while scrolling
@@ -120,10 +111,47 @@ set sidescrolloff=5                     " columns to left/right of cursor while 
 set showmatch                           " Show matching brackets
 set nowrap                              " Display long lines as just one line
 set pumheight=10                        " Makes popup menu smaller
+colorscheme dracula                     " set color scheme
+set background=dark
+
+"disable vim background to preserve terminal transparency
+hi Normal guibg=NONE ctermbg=NONE        
 
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Swap & Backup 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:enableswap = 1                    " enable the use of swap files when editing
+let g:enablebackup = 0                  " enable backups of files (not recommended for coc)
+let g:enablesavedundo = 1               " enable undoing changes even after a file was saved
 
+" those options may not be that useful when VCS is present
+
+if enableswap
+    silent !mkdir -p ~/.local/share/nvim/swap
+    " create a swap directory if it doesn't exist
+    set directory=~/.local/share/nvim/swap//        " make it the default location
+else
+    set noswapfile                                  " disable swapfiles
+endif
+
+if enablebackup
+    silent !mkdir -p ~/.local/share/nvim/backup
+    " create a backup directory if it doesn't exist
+    set directory=~/.local/share/nvim/backup//      " make it the default location
+else
+    set nobackup                        	        " disable backups
+    set nowritebackup
+endif
+
+if enablesavedundo
+    silent !mkdir -p ~/.local/share/nvim/changes
+    " create an undo directory if it doesn't exist
+    set undodir=~/.local/share/nvim/changes//       " make it the default location
+    set undofile                                    " enable saved undos
+    set undoreload=10000
+endif
 
 
 
@@ -131,8 +159,9 @@ set pumheight=10                        " Makes popup menu smaller
 "" Plugin Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-    " airline
-    """""""""
+    """""""""""""
+    " vim-airline
+    """""""""""""
 
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
@@ -150,10 +179,76 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'violet'
 
 
+    """"""""""
+    " nerdtree
+    """"""""""
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Show hidden files
+let NERDTreeShowHidden=1
+
+
+    """""""""""""""""""""""""""""""
+    " vim-nerdtree-syntax-highlight
+    """""""""""""""""""""""""""""""
+
+let g:NERDTreeLimitedSyntax = 1
+" limits the highlight syntax to this types:
+" .bmp, .c, .coffee, .cpp, .cs, .css, .erb, .go, .hs, .html, .java, .jpg, .js,
+" .json, .jsx, .less, .lua, .markdown, .md, .php, .png, .pl, .py, .rb, .rs,
+" .scala, .scss, .sh, .sql, .vim
+
+
+    """""""""""""""""""""
+    " nerdtree-git-plugin 
+    """""""""""""""""""""
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+
+let g:NERDTreeGitStatusConcealBrackets = 1      " hide the boring brackets
+let g:NERDTreeGitStatusUseNerdFonts = 1         " use nerdfonts
+
+
+    """"""""""""""
+    " vim-figitive
+    """"""""""""""
+" git status
+nmap <leader>gs :G<CR>
+" when resolving conflict, choose the left option
+nmap <leader>gf :diffget //2<CR>
+" when resolving conflict, choose the right option
+nmap <leader>gj :diffget //3<CR>
+
+    """"""""""""""
+    " vmachakann/highlightedyank
+    """"""""""""""
+
+let g:highlightedyank_highlight_duration = 1000
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Key Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Leader key
+let mapleader = ","                     " set leader key for shortcuts
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -187,5 +282,5 @@ vnoremap < <gv
 vnoremap > >gv
 
 
-
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au! BufWritePost $MYVIMRC source %      " this file is automatically sourced when saved
