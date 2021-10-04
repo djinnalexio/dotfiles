@@ -238,8 +238,34 @@ let g:highlightedyank_highlight_duration = 1000
 "" Key Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Mapping tips
+"
+" Vim/Nvim is a modal editor. Each mode has its own shortcuts:
+"
+" n  Normal mode
+" i  Insert mode
+" v  Visual and select mode
+" x  Visual mode
+" s  Select mode
+" c  Command-line mode
+" o  Operator pending mode
+"
+" :<letter><command>    (use the command for that mode)
+"
+" :map                  (displays all shortcuts)
+" 
+" :map <key> ...        (maps a key to a shorcut or any other shortcut the sequence is mapped to)
+" :noremap <key> ...    (maps a key to a sequence non-recursively. Shortcuts the sequence is linked to are not triggered)
+"
+" :unmap                (unmaps a key of all shortcuts)
+" :nnremap <key> <nop>  (disables an internal shortcut to make the key usuable for a custom shortcut)
+"
+" :mapclear             (clears all shortcuts)
+
+
+
 " Leader key
-let mapleader = "\<space>"                     " set leader key for shortcuts
+let mapleader = "\<space>"                      " set leader key for shortcuts
 nnoremap <space> <nop>
 
 " Use alt + hjkl to resize windows
@@ -258,6 +284,9 @@ nnoremap <C-s> :w<CR>
 " Alternate way to save & quit
 nnoremap <C-Q> :wq!<CR>
 
+" Alternate way to close current buffer
+nnoremap <C-w> :bd<CR>
+
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -272,7 +301,6 @@ nnoremap <S-TAB> :bprevious<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
-
 
 " git status
 nmap <leader>gs :G<CR>
