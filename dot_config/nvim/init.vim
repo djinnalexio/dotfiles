@@ -114,6 +114,7 @@ set pumheight=10                        " Makes popup menu smaller
 colorscheme dracula                     " set color scheme
 set background=dark
 
+
 "disable vim background to preserve terminal transparency
 hi Normal guibg=NONE ctermbg=NONE        
 
@@ -227,16 +228,6 @@ let g:NERDTreeGitStatusUseNerdFonts = 1         " use nerdfonts
 
 
     """"""""""""""
-    " vim-figitive
-    """"""""""""""
-" git status
-nmap <leader>gs :G<CR>
-" when resolving conflict, choose the left option
-nmap <leader>gf :diffget //2<CR>
-" when resolving conflict, choose the right option
-nmap <leader>gj :diffget //3<CR>
-
-    """"""""""""""
     " vmachakann/highlightedyank
     """"""""""""""
 
@@ -248,7 +239,8 @@ let g:highlightedyank_highlight_duration = 1000
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Leader key
-let mapleader = ","                     " set leader key for shortcuts
+let mapleader = "\<space>"                     " set leader key for shortcuts
+nnoremap <space> <nop>
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -280,6 +272,15 @@ nnoremap <S-TAB> :bprevious<CR>
 " Better tabbing
 vnoremap < <gv
 vnoremap > >gv
+
+
+" git status
+nmap <leader>gs :G<CR>
+" when resolving conflict, choose the left option
+nmap <leader>gf :diffget //2<CR>
+" when resolving conflict, choose the right option
+nmap <leader>gj :diffget //3<CR>
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
