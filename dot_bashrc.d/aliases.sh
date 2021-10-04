@@ -25,6 +25,7 @@ alias rm='rm -iv'
 alias rmy='rm -v'
 
 alias vim='nvim'
+alias vi='nvim'
 
 # in case I need to manually fix the prompt format
 alias ps1fix='export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "; clear'
