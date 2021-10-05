@@ -47,6 +47,14 @@ Plug 'preservim/nerdtree' |
 " comments
 Plug 'tpope/vim-commentary'
 
+" Intellisense , code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" command-line fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+
 " Initialize plugin system
 call plug#end()
 
@@ -234,6 +242,29 @@ let g:NERDTreeGitStatusUseNerdFonts = 1         " use nerdfonts
 let g:highlightedyank_highlight_duration = 1000
 
 
+    """"""""""""""
+    " fzf
+    """"""""""""""
+
+" Border color
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Key Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,6 +318,9 @@ nnoremap <C-Q> :wq!<CR>
 " Alternate way to close current buffer
 nnoremap <C-w> :bd<CR>
 
+" Close vim
+noremap <C-s><F4> :wqall<CR>
+
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -309,7 +343,15 @@ nmap <leader>gf :diffget //2<CR>
 " when resolving conflict, choose the right option
 nmap <leader>gj :diffget //3<CR>
 
+" COC completion
+inoremap <silent><expr> <c-space> coc#refresh()
 
+" FZF
+map <C-f> :Files<CR>
+map <leader>b :Buffers<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>m :Marks<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au! BufWritePost $MYVIMRC source %      " this file is automatically sourced when saved
