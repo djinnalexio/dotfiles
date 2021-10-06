@@ -1,6 +1,6 @@
 # aliases
 
-# ls aliases
+# ls
 alias ls="ls -h --color=auto"
 alias la="ls -ha --color=auto"
 alias ll="ls -halF --color=auto"
@@ -25,15 +25,18 @@ alias ....="cd ../../../.."
 alias update="sudo dnf update"
 alias updatey="sudo dnf update -y"
 
-# nvim aliases
+# nvim
 alias vim='nvim'
 alias vi='nvim'
+
+# git
+alias gdone="git push"
 
 # script to quickly switch from gnome-terminal to terminator
 alias ct="change_terminal gnome-terminal terminator"
 
-# in case I need to manually fix the prompt format
-alias ps1fix='export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "; clear'
+# chmod
+alias chmod="chmod -v"
 
 # chezmoi aliases
 alias cz='chezmoi'
