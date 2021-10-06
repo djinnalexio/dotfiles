@@ -38,7 +38,7 @@ Plug 'rigellute/shades-of-purple.vim'
 Plug 'dracula/vim'
 
 " file explorer & icons & highlighting | use fonts from https://www.nerdfonts.com/font-download
-Plug 'preservim/nerdtree' | 
+Plug 'preservim/nerdtree' |
     \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
     \ Plug 'PhilRunninger/nerdtree-visual-selection' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin' |
@@ -47,7 +47,7 @@ Plug 'preservim/nerdtree' |
 " comments
 Plug 'tpope/vim-commentary'
 
-" Intellisense , code completion
+" code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " command-line fuzzy finder
@@ -61,7 +61,7 @@ call plug#end()
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" General 
+"" General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible			            " don't attempt to be compatible with vi/vim
@@ -70,18 +70,18 @@ set clipboard+=unnamedplus              " using system clipboard
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set updatetime=300                      " Faster completion
 set timeoutlen=1500                     " timeout on default shortcuts (ms)
-" set notimeout                           " ... or get rid of the timeout on custom shortcuts
+" set notimeout                           " ...or get rid of the timeout on custom shortcuts
 set encoding=UTF-8                      " set the default encoding
-
+set spell spelllang=en_us               " set spellfile and language
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch                            " highlight search
-set incsearch                           " increamental search
+set incsearch                           " incremental search
 set ignorecase                          " search is case insensitive
-set smartcase                           " ... becomes sensitive if an uppercase letter is entered
+set smartcase                           " ...becomes sensitive if an uppercase letter is entered
 
 " set wildmode=longest,list               " get bash-like tab completions
 set wildignore=*.swp,*.bak,*.pyc,*.class    " things to exclude from completion
@@ -124,12 +124,12 @@ set background=dark
 
 
 "disable vim background to preserve terminal transparency
-hi Normal guibg=NONE ctermbg=NONE        
+hi Normal guibg=NONE ctermbg=NONE
 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Swap & Backup 
+"" Swap & Backup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:enableswap = 1                    " enable the use of swap files when editing
 let g:enablebackup = 0                  " enable backups of files (not recommended for coc)
@@ -215,7 +215,7 @@ let g:NERDTreeLimitedSyntax = 1
 
 
     """""""""""""""""""""
-    " nerdtree-git-plugin 
+    " nerdtree-git-plugin
     """""""""""""""""""""
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -284,12 +284,12 @@ let g:fzf_colors =
 " :<letter><command>    (use the command for that mode)
 "
 " :map                  (displays all shortcuts)
-" 
-" :map <key> ...        (maps a key to a shorcut or any other shortcut the sequence is mapped to)
+"
+" :map <key> ...        (maps a key to a shortcut or any other shortcut the sequence is mapped to)
 " :noremap <key> ...    (maps a key to a sequence non-recursively. Shortcuts the sequence is linked to are not triggered)
 "
 " :unmap                (unmaps a key of all shortcuts)
-" :nnremap <key> <nop>  (disables an internal shortcut to make the key usuable for a custom shortcut)
+" :nnremap <key> <nop>  (disables an internal shortcut to make the key usable for a custom shortcut)
 "
 " :mapclear             (clears all shortcuts)
 
@@ -299,7 +299,7 @@ let g:fzf_colors =
 let mapleader = "\<space>"                      " set leader key for shortcuts
 nnoremap <space> <nop>
 
-" Use alt + hjkl to resize windows
+" Use alt + hjkl to size windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
@@ -307,7 +307,7 @@ nnoremap <M-l>    :vertical resize +2<CR>
 
 " Alternative to Escape key
 inoremap jk <Esc>
-inoremap kj <Esc>      
+inoremap kj <Esc>
 
 " Alternate way to save
 nnoremap <C-s> :w<CR>
@@ -354,4 +354,5 @@ nnoremap <leader>t :Tags<CR>
 nnoremap <leader>m :Marks<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre * :%s/\s\+$//e      " removes trailing spaces when saving files
 au! BufWritePost $MYVIMRC source %      " this file is automatically sourced when saved
