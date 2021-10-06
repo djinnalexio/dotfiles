@@ -110,7 +110,8 @@ set number                              " shows lines numbers on the left
 set relativenumber                      " display numbers away from current line
 set showtabline=2		                " Always show tabs
 set noshowmode			                " We don't need to see things like -- INSERT -- anymore
-set cursorline                          " highlight current cursorline
+set cursorline                          " highlight current cursor line
+set cursorcolumn                        " highlight current cursor column
 set cc=80                               " set an 80 column border
 set splitbelow                          " Horizontal split below current
 set splitright                          " Vertical split to right of current
@@ -310,7 +311,7 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+noremap <C-s> :w<CR>
 
 " Alternate way to save & quit
 nnoremap <C-Q> :wq!<CR>
