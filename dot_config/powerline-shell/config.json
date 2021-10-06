@@ -13,7 +13,7 @@
   "cwd": {
     "_mode": "nothing for expanded, 'plain' for simple path, 'dironly' for the last directory",
     "mode": "flat",
- 
+
     "_maxdepth": "number of directories in the middle",
     "maxdepth": 3,
 
@@ -23,9 +23,9 @@
     "_full_cwd": "set to true so that the last directory is not shorten by max_dir_size",
     "full_cwd": true
   },
-  
+
   "theme": "~/.config/powerline-shell/themes/purple_neo.py",
-  
+
   "vcs": {
     "show_symbol": true
   }
