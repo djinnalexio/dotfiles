@@ -1,14 +1,14 @@
-# Bash history settings                                                         
+# Bash history settings
 
 export HISTSIZE=300        # set the limit of commands shown by the history command, -1 for unlimited
 export HISTFILESIZE=-1        # set the limit of commands saved in .bash_history, -1 for unlimited
 export HISTTIMEFORMAT="%F %T -> "    # enable the recoding and formatting of timestamps
 export HISTCONTROL=ignoreboth    # set to omit lines that start by a space or that match the previous command
 export HISTIGNORE="ls*:la*:ll:history:clear:ct:h:c"    # set to ignore specific commands
-                                                                                
-# To make bash append lines to the history rather than overwrite it             
-shopt -s histappend                                                             
-                                                                                
+
+# To make bash append lines to the history rather than overwrite it
+shopt -s histappend
+
 # By default, the history is kept only in memory while a session is running and is saved on exit
 if [[ ! $PROMPT_COMMAND =~ 'history -a' ]]; then
     # The history command gets the last $HISTSIZE into memory. Those lines will be displayed when using the history command
@@ -19,7 +19,7 @@ if [[ ! $PROMPT_COMMAND =~ 'history -a' ]]; then
     # with multiple sessions, a newly started session can find the commands from other open sessions but they won't be synced from there
     PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-    # will overwrite the history in the HISTFILE with the list from memory. 
+    # will overwrite the history in the HISTFILE with the list from memory.
     # WARNING: only the lines currently in memory as limited by $HISTFILE will be saved and prior lines will be lost
     #PROMPT_COMMAND="history -w; $PROMPT_COMMAND"
 
