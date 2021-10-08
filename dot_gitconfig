@@ -7,6 +7,7 @@
 [user]
 	name = djinnalexio
 	email = pakueamb@gmail.com
+	signingkey = 495D7FDBE7A7605D
 
 [alias]
 	co = checkout
@@ -36,3 +37,5 @@
   interactive = auto
   ui = true
   pager = true
+[commit]
+	gpgsign = true
