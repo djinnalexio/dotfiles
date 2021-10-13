@@ -37,5 +37,6 @@
   interactive = auto
   ui = true
   pager = true
+
 [commit]
 	gpgsign = true
