@@ -10,6 +10,7 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
 export PATH
 
 export LC_ALL=en_US.UTF-8
@@ -41,3 +42,21 @@ complete -cf man
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/djinnalexio/.anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/djinnalexio/.anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/djinnalexio/.anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/djinnalexio/.anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# deactivate on startup
+conda deactivate
