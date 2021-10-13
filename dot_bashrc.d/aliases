@@ -41,7 +41,7 @@ alias chmod="chmod -v"
 # chezmoi aliases
 alias cz='chezmoi'
 alias czs='chezmoi status'
-alias cza='chezmoi re-add'
+alias cza='chezmoi re-add; echo "added local changes to chezmoi VCS"'
 alias czm='chezmoi managed'
 alias czg='chezmoi git'
 alias czd='chezmoi diff'

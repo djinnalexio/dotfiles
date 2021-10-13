@@ -3,14 +3,17 @@
 # powerline-shell/status both installed with pip
 
 function _powerline_ps1() {
-    PS1=$(powerline-shell $?)
+    export PS1=$(powerline-shell $?)
 }
+
+export _powerline_ps1
 
 # in case powerline is not found
 function _backup_ps1() {
     export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "
     clear
 }
+export _backup_ps1
 
 # if  $TERM != linux
 #     _powerline_ps1 is not already in the variable
@@ -20,9 +23,9 @@ function _backup_ps1() {
 # $PROMPT_COMMAND runs at each command line
 
 if [[ $TERM != linux &&
-  ! $PROMPT_COMMAND =~ _update_ps1 &&
+  ! $PROMPT_COMMAND =~ _powerline_ps1 &&
   -f `which powerline-shell` ]]; then
-    PROMPT_COMMAND="_powerline_ps1; $PROMPT_COMMAND"
+    export PROMPT_COMMAND="_powerline_ps1; $PROMPT_COMMAND"
 else
     _backup_ps1
 fi
