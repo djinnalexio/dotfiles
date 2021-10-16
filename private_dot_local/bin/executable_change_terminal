@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+# Open a new terminal while indicating the current directory
+$2 --working-directory="$PWD" &
+
+# kill the process of the current terminal (kills all windows)
+pkill $1

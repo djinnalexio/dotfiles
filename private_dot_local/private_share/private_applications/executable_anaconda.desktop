@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Anaconda
+Exec=/home/djinnalexio/.anaconda3/bin/anaconda-navigator
+Icon=anaconda
+Terminal=false
+Type=Application
+Comment=Package manager, environment manager, and Python distribution for data science and machine learning.
+Categories=Development
+
