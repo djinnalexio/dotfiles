@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # Customize the command prompt
 
 # powerline-shell/status both installed with pip
@@ -28,10 +30,4 @@ if [[ $TERM != linux &&
     export PROMPT_COMMAND="_powerline_ps1; $PROMPT_COMMAND"
 else
     _backup_ps1
-fi
-
-if [ -f `which powerline-daemon` ]; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
 fi

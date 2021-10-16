@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # Bash history settings
 
 export HISTSIZE=300        # set the limit of commands shown by the history command, -1 for unlimited
@@ -28,7 +30,5 @@ if [[ ! $PROMPT_COMMAND =~ 'history -a' ]]; then
     # 2) clear the history in memory
     # 3) re-read the history from file
     #PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
-
 fi
 

@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # Welcome Message
 
 cowfiles=(cower default elephant eyes hellokitty kitty koala meow sheep
