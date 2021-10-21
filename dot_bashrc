@@ -18,6 +18,7 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
 
+export TERM=xterm-256color
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -60,3 +61,6 @@ unset __conda_setup
 
 # deactivate on startup
 conda deactivate
+
+# change directory without cd
+shopt -s autocd

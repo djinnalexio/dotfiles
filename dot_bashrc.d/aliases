@@ -2,42 +2,38 @@
 
 # aliases
 
-# ls
-alias ls="ls -h --color=auto"
-alias la="ls -ha --color=auto"
-alias ll="ls -halF --color=auto"
-
 # quick tools
-alias c="clear"
-alias mkdir="mkdir -vp"
-alias h="history"
-alias hg="history | grep"
-alias df="pydf"
+alias grep="grep --color=auto"
+
 alias rm='rm -iv'
 alias rmy='\rm -v'
-alias r='ranger'
-alias neo='neofetch'
+alias mv='mv -iv'
+alias mkdir="mkdir -vp"
+
+alias h="history"
+alias hg="history | grep"
+
+alias c="clear"
 alias pls='sudo $(fc -ln -1)'
-alias matrix='cmatrix -ab -u 4 -C magenta'
+
+# ls
+alias ls="ls -h --color=auto"
+alias la="ls -hA --color=auto"
+alias ll="ls -hAlF --color=auto"
 
 # navigation
 alias ..="cd .."
-alias ...="cd ../../.."
-alias ....="cd ../../../.."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # package manager
 alias update="sudo dnf update"
 alias updatey="sudo dnf update -y"
 
-# nvim
-alias vim='nvim'
-alias vi='nvim'
-
 # git
 alias gdone="git push"
-
-# script to quickly switch from gnome-terminal to terminator
-alias ct="change_terminal gnome-terminal terminator"
+alias gs="git status"
 
 # chmod
 alias chmod="chmod -v"
@@ -50,4 +46,15 @@ alias czm='chezmoi managed'
 alias czg='chezmoi git'
 alias czd='chezmoi diff'
 alias czcd='chezmoi cd'
+
+# programs
+alias vim='nvim'
+alias vi='nvim'
+alias neo='neofetch'
+alias cmatrix='cmatrix -ab -u 4 -C magenta'
+alias r='ranger'
+alias df="pydf"
+
+# script to quickly switch from gnome-terminal to terminator
+alias ct="change_terminal gnome-terminal terminator"
 
