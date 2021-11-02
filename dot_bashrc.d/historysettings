@@ -2,7 +2,7 @@
 
 # Bash history settings
 
-export HISTSIZE=300        # set the limit of commands shown by the history command, -1 for unlimited
+export HISTSIZE=900        # set the limit of commands shown by the history command, -1 for unlimited
 export HISTFILESIZE=-1        # set the limit of commands saved in .bash_history, -1 for unlimited
 export HISTTIMEFORMAT="%F %T -> "    # enable the recoding and formatting of timestamps
 export HISTCONTROL=ignoreboth    # set to omit lines that start by a space or that match the previous command
