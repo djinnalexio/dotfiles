@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
-# aliases
+# Aliases are used as abbreviations and shorthands for commands that are used often.
+# They are stored in the memory of the shell when they are created or sourced.
+# If an alias is the same as a command, use "\" to use the original command.
+# To make aliases available to shell scripts, use the command: 'shopt -s expand_aliases'
 
 # quick tools
 alias grep="grep --color=auto"
@@ -54,7 +57,3 @@ alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
 alias r='ranger'
 alias df="pydf"
-
-# script to quickly switch from gnome-terminal to terminator
-alias ct="change_terminal gnome-terminal terminator"
-

@@ -1,0 +1,44 @@
+#!/usr/bin/bash
+
+# Functions can be more rich and complex than aliases.
+# They can contain multiple lines of instructions and loops.
+# Like aliases, they are stored in memory after being sourced from a file or declared.
+# However, they can be exported to be used by scripts.
+
+# Shell scripts run in forked non-interactive shells.
+# A script should be independent of the environment and should stand on its own.
+
+# Because gnome-terminal is hardcoded as the default terminal, I use a shortcut to swap it.
+_change_terminal() {
+    # Open a new terminal while indicating the current directory
+    $1 --working-directory="$PWD" &
+    # Exit the current terminal
+    exit
+}
+alias ct="_change_terminal terminator"
+
+
+# Replace the osu application with the updated version and fix the menu entry in one command.
+osu-update() {
+    echo "Closing current osu! session..."
+    pkill osu\!
+
+    echo "Moving the up-to-date osu!lazer AppImage to the Applications folder..."
+    \mv -v ~/Downloads/osu.AppImage ~/Applications/osu\!*
+
+    count=20
+    while [[ ${count} -gt 0 ]];
+    do
+        printf "\rWaiting for Applauncher to update the desktop file (%2d second(s) remaining)" ${count}
+        sleep 1
+        ((count--))
+    done
+
+    echo ""
+    echo "Renaming the menu entry to \"osu!lazer\"..."
+    sed -i "s/Name=osu\!/Name=osu\!lazer/" ~/.local/share/applications/*osu*
+    echo ""
+    head -n 5 ~/.local/share/applications/*osu* | tail -n 3
+    echo ""
+    echo "DONE!"
+}
