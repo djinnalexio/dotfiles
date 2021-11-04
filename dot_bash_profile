@@ -7,3 +7,6 @@ fi
 
 # User specific environment and startup programs
 export GPG_TTY=$(tty)
+
+# Fedora 35: fix for missing sound devices on login
+systemctl --user restart wireplumber
