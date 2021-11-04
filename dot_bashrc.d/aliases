@@ -36,7 +36,7 @@ alias updatey="sudo dnf update -y"
 
 # git
 alias gdone="git push"
-alias gs="git status"
+alias gs="git status -sb"
 
 # chmod
 alias chmod="chmod -v"

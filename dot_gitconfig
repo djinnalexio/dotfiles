@@ -11,7 +11,7 @@
 
 [alias]
 	co = checkout
-	s = status -sb
+	s = status
 	cob = checkout -b
 	del = branch -D
 	br = branch --format='%(HEAD) %(color:magenta)%(refname:short)%(color:reset) - %(contents:subject) %(color:yellow)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
