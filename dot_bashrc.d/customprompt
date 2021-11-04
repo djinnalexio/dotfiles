@@ -3,31 +3,34 @@
 # Customize the command prompt
 
 # powerline-shell/status both installed with pip
-
-function _powerline_ps1() {
+function _ps1_powerline() {
     export PS1=$(powerline-shell $?)
 }
-
-export _powerline_ps1
+export _ps1_powerline
 
 # in case powerline is not found
-function _backup_ps1() {
+function _ps1_backup() {
     export PS1="\[\e[35m\][\[\e[m\]\[\e[35m\]\A\[\e[m\]\[\e[35m\]]\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\W\[\e[m\]\[\e[35m\] \[\e[m\]\[\e[35m\]\\$\[\e[m\] "
-    clear
 }
-export _backup_ps1
+export _ps1_backup
 
-# if  $TERM != linux
-#     _powerline_ps1 is not already in the variable
-#     the command powerline-shell is found
-#then add the function for powerline in the variable
+if [[ # Conditions to use powerline-shell:
+    $TERM != linux &&   # the type of terminal cannot be one without GUI
+    `pip list` == *"powerline-shell"* &&    # the python module powerline-shell is found
+    -f `which powerline-shell` ]]; then     # the shell command powerline-shell is found
 
-# $PROMPT_COMMAND runs at each command line
-
-if [[ $TERM != linux &&
-  ! $PROMPT_COMMAND =~ _powerline_ps1 &&
-  -f `which powerline-shell` ]]; then
-    export PROMPT_COMMAND="_powerline_ps1; $PROMPT_COMMAND"
+    # echo "powerline-shell APPROVED"
+    if [[ $PROMPT_COMMAND != *_ps1_powerline* ]]; then  # if powerline-shell is not in prompt
+        export PROMPT_COMMAND="_ps1_powerline; $PROMPT_COMMAND"
+        # echo "powerline-shell just added to prompt"
+    # else
+        # echo "powerline-shell already in prompt"
+    fi
 else
-    _backup_ps1
+    # echo "powerline-shell REJECTED"
+    if [[ $PROMPT_COMMAND == *_ps1_powerline* ]]; then  # if powerline-shell is already part of prompt
+        export PROMPT_COMMAND= `sed -i "s/_ps1_powerline;//" $PROMPT_COMMAND`
+        # echo "powerline-shell removed from prompt"
+    fi
+    _ps1_backup
 fi
