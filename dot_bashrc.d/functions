@@ -35,10 +35,15 @@ osu-update() {
     done
 
     echo ""
-    echo "Renaming the menu entry to \"osu!lazer\"..."
+    echo "Renaming the menu entry to 'osu!lazer'..."
     sed -i "s/Name=osu\!/Name=osu\!lazer/" ~/.local/share/applications/*osu*
+
+    echo "Removing the Path variable..."
+    sed -i "s/Path=~//" ~/.local/share/applications/*osu*
+
     echo ""
-    head -n 5 ~/.local/share/applications/*osu* | tail -n 3
+    head -n 11 ~/.local/share/applications/*osu* | tail -n 9
     echo ""
+
     echo "DONE!"
 }
