@@ -12,8 +12,10 @@ alias rm='rm -iv'
 alias rmy='\rm -v'
 alias mv='mv -iv'
 alias mkdir="mkdir -vp"
+alias cp='cp -v'
 
 alias h="history"
+
 alias hg="history | grep"
 
 alias c="clear"
