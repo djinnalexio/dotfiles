@@ -4,7 +4,7 @@
 # Used to set environment variables.
 
 # This file is placed in the home directory and only used to set ZDOTDIR.
-# To set more environment variables, go to '$HOME/.zsh/.zshenv'.
+# To set more environment variables, go to '$HOME/.config/zsh/.zshenv'.
 
 # Setting the directory for ZSH config files
 ZDOTDIR=$HOME/.config/zsh
