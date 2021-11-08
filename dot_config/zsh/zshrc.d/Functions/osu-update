@@ -1,0 +1,15 @@
+#!/usr/bin/zsh
+
+# Replace the osu application with the updated version and fix the menu entry in one command.
+osu-update() {
+    echo "Closing current osu! session..."
+    pkill osu\!
+
+    echo "Moving the up-to-date osu!lazer AppImage to the Applications folder..."
+    \mv -v ~/Downloads/osu.AppImage ~/Applications/osuLazer.AppImage
+
+    echo "Launching osu!lazer..."
+    ~/Applications/osuLazer.AppImage &
+
+    exit
+}

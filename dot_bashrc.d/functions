@@ -24,26 +24,10 @@ osu-update() {
     pkill osu\!
 
     echo "Moving the up-to-date osu!lazer AppImage to the Applications folder..."
-    \mv -v ~/Downloads/osu.AppImage ~/Applications/osu\!*
+    \mv -v ~/Downloads/osu.AppImage ~/Applications/osuLazer.AppImage
 
-    count=20
-    while [[ ${count} -gt 0 ]];
-    do
-        printf "\rWaiting for Applauncher to update the desktop file (%2d second(s) remaining)" ${count}
-        sleep 1
-        ((count--))
-    done
+    echo "Launching osu!lazer..."
+    ~/Applications/osuLazer.AppImage &
 
-    echo ""
-    echo "Renaming the menu entry to 'osu!lazer'..."
-    sed -i "s/Name=osu\!/Name=osu\!lazer/" ~/.local/share/applications/*osu*
-
-    echo "Removing the Path variable..."
-    sed -i "s/Path=~//" ~/.local/share/applications/*osu*
-
-    echo ""
-    head -n 11 ~/.local/share/applications/*osu* | tail -n 9
-    echo ""
-
-    echo "DONE!"
+    exit
 }

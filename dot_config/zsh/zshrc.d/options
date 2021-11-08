@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+
+# zsh General/Other Options
+
+bindkey -v                              # enable vi/vim-like behaviour
+
+setopt autocd                           # Change directory given just path.
+#setopt extend                           # Use additional pattern matching features.
+#setopt nomatc                           # Unmatched patterns cause an error.
+setopt beep                             # Beep on errors.
+setopt notify                           # Immediately report changes in background job status.

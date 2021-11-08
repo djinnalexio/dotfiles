@@ -1,0 +1,10 @@
+#!/usr/bin/zsh
+
+# Because gnome-terminal is hardcoded as the default terminal, I use a shortcut to swap it.
+change_terminal() {
+    # Open a new terminal while indicating the current directory
+    $1 --working-directory="$PWD" &
+    # Exit the current terminal
+    exit
+}
+alias ct="change_terminal terminator"

@@ -1,0 +1,23 @@
+#!/usr/bin/zsh
+
+######################################################
+#      _  _ _                   _           _        #
+#   __| |(_|_)_ __  _ __   __ _| | _____  _(_) ___   #
+#  / _` || | | '_ \| '_ \ / _` | |/ _ \ \/ / |/ _ \  #
+# | (_| || | | | | | | | | (_| | |  __/>  <| | (_) | #
+#  \__,_|/ |_|_| |_|_| |_|\__,_|_|\___/_/\_\_|\___/  #
+#      |__/                                          #
+#                                                    #
+######################################################
+
+# My ZSH configuration file for interactive shells.
+# I leave this file basically empty and put all the contents
+# in sub-files for easy editing and location.
+
+# Get files recursively in '$ZDOTDIR/zshrc.d'
+# and source each of them
+for rc in $(find $ZDOTDIR/zshrc.d -type f); do
+	. "$rc"
+done
+
+unset rc

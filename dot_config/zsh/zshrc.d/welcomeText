@@ -1,0 +1,29 @@
+#!/usr/bin/zsh
+
+# Welcome Message to the Shell
+
+# array of chosen cowfiles
+cowfiles=(elephant eyes kitty meow tux)
+# cower default elephant eyes hellokitty
+# kitty koala meow sheep small tux
+
+# array length
+arrayLength=${#cowfiles[@]}
+
+# a random number between 1 and 'arraylength' (the first index is 1, not 0 )
+randomIndex=$[ $RANDOM%${arrayLength} + 1 ]
+
+# use the random number to pick a cowfile
+currentCowfile=${cowfiles[ randomIndex ]}
+
+
+if [ $[ $RANDOM % 5 ] = 0 ]; then # fortune 1 out of 5 times
+    fortune | cowsay -f $currentCowfile | lolcat -h 0.1
+else
+    figlet "$USER" | cowsay -n -f $currentCowfile | lolcat -h 0.2
+fi
+
+unset cowfiles
+unset arrayLength
+unset randomIndex
+unset currentCowfile

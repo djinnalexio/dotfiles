@@ -1,0 +1,67 @@
+#!/usr/bin/zsh
+
+# Aliases
+
+# Aliases are used as abbreviations and shorthands for commands that are used often.
+# They are stored in the memory of the shell when they are created or sourced.
+# If an alias is the same as a command, use "\" to use the original command.
+# To make aliases available to shell scripts, use the command: 'shopt -s expand_aliases'
+
+# quick tools
+alias grep="grep --color=auto"
+
+alias rm='rm -iv'
+alias rmy='\rm -v'
+alias mv='mv -iv'
+alias mkdir="mkdir -vp"
+alias cp='cp -v'
+
+alias h="history"
+
+alias hg="history | grep"
+
+alias c="clear"
+alias pls='sudo $(fc -ln -1)'
+
+# ls
+alias ls="lsd"
+alias la="lsd -A"
+alias ll="lsd -AlF"
+
+# navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# package manager
+alias update="sudo dnf update"
+alias updatey="sudo dnf update -y"
+
+# git
+alias gdone="git push"
+alias gs="git status -sb"
+
+# chmod
+alias chmod="chmod -v"
+
+# chezmoi aliases
+alias cz='chezmoi'
+alias czs='chezmoi status'
+alias cza='chezmoi re-add; echo "added local changes to chezmoi VCS"'
+alias czm='chezmoi managed'
+alias czg='chezmoi git'
+alias czd='chezmoi diff'
+alias czcd='chezmoi cd'
+
+# programs
+alias vim='nvim'
+alias vi='nvim'
+alias neo='neofetch'
+alias cmatrix='cmatrix -ab -u 4 -C magenta'
+alias r='ranger'
+alias df="pydf"
+alias top='bpytop'
+
+# Find my Public IP Address
+alias myip="curl http://ipecho.net/plain; echo"
