@@ -4,7 +4,12 @@
 change_terminal() {
     # Open a new terminal while indicating the current directory
     $1 --working-directory="$PWD" &
+
+    # Make the new process independent
+    disown
+
     # Exit the current terminal
     pkill gnome-terminal
 }
+
 alias ct="change_terminal kitty"
