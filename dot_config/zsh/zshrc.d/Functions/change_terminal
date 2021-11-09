@@ -5,6 +5,6 @@ change_terminal() {
     # Open a new terminal while indicating the current directory
     $1 --working-directory="$PWD" &
     # Exit the current terminal
-    exit
+    pkill gnome-terminal
 }
-alias ct="change_terminal terminator"
+alias ct="change_terminal kitty"
