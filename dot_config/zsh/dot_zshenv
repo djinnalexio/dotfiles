@@ -4,14 +4,24 @@
 # Used to set environment variables.
 # Variables set here are available everywhere, including scripts
 
+# This script should not produce any output or assume the shell is attached to a TTY
+
+# Language and locale
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Pager to display file content in terminal
+export PAGER='less -R'      #less with color interpretation ad output
+
+# Web Browser
+export BROWSER="firefox"
+
+# Add to PATH
 if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 then
     export PATH="$HOME/.local/bin:$PATH"
 fi
-
-
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-export EDITOR=nvim
-export VISUAL=nvim
