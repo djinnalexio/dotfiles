@@ -6,7 +6,10 @@ osu-update() {
     pkill osu\!
 
     echo "Moving the up-to-date osu!lazer AppImage to the Applications folder..."
-    \mv -v ~/Downloads/osu.AppImage ~/Applications/osuLazer.AppImage
+    mv -v ~/Downloads/osu.AppImage ~/Applications/osuLazer.AppImage
+
+    echo "Making the file executable..."
+    chmod 755 ~/Applications/osuLazer.AppImage
 
     echo "Launching osu!lazer..."
     ~/Applications/osuLazer.AppImage &
