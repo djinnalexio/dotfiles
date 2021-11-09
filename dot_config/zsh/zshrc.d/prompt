@@ -1,0 +1,16 @@
+#!/usr/bin/zsh
+
+# Customize the command prompt
+
+
+
+autoload -Uz promptinit
+promptinit
+
+# simple
+PROMPT=' -> %~ %# '
+
+#complex with colors and right prompt
+# PROMPT='%F{#c0c0c0}%n%f@%F{#008000}%m%f %F{#800080}%B%~%b%f %# '
+PROMPT='%F{#ffff00} -> %F{#800080}%B%~%b%f > '
+RPROMPT='[%F{#0000ff}%?%f]'
