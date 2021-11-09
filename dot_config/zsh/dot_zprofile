@@ -1,6 +1,0 @@
-#/usr/bin/zsh
-
-# Script launched at login
-
-# Fedora 35: fix for missing sound devices on login
-systemctl --user restart wireplumber

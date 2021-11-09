@@ -1,0 +1,8 @@
+#/usr/bin/zsh
+
+# Script launched at login
+
+{{- if eq .chezmoi.osRelease.platformID "platform:f35" }}
+# Fedora 35: fix for missing sound devices on login
+systemctl --user restart wireplumber
+{{- end }}
