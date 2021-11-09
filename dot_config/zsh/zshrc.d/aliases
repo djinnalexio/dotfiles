@@ -7,43 +7,46 @@
 # If an alias is the same as a command, use "\" to use the original command.
 # To make aliases available to shell scripts, use the command: 'shopt -s expand_aliases'
 
+# Also, strings in single quotes are literal and do not interprete anything
+# Strings with double quotes interpret variables and special characters ($, \, `)
+
 # quick tools
-alias grep="grep --color=auto"
+alias grep='grep --color=auto'
 
 alias rm='rm -iv'
 alias rmy='\rm -v'
 alias mv='mv -iv'
-alias mkdir="mkdir -vp"
+alias mkdir='mkdir -vp'
 alias cp='cp -v'
-
-alias h="history"
-
-alias hg="history | grep"
-
-alias c="clear"
+alias c='clear'
 alias pls='sudo $(fc -ln -1)'
 
+# History
+alias h='history -E -50'
+alias hg='history -E 1 | grep'
+alias hf='history -E 1' #history full
+
 # ls
-alias ls="lsd"
-alias la="lsd -A"
-alias ll="lsd -AlF"
+alias ls='lsd'
+alias la='lsd -A'
+alias ll='lsd -AlF'
 
 # navigation
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # package manager
-alias update="sudo dnf update"
-alias updatey="sudo dnf update -y"
+alias update='sudo dnf update'
+alias updatey='sudo dnf update -y'
 
 # git
-alias gdone="git push"
-alias gs="git status -sb"
+alias gdone='git push'
+alias gs='git status -sb'
 
 # chmod
-alias chmod="chmod -v"
+alias chmod='chmod -v'
 
 # chezmoi aliases
 alias cz='chezmoi'
@@ -60,8 +63,12 @@ alias vi='nvim'
 alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
 alias r='ranger'
-alias df="pydf"
+alias df='pydf'
 alias top='bpytop'
 
+# Programs Configuration
+alias zsh_config="$EDITOR $ZDOTDIR"
+alias kitty_config="$EDITOR $HOME/.config/kitty/kitty.conf"
+
 # Find my Public IP Address
-alias myip="curl http://ipecho.net/plain; echo"
+alias myip='curl http://ipecho.net/plain; echo'
