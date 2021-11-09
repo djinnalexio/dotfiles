@@ -1,14 +1,18 @@
-# To Ignore
+# Files and Patterns not synced between source and target destinations
 
 README.md
 
 # plugin files for neovim
-.config/nvim/plugged
+**/.config/nvim/plugged/
 
 # swap files
 *.swp
-.config/nvim/swap
+**/.config/nvim/swap/
 
 # backups
 *.bak
-.config/nvim/backup
+**/.config/nvim/backup/
+
+# history files
+**/.bash_history
+**/.zsh_history
