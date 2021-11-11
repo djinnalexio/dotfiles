@@ -21,3 +21,13 @@ for rc in $(find $ZDOTDIR/zshrc.d -type f); do
 done
 
 unset rc
+
+# syntax-highlighting needs to be at the bottom of '.zshrc' so
+# that it runs after anything else that modifies the command-line buffer
+. $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# TODO:
+#
+# move auto jump from package to zsh sccript
+# make suggestion work
+#
