@@ -2,6 +2,8 @@
 
 # Welcome Message to the Shell
 
+clear
+
 # array of chosen cowfiles
 cowfiles=(elephant eyes kitty meow tux)
 # cower default elephant eyes hellokitty
@@ -21,7 +23,7 @@ optionEvent=$[ $RANDOM%3 ] # between 0 and n-1
 
 
 if [ $optionEvent -le 0 ]; then
-    fortune | cowsay -f $currentCowfile | lolcat -h 0.1
+    fortune -sa | cowsay -f $currentCowfile | lolcat -h 0.1
 else
     if [ $optionEvent -le 1 ]; then
         figlet "$USER" | cowsay -n -f $currentCowfile | lolcat -h 0.2
