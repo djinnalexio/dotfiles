@@ -27,9 +27,11 @@ alias hg='history -E 1 | grep'
 alias hf='history -E 1' #history full
 
 # ls
-alias ls='lsd'
-alias la='lsd -A'
-alias ll='lsd -AlF'
+alias ls='lsd -h'
+alias la='lsd -Ah'
+alias ll='lsd -AlFh'
+alias lr='lsd -AlFhR'
+alias lt='lsd -AlFht'
 
 # navigation
 alias ..='cd ..'
