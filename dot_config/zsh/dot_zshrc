@@ -14,9 +14,9 @@
 # I leave this file basically empty and put all the contents
 # in sub-files for easy editing and location.
 
-# Get files recursively in '$ZDOTDIR/zshrc.d'
+# Get files recursively in '$ZDOTDIR/zshrc.d' excluding ".md" files
 # and source each of them
-for rc in $(find $ZDOTDIR/zshrc.d -type f); do
+for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
 	. "$rc"
 done
 
@@ -25,9 +25,3 @@ unset rc
 # syntax-highlighting needs to be at the bottom of '.zshrc' so
 # that it runs after anything else that modifies the command-line buffer
 . $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# TODO:
-#
-# move auto jump from package to zsh sccript
-# make suggestion work
-#
