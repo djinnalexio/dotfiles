@@ -24,7 +24,7 @@ alias pls='sudo $(fc -ln -1)'
 # History
 alias h='history -E -50'
 alias hg='history -E 1 | grep'
-alias hf='history -E 1' #history full
+alias hf='history -E 1 | less' #full history
 
 # ls
 alias ls='lsd -h'
