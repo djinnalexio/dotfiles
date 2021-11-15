@@ -1,6 +1,0 @@
-#!/usr/bin/zsh
-
-# Exported Variables
-
-# For systems with a GUI
-export TERM=xterm-256color
