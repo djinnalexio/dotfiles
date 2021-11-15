@@ -1,47 +1,58 @@
-#!/usr/bin/bash
+#!/usr/bin/zsh
+
+# Aliases
 
 # Aliases are used as abbreviations and shorthands for commands that are used often.
 # They are stored in the memory of the shell when they are created or sourced.
 # If an alias is the same as a command, use "\" to use the original command.
 # To make aliases available to shell scripts, use the command: 'shopt -s expand_aliases'
 
+# Also, strings in single quotes are literal and do not interprete anything
+# Strings with double quotes interpret variables and special characters ($, \, `)
+
+# FLAGS
+# -s        run the alias depending on the last letters of the command
+
 # quick tools
-alias grep="grep --color=auto"
-
-alias rm='rm -iv'
+alias grep='grep --color=auto'
+alias rm='rm -i'
 alias rmy='\rm -v'
-alias mv='mv -iv'
-alias mkdir="mkdir -vp"
+alias mv='mv -i'
+alias mkdir='mkdir -vp'
 alias cp='cp -v'
-
-alias h="history"
-
-alias hg="history | grep"
-
-alias c="clear"
+alias c='clear'
 alias pls='sudo $(fc -ln -1)'
 
+# History
+alias h='history'
+alias hg='history | grep'
+alias hf="cat $HOME/.bash_history | less +G" #full history
+
 # ls
-alias ls="ls -h --color=auto"
-alias la="ls -hA --color=auto"
-alias ll="ls -hAlF --color=auto"
+alias l='lsd -h'
+alias ls='lsd -h'
+alias la='lsd -Ah'
+alias ll='lsd -AlFh'
+alias lr='lsd -AlFhR'
+alias lt='lsd -AlFht'
 
 # navigation
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # package manager
-alias update="sudo dnf update"
-alias updatey="sudo dnf update -y"
+alias dnfs='dnf search'
+alias update='sudo dnf update'
+alias updatey='sudo dnf update -y'
 
 # git
-alias gdone="git push"
-alias gs="git status -sb"
+alias gdone='git push'
+alias gs='git status -sb'
 
 # chmod
-alias chmod="chmod -v"
+alias chmod='chmod -v'
 
 # chezmoi aliases
 alias cz='chezmoi'
@@ -55,7 +66,18 @@ alias czcd='chezmoi cd'
 # programs
 alias vim='nvim'
 alias vi='nvim'
+alias v='nvim'
 alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
 alias r='ranger'
-alias df="pydf"
+alias df='pydf'
+alias top='bpytop'
+
+# Programs Configuration
+alias zsh_config="cd $ZDOTDIR"
+alias kitty_config="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"
+alias neofetch_config="cd $XDG_CONFIG_HOME/neofetch"
+alias v_config="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+
+# Find my Public IP Address
+alias myip='curl http://ipecho.net/plain; echo'

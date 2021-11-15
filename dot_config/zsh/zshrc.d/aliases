@@ -10,23 +10,30 @@
 # Also, strings in single quotes are literal and do not interprete anything
 # Strings with double quotes interpret variables and special characters ($, \, `)
 
+# FLAGS
+# -g        makes the alias usable anywhere in the command (zsh only)
+# -s        run the alias depending on the last letters of the command
+
 # quick tools
 alias grep='grep --color=auto'
-
-alias rm='rm -iv'
+alias rm='rm -i'
 alias rmy='\rm -v'
-alias mv='mv -iv'
+alias mv='mv -i'
 alias mkdir='mkdir -vp'
 alias cp='cp -v'
 alias c='clear'
 alias pls='sudo $(fc -ln -1)'
 
+# the -g flag
+alias -g L="| less"
+
 # History
 alias h='history -E -50'
 alias hg='history -E 1 | grep'
-alias hf='history -E 1 | less' #full history
+alias hf='history -E 1 | less +G' #full history
 
 # ls
+alias l='lsd -h'
 alias ls='lsd -h'
 alias la='lsd -Ah'
 alias ll='lsd -AlFh'
@@ -40,6 +47,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # package manager
+alias dnfs='dnf search'
 alias update='sudo dnf update'
 alias updatey='sudo dnf update -y'
 
@@ -62,6 +70,7 @@ alias czcd='chezmoi cd'
 # programs
 alias vim='nvim'
 alias vi='nvim'
+alias v='nvim'
 alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
 alias r='ranger'
@@ -69,8 +78,10 @@ alias df='pydf'
 alias top='bpytop'
 
 # Programs Configuration
-alias zsh_config="$EDITOR $ZDOTDIR"
-alias kitty_config="$EDITOR $HOME/.config/kitty/kitty.conf"
+alias zsh_config="cd $ZDOTDIR"
+alias kitty_config="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"
+alias neofetch_config="cd $XDG_CONFIG_HOME/neofetch"
+alias v_config="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
 
 # Find my Public IP Address
 alias myip='curl http://ipecho.net/plain; echo'
