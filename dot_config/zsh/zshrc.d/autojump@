@@ -2,6 +2,8 @@
 
 # source: https://github.com/wting/autojump/blob/master/bin/autojump.zsh
 
+# Wrapper for autojump to quickly go back to previously visited directories
+
 export AUTOJUMP_SOURCED=1
 
 # set user installation paths

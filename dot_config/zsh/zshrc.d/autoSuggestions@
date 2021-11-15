@@ -1,9 +1,9 @@
 #!/usr/bin/zsh
 
-
 # source: https://github.com/zsh-users/zsh-autosuggestions
 
 # Fish-like fast/unobtrusive autosuggestions for zsh.
+
 # https://github.com/zsh-users/zsh-autosuggestions
 # v0.7.0
 # Copyright (c) 2013 Thiago de Arruda
