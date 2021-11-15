@@ -1,15 +1,30 @@
-# Files in the source (in ~/.local/share/chezmoi) not applied to the target
-# system.
+# -*-mode:gitignore-*- vim:ft=gitignore
 
-**/README.md
+# ~/.local/share/chezmoi/.chezmoiignore
+# =============================================================================
+# Source: https://www.chezmoi.io/docs/reference/#chezmoiignore
 
-# git files
-**/.git/
+# The file .chezmoiignore contains a list of files and patterns that chezmoi will not copy to the target system.
 
-# Ignore some applications
+Makefile
+LICENSE
+README.md
+*.gz
+*.tar.gz
+*.deb
 
-# bash and powershell
-$HOME/.bash*
-$HOME/.bashrc.d/
-$HOME/.inputrc
-$XDG_CONFIG_HOME/powerline-shell
+
+# Ignore some applications for the root user
+{{- if eq .chezmoi.username "root" }}
+
+# Blacklist all files/folders in the root directory
+/*
+
+# The only files/folders to include
+!.bash*
+!.bashrc.d/
+!.inputrc
+!.config/powerline-shell/
+!.config/nvim
+
+{{- end }}
