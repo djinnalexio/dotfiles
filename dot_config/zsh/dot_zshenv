@@ -14,7 +14,14 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
 
-# Default Folders
+# For systems with a GUI
+export TERM=xterm-256color
+
+# Default Program Directories
+# These are already the default locations in case the variables
+# are not set, thus making the following lines redundant.
+# The are here mostly so that they are explicitely defined and
+# I know about them.
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
