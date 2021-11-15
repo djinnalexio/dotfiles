@@ -2,18 +2,48 @@
 
 # Code Completion Settings
 
-zstyle ':completion:*' auto-description 'Specify: %d'
-zstyle ':completion:*' completer _complete _ignored _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
-zstyle ':completion:*' max-errors 2 numeric
-zstyle ':completion:*' original true
-zstyle ':completion:*' verbose true
-zstyle :compinstall filename "$ZDOTDIR/zshrc.d/completion"
+# Documentation: https://zsh.sourceforge.io/Doc/Release/Completion-System.html#Standard-Styles
 
+# Enable tab select in completions
+zstyle ':completion:*' menu select
+
+# Description for options that are not described by the completion functions, but that have exactly one argument
+zstyle ':completion:*' auto-description '%F{green}Specify: %d'
+
+# Enable caching
+zstyle ':completion:*' use-cache true
+zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
+
+# Defines the types of completers to use
+zstyle ':completion:*' completer _complete _ignored _correct _approximate
+
+# Gives the types of suggestions that are being offered
+zstyle ':completion:*' format '%F{cyan}Completing %d'
+
+# Groups suggestions by type
+zstyle ':completion:*' group-name ''
+
+# Autocompletes term and gives suggestions IF there is more than one option
+zstyle ':completion:*' insert-unambiguous true
+
+# If the `zsh/complist` module is loaded, this style can be used to set color specifications
+zstyle ':completion:*' list-colors ''
+
+# Completion lists that don’t fit on the screen can be scrolled
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+
+# Enable case-insensitive completion
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
+
+# Enable auto-correction up to N characters
+zstyle ':completion:*' max-errors 2 numeric
+
+# when correcting, original string should be added as a possible completion
+zstyle ':completion:*' original true
+
+# completion listing is more verbose
+zstyle ':completion:*' verbose true
+
+# Initialize completion system
 autoload -Uz compinit
 compinit
