@@ -1,3 +1,7 @@
+#!/usr/bin/zsh
+
+# Source: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/zsh-syntax-highlighting.zsh
+
 # -------------------------------------------------------------------------------------------------
 # Copyright (c) 2010-2020 zsh-syntax-highlighting contributors
 # All rights reserved.
@@ -34,20 +38,6 @@ typeset zsh_highlight__aliases="$(builtin alias -Lm '[^+]*')"
 #
 # Hence, we exclude them from unaliasing:
 builtin unalias -m '[^+]*'
-
-# Set $0 to the expected value, regardless of functionargzero.
-0=${(%):-%N}
-if true; then
-  # $0 is reliable
-  typeset -g ZSH_HIGHLIGHT_VERSION=$(<"${0:A:h}"/.version)
-  typeset -g ZSH_HIGHLIGHT_REVISION=$(<"${0:A:h}"/.revision-hash)
-  if [[ $ZSH_HIGHLIGHT_REVISION == \$Format:* ]]; then
-    # When running from a source tree without 'make install', $ZSH_HIGHLIGHT_REVISION
-    # would be set to '$Format:%H$' literally.  That's an invalid value, and obtaining
-    # the valid value (via `git rev-parse HEAD`, as Makefile does) might be costly, so:
-    ZSH_HIGHLIGHT_REVISION=HEAD
-  fi
-fi
 
 # This function takes a single argument F and returns True iff F is an autoload stub.
 _zsh_highlight__function_is_autoload_stub_p() {
@@ -404,7 +394,7 @@ _zsh_highlight_call_widget()
 # We use the new codepath under two conditions:
 #
 # 1. If it's available, which we check by testing for add-zle-hook-widget's availability.
-# 
+#
 # 2. If zsh has the memo= feature, which is required for interoperability reasons.
 #    See issues #579 and #735, and the issues referenced from them.
 #
