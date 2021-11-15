@@ -9,14 +9,18 @@
 # A script should be independent of the environment and should stand on its own.
 
 # Because gnome-terminal is hardcoded as the default terminal, I use a shortcut to swap it.
-_change_terminal() {
+change_terminal() {
     # Open a new terminal while indicating the current directory
     $1 --working-directory="$PWD" &
-    # Exit the current terminal
-    exit
-}
-alias ct="_change_terminal terminator"
 
+    # Make the new process independent
+    disown
+
+    # Exit the current terminal
+    pkill gnome-terminal
+}
+
+alias ct="change_terminal kitty"
 
 # Replace the osu application with the updated version and fix the menu entry in one command.
 osu-update() {
@@ -24,10 +28,17 @@ osu-update() {
     pkill osu\!
 
     echo "Moving the up-to-date osu!lazer AppImage to the Applications folder..."
-    \mv -v ~/Downloads/osu.AppImage ~/Applications/osuLazer.AppImage
+    \mv -v $HOME/Downloads/osu.AppImage $HOME/Applications/osuLazer.AppImage
+
+    echo "Making the file executable..."
+    chmod -v 755 $HOME/Applications/osuLazer.AppImage
 
     echo "Launching osu!lazer..."
-    ~/Applications/osuLazer.AppImage &
+    $HOME/Applications/osuLazer.AppImage 2> /dev/null &
 
+    # Make the new process independent
+    disown
+
+    # Exit the terminal
     exit
 }
