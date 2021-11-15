@@ -2,10 +2,12 @@
 
 # zsh General/Other Options
 
-bindkey -v                              # enable vi/vim-like behaviour
+# Documentation: https://zsh.sourceforge.io/Doc/Release/Options.html
+
 
 setopt autocd                           # Change directory given just path.
 setopt extendedglob                     # Use additional pattern matching features.
-setopt nomatch                          # Unmatched patterns cause an error.
+setopt nomatch                          # Unmatched patterns raise an error.
 setopt beep                             # Beep on errors.
 setopt notify                           # Immediately report changes in background job status.
+setopt globdots                         # Include dot files when matching
