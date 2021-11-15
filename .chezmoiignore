@@ -1,20 +1,15 @@
-# Files and Patterns not synced between source and target destinations
+# Files in the source (in ~/.local/share/chezmoi) not applied to the target
+# system.
 
-README.md
+**/README.md
 
-# plugin files for neovim
-**/.config/nvim/plugged/
+# git files
+**/.git/
 
-# swap files
-*.swp
-**/.config/nvim/swap/
+# Ignore some applications
 
-# backups
-*.bak
-**/.config/nvim/backup/
-
-# history files
-**/.bash_history
-**/.zsh_history
-
-**/.zcompdump*
+# bash and powershell
+$HOME/.bash*
+$HOME/.bashrc.d/
+$HOME/.inputrc
+$XDG_CONFIG_HOME/powerline-shell
