@@ -4,6 +4,11 @@ I use `chezmoi` to manage my dotfiles and other configuration files. My current 
 
 Here is the list of programs with configuration files that `chezmoi` manages.
 
+Instantly apply this system configuration:
+```
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
+```
+
 ## Essentials
 
 * ZSH
