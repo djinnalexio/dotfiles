@@ -5,7 +5,6 @@
 " | (_| || | | | | | | | | (_| | |  __/>  <| | (_) | "
 "  \__,_|/ |_|_| |_|_| |_|\__,_|_|\___/_/\_\_|\___/  "
 "      |__/                                          "
-"                                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " This is my Nvim configuration for Linux.
@@ -69,7 +68,7 @@ set clipboard+=unnamedplus              " using system clipboard
 " set confirm                             " ask for confirmation when saving
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set updatetime=300                      " Faster completion
-set timeoutlen=1500                     " timeout on default shortcuts (ms)
+set timeoutlen=1000                     " timeout on default shortcuts (ms)
 " set notimeout                           " ...or get rid of the timeout on custom shortcuts
 set encoding=UTF-8                      " set the default encoding
 set spell spelllang=en_us               " set spellfile and language
@@ -112,7 +111,7 @@ set showtabline=2		                " Always show tabs
 set noshowmode			                " We don't need to see things like -- INSERT -- anymore
 set cursorline                          " highlight current cursor line
 set cursorcolumn                        " highlight current cursor column
-set cc=80                               " set an 80 column border
+" set cc=80                               " set an 80 column border
 set splitbelow                          " Horizontal split below current
 set splitright                          " Vertical split to right of current
 set scrolloff=10                        " rows above/below cursor while scrolling
@@ -314,13 +313,13 @@ inoremap kj <Esc>
 noremap <C-s> :w<CR>
 
 " Alternate way to save & quit
-nnoremap <C-Q> :wq!<CR>
+nnoremap <C-q> :wq!<CR>
 
 " Alternate way to close current buffer
 nnoremap <C-w> :bd<CR>
 
-" Close vim
-noremap <C-s><F4> :wqall<CR>
+" Force close vim
+noremap <leader><C-q> :wqall<CR>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
@@ -348,7 +347,7 @@ nmap <leader>gj :diffget //3<CR>
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " FZF
-map <C-f> :Files<CR>
+map <leader>f :Files<CR>
 map <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>t :Tags<CR>
