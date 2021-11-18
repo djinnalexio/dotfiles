@@ -20,7 +20,7 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
 
 * Welcome Message Text
     * Programs used to display to greet the users when opening the terminal.
-    * `sudo dnf -y install cowsay lolcat fortuned figlet`
+    * `sudo dnf -y install cowsay lolcat fortune-mod figlet`
 
 * Neofetch
     * ~~Show off~~ Display system information
@@ -43,7 +43,7 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
 
 * Neovim
     * My default text editor
-    * `sudo dnf -y install nvim`
+    * `sudo dnf -y install neovim`
 
 * Key-mapper
     * ~~Mostly~~ Only used to map the side buttons on a mouse to ALT+L and ALT+R on the keyboard
