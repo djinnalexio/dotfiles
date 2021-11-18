@@ -24,6 +24,10 @@ README.md
 !.bash*
 !.bashrc.d/
 !.inputrc
+
+# only parts of the config folder
+!.config/
+.config/*
 !.config/powerline-shell/
 !.config/nvim
 
