@@ -18,6 +18,9 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
     sudo usermod -s $(which zsh) $USER      # set it as the default shell for the current user
     ```
 
+* Aliases commands
+    * `sudo dnf -y lsd conda autojump`
+
 * Welcome Message Text
     * Programs used to display to greet the users when opening the terminal.
     * `sudo dnf -y install cowsay lolcat fortune-mod figlet`
@@ -36,11 +39,6 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
     npm i -g gitmoji-cli
     ```
 
-* Kitty
-    * My current terminal emulator
-    * Minimal and fast
-    * `sudo dnf -y install kitty`
-
 * Neovim
     * My default text editor
     * `sudo dnf -y install neovim`
@@ -53,12 +51,12 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
     sudo systemctl restart key-mapper
     ```
 
-* ULauncher
-    * An app launcher that I find convenient
-    * `sudo dnf -y install ulauncher`
-
-
 ## Non-Essentials
+
+* Kitty
+    * My current terminal emulator
+    * Minimal and fast
+    * `sudo dnf -y install kitty`
 
 * Terminator
     * My previous terminal emulator
@@ -68,9 +66,6 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
     * Setup to beautify the bash shell
     * `sudo pip3 install powerline-shell`
 
-## Pull the configuration from GitHub
-
-```bash
-chezmoi init git@github.com:djinnalexio/dotfiles.git
-chezmoi apply
-```
+* ULauncher
+    * An app launcher that I find convenient
+    * `sudo dnf -y install ulauncher`
