@@ -5,7 +5,8 @@ I use `chezmoi` to manage my dotfiles and other configuration files. My current 
 Here is the list of programs with configuration files that `chezmoi` manages.
 
 Instantly apply this system configuration:
-```
+
+```bash
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
 ```
 
@@ -19,15 +20,21 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
     ```
 
 * Aliases commands
-    * `sudo dnf -y lsd conda autojump`
+    ```bash
+    sudo dnf -y install lsd conda autojump
+    ```
 
 * Welcome Message Text
     * Programs used to display to greet the users when opening the terminal.
-    * `sudo dnf -y install cowsay lolcat fortune-mod figlet`
+    ```bash
+    sudo dnf -y install cowsay lolcat fortune-mod figlet
+    ```
 
 * Neofetch
     * ~~Show off~~ Display system information
-    * `sudo dnf -y install neofetch`
+    ```bash
+    sudo dnf -y install neofetch
+    ```
 
 * Git, Git-lfs, and Gitmoji
     * Version Control System
@@ -41,7 +48,9 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
 
 * Neovim
     * My default text editor
-    * `sudo dnf -y install neovim`
+    ```bash
+    sudo dnf -y install neovim
+    ```
 
 * Key-mapper
     * ~~Mostly~~ Only used to map the side buttons on a mouse to ALT+L and ALT+R on the keyboard
@@ -56,16 +65,24 @@ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply djinnalexio
 * Kitty
     * My current terminal emulator
     * Minimal and fast
-    * `sudo dnf -y install kitty`
+    ```bash
+    sudo dnf -y install kitty
+    ```
 
 * Terminator
     * My previous terminal emulator
-    * `sudo dnf -y install terminator`
+    ```bash
+    sudo dnf -y install terminator
+    ```
 
 * powerline-shell
     * Setup to beautify the bash shell
-    * `sudo pip3 install powerline-shell`
+    ```bash
+    sudo pip3 install powerline-shell
+    ```
 
 * ULauncher
     * An app launcher that I find convenient
-    * `sudo dnf -y install ulauncher`
+    ```bash
+    sudo dnf -y install ulauncher
+    ```
