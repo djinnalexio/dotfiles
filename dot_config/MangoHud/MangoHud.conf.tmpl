@@ -6,14 +6,12 @@ gl_vsync=-1
 legacy_layout=false
 gpu_stats
 gpu_temp
-graphs=gpu_temp
 gpu_load_change
 gpu_load_value=50,90
 gpu_load_color=FFFFFF,FF7800,CC0000
 gpu_text=GPU
 cpu_stats
 cpu_temp
-graphs=cpu_temp
 cpu_load_change
 core_load_change
 cpu_load_value=50,90
@@ -21,6 +19,7 @@ cpu_load_color=FFFFFF,FF7800,CC0000
 cpu_color=2e97cb
 cpu_text=CPU
 io_color=a491d3
+vram
 vram_color=ad64c1
 ram
 ram_color=c26693
@@ -46,6 +45,7 @@ text_color=ffffff
 toggle_hud=Shift_R+F9
 toggle_logging=Shift_L+F2
 upload_log=F8
+autostart_log=5
 {{- if eq .chezmoi.username "djinnalexio" }}
 output_folder=/home/djinnalexio/.local/share/MangoHud
 {{- end }}
