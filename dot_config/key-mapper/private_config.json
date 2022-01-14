@@ -1,6 +1,7 @@
 {
     "autoload": {
-        "AT Translated Set 2 keyboard": "Side Mouse Buttons"
+        "AT Translated Set 2 keyboard": "Side Mouse Buttons",
+        "Dell Dell Multimedia Pro Keyboard": "Key fix"
     },
     "macros": {
         "keystroke_sleep_ms": 10
