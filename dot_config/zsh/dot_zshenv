@@ -28,7 +28,7 @@ export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
 # Pager to display file content in terminal
-export PAGER='less -R'      #less with color interpretation ad output
+export PAGER='less -R'      #less with color interpretation and output
 
 # Disable less history
 export LESSHISTFILE=-

@@ -1,15 +1,22 @@
 #!/usr/bin/zsh
 
-# Because gnome-terminal is hardcoded as the default terminal, I use a shortcut to swap it.
-change_terminal() {
+# Because gnome-terminal is hardcoded as the default terminal, I use this workaround
+# to open the terminal I want in the same directory, then close gnome-terminal.
+
+# Kills ALL instances of the current terminal emulator and opens to one provided.
+change-terminal() {
     # Open a new terminal while indicating the current directory
     $1 --working-directory="$PWD" &
 
     # Make the new process independent
     disown
 
-    # Exit the current terminal
-    pkill gnome-terminal
+    # in case the terminal wasn't stopped, print the process that was caught instead
+    echo $(< "/proc/${2:-$PPID}/comm")
+
+    # Kill the current terminal emulator process
+    pkill $(< "/proc/${2:-$PPID}/comm")
 }
 
-alias ct="change_terminal kitty"
+# Add a favorite terminal emulator
+export FAVTERMEMULATOR=kitty

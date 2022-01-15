@@ -13,15 +13,15 @@
 # I leave this file almost empty and put all the contents in sub-files that each have
 # their function/feature for easy debugging and editing.
 
-#~~~~~~~~~~~~~~~~~~~~Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#~~~~~~~~~~~~~~~~~~~~Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~ Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Get files recursively in '$ZDOTDIR/zshrc.d' excluding ".md" files and source each of them
 for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
 	. "$rc"
@@ -29,7 +29,12 @@ done
 
 unset rc
 
-#~~~~~~~~~~~~~~~~~~~~Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~ If in gnome-terminal, change the terminal ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+if [[ $(< "/proc/${1:-$PPID}/comm") = "gnome-terminal-" ]]; then
+	change-terminal $FAVTERMEMULATOR
+fi
+
+#~~~~~~~~~~~~~~~~~~~ Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # syntax-highlighting needs to be at the bottom of '.zshrc' so that it runs after anything
 # else that modifies the command-line buffer
 . "$ZDOTDIR/zsh-syntax-highlighting@/zsh-syntax-highlighting.zsh"
