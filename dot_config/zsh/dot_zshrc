@@ -29,11 +29,6 @@ done
 
 unset rc
 
-#~~~~~~~~~~~~~~~~~~~ If in gnome-terminal, change the terminal ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if [[ $(< "/proc/${1:-$PPID}/comm") = "gnome-terminal-" ]]; then
-	change-terminal $FAVTERMEMULATOR
-fi
-
 #~~~~~~~~~~~~~~~~~~~ Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # syntax-highlighting needs to be at the bottom of '.zshrc' so that it runs after anything
 # else that modifies the command-line buffer
