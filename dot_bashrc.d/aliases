@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/bash
 
 # Aliases
 
@@ -10,18 +10,17 @@
 # Also, strings in single quotes are literal and do not interprete anything
 # Strings with double quotes interpret variables and special characters ($, \, `)
 
-# FLAGS
-# -s        run the alias depending on the last letters of the command
-
 # quick tools
 alias grep='grep --color=auto'
 alias rm='rm -i'
 alias rmy='\rm -v'
-alias mv='mv -i'
+alias mv='mv -v'
 alias mkdir='mkdir -vp'
 alias cp='cp -v'
 alias c='clear'
 alias pls='sudo $(fc -ln -1)'
+alias less='less -N'
+alias diff='nvim -d'
 
 # History
 alias h='history'
@@ -44,8 +43,10 @@ alias .....='cd ../../../..'
 
 # package manager
 alias dnfs='dnf search'
+alias dnfg='dnf list installed | grep'
 alias update='sudo dnf update'
 alias updatey='sudo dnf update -y'
+alias updateall='sudo dnf update -y && flatpak update -y'
 
 # git
 alias gdone='git push'
@@ -76,8 +77,8 @@ alias top='bpytop'
 # Programs Configuration
 alias zsh_config="cd $ZDOTDIR"
 alias kitty_config="$EDITOR $XDG_CONFIG_HOME/kitty/kitty.conf"
-alias neofetch_config="cd $XDG_CONFIG_HOME/neofetch"
-alias v_config="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
+alias neofetch_config="$EDITOR $XDG_CONFIG_HOME/neofetch"
+alias vi_config="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim"
 
 # Find my Public IP Address
 alias myip='curl http://ipecho.net/plain; echo'

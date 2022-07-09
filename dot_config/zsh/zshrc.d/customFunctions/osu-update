@@ -9,7 +9,7 @@ osu-update() {
     \mv -v $HOME/Downloads/osu.AppImage $HOME/Applications/osuLazer.AppImage
 
     echo "Making the file executable..."
-    chmod -v 755 $HOME/Applications/osuLazer.AppImage
+    chmod -v u+x $HOME/Applications/osuLazer.AppImage
 
     echo "Launching osu!lazer..."
     $HOME/Applications/osuLazer.AppImage 2> /dev/null &
