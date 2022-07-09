@@ -2,8 +2,8 @@
 
 # The file that I do not want added to the remote repository.
 
-dot_config/zsh/dot_zsh_history
-private_dot_bash_history
+home/private_dot_bash_history
 
-dot_config/zsh/dot_zcompdump
-dot_config/zsh/private_dot_zcompcache/
+home/dot_config/zsh/dot_zcompdump
+home/dot_config/zsh/dot_zsh_history
+home/dot_config/zsh/private_dot_zcompcache/

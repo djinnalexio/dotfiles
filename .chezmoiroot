@@ -1,0 +1,8 @@
+home
+
+# ~/.local/share/chezmoi/.chezmoiroot
+# =============================================================================
+# Source: https://www.chezmoi.io/user-guide/advanced/customize-your-source-directory/
+
+# The file .chezmoiroot tells chezmoi to read the source state from a subdirectory instead of the root
+# of chezmoi.

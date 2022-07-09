@@ -8,16 +8,6 @@
 
 # Use ! to exclude items from being ignored
 
-Makefile
-.github/
-install.sh
-LICENSE
-README.md
-.gitignore
-*.gz
-*.tar.gz
-*.deb
-
 {{- if eq .chezmoi.username "root" }}
 # If running as root, only configure bash, powerline-shell, and nvim
 
