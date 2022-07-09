@@ -28,7 +28,13 @@ class Color(DefaultColor):
     JOBS_FG = 13
     JOBS_BG = 55
 
+{{- if eq .chezmoi.username "root" }}
+
+    CMD_PASSED_FG = 124
+{{- else }}
+
     CMD_PASSED_FG = HOME_FG
+{{- end }}
     CMD_PASSED_BG = HOME_BG
     CMD_FAILED_FG = 231
     CMD_FAILED_BG = 196
@@ -44,4 +50,3 @@ class Color(DefaultColor):
 
     TIME_FG = 189
     TIME_BG = SEPARATOR_FG
-

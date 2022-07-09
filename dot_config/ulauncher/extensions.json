@@ -34,18 +34,25 @@
         "last_commit": "7ba3f9fb273c4cbbecd26352c88a3156205417db",
         "last_commit_time": "2020-01-05T13:02:00"
     },
-    "com.github.djinnalexio.ulauncher-system": {
-        "id": "com.github.djinnalexio.ulauncher-system",
-        "url": "https://github.com/djinnalexio/ulauncher-system",
-        "updated_at": "2021-11-05T00:26:20.734699",
-        "last_commit": "b32fd38359d65ec3e153fbcc8833dc8422ff3b2c",
-        "last_commit_time": "2021-11-05T04:07:27"
-    },
     "com.github.rootwork.ulauncher-symbol": {
         "id": "com.github.rootwork.ulauncher-symbol",
         "url": "https://github.com/rootwork/ulauncher-symbol",
         "updated_at": "2021-11-05T21:09:21.413161",
         "last_commit": "8a580616039acc8e24c9f3b4c534cb2afc3b7107",
         "last_commit_time": "2021-10-26T04:05:08"
+    },
+    "com.github.andr3slelouch.ulauncher-gnome-extensions-prefs": {
+        "id": "com.github.andr3slelouch.ulauncher-gnome-extensions-prefs",
+        "url": "https://github.com/andr3slelouch/ulauncher-gnome-extensions-prefs",
+        "updated_at": "2022-06-14T18:06:00.851183",
+        "last_commit": "fa41689dfbb2477c61ebbb64b5237dc7f44fa481",
+        "last_commit_time": "2020-11-02T01:18:57"
+    },
+    "com.github.tjquillan.ulauncher-system": {
+        "id": "com.github.tjquillan.ulauncher-system",
+        "url": "https://github.com/tjquillan/ulauncher-system",
+        "updated_at": "2022-07-07T11:37:21.941479",
+        "last_commit": "667613bf7bb6b4affa4f2121b58589477cd89829",
+        "last_commit_time": "2021-11-08T18:16:55"
     }
 }
