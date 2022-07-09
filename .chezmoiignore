@@ -2,33 +2,40 @@
 
 # ~/.local/share/chezmoi/.chezmoiignore
 # =============================================================================
-# Source: https://www.chezmoi.io/docs/reference/#chezmoiignore
+# Source: https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/#ignore-files-or-a-directory-on-different-machines
 
 # The file .chezmoiignore contains a list of files and patterns that chezmoi will not copy to the target system.
 
+# Use ! to exclude items from being ignored
+
 Makefile
+.github/
+install.sh
 LICENSE
 README.md
+.gitignore
 *.gz
 *.tar.gz
 *.deb
 
-
-# Ignore some applications for the root user
 {{- if eq .chezmoi.username "root" }}
+# If running as root, only configure bash, powerline-shell, and nvim
 
 # Blacklist all files/folders in the root directory
 /*
-
-# The only files/folders to include
+# Include only those files and folders
 !.bash*
 !.bashrc.d/
 !.inputrc
-
-# only parts of the config folder
+# Include only part of `.config/`
 !.config/
 .config/*
 !.config/powerline-shell/
 !.config/nvim
+{{- end }}
 
+{{-if ne .shell.zshEnabled }}
+# If zsh is not enabled, ignore zsh config
+.zshenv
+.config/zsh
 {{- end }}

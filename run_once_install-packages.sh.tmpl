@@ -1,0 +1,40 @@
+#!/usr/bin/sh
+
+# ~/.local/share/chezmoi/run_once_install-packages.sh
+# =============================================================================
+# Source: https://www.chezmoi.io/docs/reference/#chezmoiignore
+
+# The file run_once_*.sh contains command that will be run once when
+# running `chezmoi apply` or `chezmoi update`. After that, the file will not
+# be called again during `chezmoi` commands unless it has been modified. Then,
+# it will be run again once.
+
+# Install programs
+
+sudo dnf -y install \
+    lsd \
+    conda \
+    cowsay \
+    lolcat \
+    fortune-mod \
+    figlet \
+    neofetch \
+    git \
+    git-lfs \
+    npm \
+    neovim
+
+{{- if eq .shell.GUIEnabled }}
+sudo dnf -y install \
+    kitty \
+    ulauncher
+{{- end }}
+
+git-lfs install
+npm i -g gitmoji-cli
+sudo pip3 install powerline-shell
+
+{{- if eq .shell.zshEnabled }}
+sudo dnf -y install zsh autojump
+sudo usermod -s $(which zsh) $USER
+{{- end }}
