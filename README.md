@@ -5,7 +5,7 @@ I use `chezmoi` to manage my dotfiles and other configuration files. My current 
 Instantly apply this system configuration:
 
 ```bash
-sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply djinnalexio
+sh -c "$(curl -fsLS chezmoi.io/get)" -- -b $HOME/.local/bin init --apply djinnalexio
 ```
 
 ## Shell Configuration Programs
@@ -13,12 +13,10 @@ sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply djinnalexio
 Here is the list of programs that are referenced in the shell configuration scripts:
 
 ```sh
-sudo dnf -y install lsd conda cowsay lolcat fortune-mod figlet neofetch git git-lfs npm neovim
-
+sudo dnf -y install lsd conda cowsay lolcat fortune-mod \
+figlet neofetch git git-lfs npm neovim
 git-lfs install
-
 npm i -g gitmoji-cli
-
 sudo pip3 install powerline-shell
 ```
 
@@ -49,36 +47,52 @@ sudo usermod -s $(which zsh) $USER      # set it as the default shell for the cu
 
 ## Other Applications
 
-* Key-mapper
+* Input-remapper
 
     Used to map the side buttons on a mouse to ALT+L and ALT+R on the keyboard
 
     ```bash
-    sudo pip install --no-binary :all: git+https://github.com/sezanzeb/ key-mapper.git
-    sudo systemctl enable key-mapper
-    sudo systemctl restart key-mapper
+    sudo pip install evdev -U
+    sudo pip install --no-binary :all: git+https://github.com/sezanzeb/input-remapper.git
+    sudo systemctl enable input-remapper
+    sudo systemctl restart input-remapper
     ```
 
 * Kitty
-
-    My current favorite terminal emulator, minimal and fast
-
-    ```bash
-    sudo dnf -y install kitty
-    ```
-
 * Terminator
 
-    My previous terminal emulator
+## Chezmoi Configuration Files
 
-    ```bash
-    sudo dnf -y install terminator
-    ```
+Chezmoi supports the template format from Go Extended.
+See the guide [here](https://www.chezmoi.io/user-guide/templating/).
 
-* ULauncher
+### [.chezmoiroot](https://www.chezmoi.io/user-guide/advanced/customize-your-source-directory/)
 
-    An app launcher that I find convenient
+Placed at the root of the directory, it tells chezmoi which subdirectory to read the source state from.
 
-    ```bash
-    sudo dnf -y install ulauncher
-    ```
+This way, other files placed at the root but not managed by chezmoi don't need to be included in `.chezmoiignore`.
+
+### [.chezmoi.toml.tmpl](https://www.chezmoi.io/docs/reference/#chezmoiignore)
+
+The file `.chezmoi.<format>.tmpl` is used during `chezmoi init` to generate the configuration file at
+`$HOME/.config/chezmoi/chezmoi.<format>` which contains variables entered by the user for this target machine.
+
+Formats: JSON, TOML, YAML
+
+### [.chezmoiignore](https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/#ignore-files-or-a-directory-on-different-machines)
+
+This file contains a list of files and patterns that chezmoi will not copy to the target system.
+
+By adding if-statements, it is possible to include and exclude files and directories based on the target machine,
+user, and other conditions.
+
+### [.chezmoiremove](https://www.chezmoi.io/user-guide/manage-different-types-of-file/#ensure-that-a-target-is-removed)
+
+This file contains a list of files and patterns that chezmoi will delete from the target system.
+
+By adding if-statements, it is possible to include and exclude files and directories based on the target machine,
+user, and other conditions.
+
+### [run_once_install-packages.sh.tmpl](https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#install-packages-with-scripts)
+
+This file contains commands to install programs when running `chezmoi apply` or `chezmoi update` for the first time. With the `run_once` prefix, the script will not run again unless its contains change.

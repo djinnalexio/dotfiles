@@ -2,8 +2,9 @@
 
 # The file that I do not want added to the remote repository.
 
-home/private_dot_bash_history
+.vscode/
 
+home/private_dot_bash_history
 home/dot_config/zsh/dot_zcompdump
 home/dot_config/zsh/dot_zsh_history
 home/dot_config/zsh/private_dot_zcompcache/

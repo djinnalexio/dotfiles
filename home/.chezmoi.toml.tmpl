@@ -1,0 +1,15 @@
+# -*-mode:conf-toml-*- vim:ft=toml
+
+[data.shell]
+    {{- if ne .chezmoi.username "root" }}
+    zshEnabled = {{ promptBool "Shell: Do you wish to use zsh instead of bash? (yes/no)" }}
+    GUIEnabled = {{ promptBool "Shell: Do you wish to install apps not limited to terminal? (yes/no)" }}
+    {{- else }}
+    zshEnabled = false
+    GUIEnabled = false
+    {{- end }}
+
+[data.git]
+    name = "{{ promptString "Git: Enter your committer name" }}"
+    email = "{{ promptString "Git: Enter your email address" }}"
+    signingkey = "{{ promptString "Git: Enter your current GPG Key ID" }}"

@@ -1,7 +1,0 @@
-# -*-mode:gitignore-*- vim:ft=gitignore
-
-# ~/.local/share/chezmoi/.chezmoiremove
-# =============================================================================
-# Source: https://www.chezmoi.io/user-guide/manage-different-types-of-file/#ensure-that-a-target-is-removed
-
-#  The file .chezmoiignore contains a list of files and patterns that chezmoi remove from the target system.

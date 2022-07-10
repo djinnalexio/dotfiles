@@ -1,0 +1,31 @@
+# -*-mode:gitignore-*- vim:ft=gitignore
+
+{{- if eq .chezmoi.username "root" }}
+# Running as root: only configure bash, powerline-shell, and nvim
+
+# Blacklist all files/folders in the root directory
+/*
+# Include only those files and folders
+!.bash*
+!.bashrc.d/
+!.inputrc
+# Include only part of `.config/`
+!.config/
+.config/*
+!.config/powerline-shell/
+!.config/nvim
+{{- end }}
+
+{{- if (and (ne .chezmoi.username "root") (not .shell.zshEnabled)) }}
+# Zsh is not enabled; ignore zsh config
+.zshenv
+.config/zsh
+{{- end }}
+
+{{- if (and (ne .chezmoi.username "root") (not .shell.GUIEnabled)) }}
+# GUI apps are not included;
+.config/input-remapper
+.config/kitty
+.config/terminator
+.config/ulauncher
+{{-end }}
