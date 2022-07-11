@@ -28,4 +28,4 @@
 .config/kitty
 .config/terminator
 .config/ulauncher
-{{-end }}
+{{- end }}
