@@ -16,13 +16,13 @@
 !.config/nvim
 {{- end }}
 
-{{- if (and (ne .chezmoi.username "root") (not .shell.zshEnabled)) }}
+{{- if (and (ne .chezmoi.username "root") (not .shell.zshenabled)) }}
 # Zsh is not enabled; ignore zsh config
 .zshenv
 .config/zsh
 {{- end }}
 
-{{- if (and (ne .chezmoi.username "root") (not .shell.GUIEnabled)) }}
+{{- if (and (ne .chezmoi.username "root") (not .shell.guienabled)) }}
 # GUI apps are not included;
 .config/input-remapper
 .config/kitty

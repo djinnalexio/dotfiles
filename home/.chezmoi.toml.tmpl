@@ -2,11 +2,11 @@
 
 [data.shell]
     {{- if ne .chezmoi.username "root" }}
-    zshEnabled = {{ promptBool "Shell: Do you wish to use zsh instead of bash? (yes/no)" }}
-    GUIEnabled = {{ promptBool "Shell: Do you wish to install apps not limited to terminal? (yes/no)" }}
+    zshenabled = {{ promptBool "Shell: Do you wish to use zsh instead of bash? (yes/no)" }}
+    guienabled = {{ promptBool "Shell: Do you wish to install apps not limited to terminal? (yes/no)" }}
     {{- else }}
-    zshEnabled = false
-    GUIEnabled = false
+    zshenabled = false
+    guienabled = false
     {{- end }}
 
 [data.git]
