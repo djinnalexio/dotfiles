@@ -1,6 +1,8 @@
 #!/usr/bin/sh
 
-# Install shell programs
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing programs for the shell"
+echo
 sudo dnf -y install \
     lsd \
     conda \
@@ -15,26 +17,48 @@ sudo dnf -y install \
     npm \
     pip
 
-# Setup shell programs
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo
 git-lfs install
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing gitmoji-cli"
+echo
 npm i -g gitmoji-cli
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing powerline-shell for bash"
+echo
 sudo pip3 install powerline-shell
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing vim-plug for vim/neovim"
+echo
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 {{- if (and (ne .chezmoi.username "root") (.shell.zshenabled)) }}
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing ZSH and setting it as the default shell"
+echo
 # User not root and ZSH enabled
 sudo dnf -y install zsh autojump
 sudo usermod -s $(which zsh) $USER
 {{- end }}
 
 {{- if (and (ne .chezmoi.username "root") (.shell.guienabled)) }}
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing GUI applications"
+echo
 # User not root and GUI apps enabled
 sudo dnf -y install \
     kitty \
     terminator \
     ulauncher
 
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing input-remapper"
+echo
 sudo pip install evdev -U
 sudo pip install --no-binary :all: git+https://github.com/sezanzeb/input-remapper.git
 sudo systemctl enable input-remapper
