@@ -9,6 +9,9 @@
 # A script should be independent of the environment and should stand on its own.
 
 # Because gnome-terminal is hardcoded as the default terminal, I use a shortcut to swap it.
+
+# Find the name of the current terminal
+    currentTerminal=$(< "/proc/${1:-$PPID}/comm")
 change_terminal() {
     # Open a new terminal while indicating the current directory
     $1 --working-directory="$PWD" &
@@ -16,11 +19,11 @@ change_terminal() {
     # Make the new process independent
     disown
 
-    # Exit the current terminal
-    pkill gnome-terminal
+    # Kill the current terminal emulator process (Kills ALL instances)
+    pkill $currentTerminal
 }
-
 alias ct="change_terminal kitty"
+
 
 # Replace the osu application with the updated version and fix the menu entry in one command.
 osu-update() {
@@ -31,7 +34,7 @@ osu-update() {
     \mv -v $HOME/Downloads/osu.AppImage $HOME/Applications/osuLazer.AppImage
 
     echo "Making the file executable..."
-    chmod -v 755 $HOME/Applications/osuLazer.AppImage
+    chmod -v u+x $HOME/Applications/osuLazer.AppImage
 
     echo "Launching osu!lazer..."
     $HOME/Applications/osuLazer.AppImage 2> /dev/null &
