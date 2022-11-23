@@ -14,7 +14,7 @@
     background_type = transparent
     cursor_color = "#cfb6ff"
     cursor_color_fg = False
-    font = CaskaydiaCove Nerd Font 12
+    font = Cascadia Code PL Semi-Bold 12
     foreground_color = "#ffffff"
     scrollbar_position = left
     scrollback_infinite = True
