@@ -13,7 +13,7 @@ fastestmirror=true
 max_parallel_downloads=20
 defaultyes=yes
 ' > /etc/dnf/dnf.conf"
-
+echo "/etc/dnf/dnf.conf:"
 cat /etc/dnf/dnf.conf
 sudo dnf update -y --refresh
 
@@ -30,25 +30,22 @@ sudo dnf -y install \
     git \
     git-lfs \
     neovim \
-    npm \
     pip
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 git-lfs install
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Installing gitmoji-cli:"
-npm install -g npm@latest
-npm install -g gitmoji-cli
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Installing powerline-shell for bash:"
-sudo pip3 install powerline-shell
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing vim-plug for neovim:"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+{{- if (or (.shell.zshenabled) (.shell.plshellenabled)) }}
+# download Nerd fonts if zsh or powerline-shell is enabled
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing Nerd fonts:"
+sudo dnf -y install powerline-fonts cascadia-code-pl-fonts cascadia-mono-pl-fonts
+{{- end }}
 
 {{- if (and (ne .chezmoi.username "root") (.shell.zshenabled)) }}
 # User not root and ZSH enabled
@@ -58,13 +55,19 @@ sudo dnf -y install zsh autojump
 sudo usermod -s $(which zsh) $USER
 {{- end }}
 
+{{- if .shell.plshellenabled }}
+# Powerline-Shell for bash enabled
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Installing powerline-shell for bash:"
+pip3 install --user powerline-shell
+{{- end }}
+
 {{- if (and (ne .chezmoi.username "root") (.shell.guienabled)) }}
 # User not root and GUI apps enabled
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing GUI applications:"
 sudo dnf -y install \
     kitty \
-    terminator \
     ulauncher
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

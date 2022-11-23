@@ -15,22 +15,21 @@ function _ps1_backup() {
 export _ps1_backup
 
 if [[ # Conditions to use powerline-shell:
-    $TERM != linux &&   # the type of terminal cannot be one without GUI
-    `pip list` == *"powerline-shell"* &&    # the python module powerline-shell is found
-    -f `which powerline-shell` ]]; then     # the shell command powerline-shell is found
+    $TERM != linux &&   # if the type of terminal has a GUI
+    `pip list` == *"powerline-shell"* &&    # and the python module powerline-shell is found
+    -f `which powerline-shell` ]]; then     # and the shell command powerline-shell is found
 
-    # echo "powerline-shell APPROVED"
-    if [[ $PROMPT_COMMAND != *_ps1_powerline* ]]; then  # if powerline-shell is not in prompt
+    # powerline-shell is available; add it to the prompt command if not already
+    if [[ $PROMPT_COMMAND != *_ps1_powerline* ]]; then
         export PROMPT_COMMAND="_ps1_powerline; $PROMPT_COMMAND"
-        # echo "powerline-shell just added to prompt"
-    # else
-        # echo "powerline-shell already in prompt"
     fi
+
 else
-    # echo "powerline-shell REJECTED"
-    if [[ $PROMPT_COMMAND == *_ps1_powerline* ]]; then  # if powerline-shell is already part of prompt
+    # powerline-shell is not available; remove it from the prompt command if it is there
+    if [[ $PROMPT_COMMAND == *_ps1_powerline* ]]; then
         export PROMPT_COMMAND= `sed -i "s/_ps1_powerline;//" $PROMPT_COMMAND`
         # echo "powerline-shell removed from prompt"
     fi
+    # set the alternative prompt
     _ps1_backup
 fi

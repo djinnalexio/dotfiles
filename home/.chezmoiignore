@@ -16,16 +16,24 @@
 !.config/nvim
 {{- end }}
 
-{{- if (and (ne .chezmoi.username "root") (not .shell.zshenabled)) }}
+{{- if not .shell.zshenabled }}
 # Zsh is not enabled; ignore zsh config
 .zshenv
 .config/zsh
 {{- end }}
 
-{{- if (and (ne .chezmoi.username "root") (not .shell.guienabled)) }}
+{{- if not .shell.plshellenabled }}
+# Powerline-shell is not enabled; ignore powerline-shell config
+.config/powerline-shell
+{{- end }}
+
+{{- if not .shell.guienabled }}
 # GUI apps are not included;
 .config/input-remapper
 .config/kitty
 .config/terminator
 .config/ulauncher
 {{- end }}
+
+# Exclude .chezmoiscripts
+.chezmoiscripts

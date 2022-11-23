@@ -14,9 +14,8 @@ Here is the list of programs that are referenced in the shell configuration scri
 
 ```sh
 sudo dnf -y install lsd conda cowsay lolcat fortune-mod \
-figlet neofetch git git-lfs npm neovim
+figlet neofetch git git-lfs neovim
 git-lfs install
-npm i -g gitmoji-cli
 sudo pip3 install powerline-shell
 ```
 
@@ -29,9 +28,7 @@ sudo pip3 install powerline-shell
 * `neofetch`: Display system information
 * `git`: Version System Control
 * `git-lfs`: Git Large File Storage
-* `npm`: A package manager for the JavaScript programming (for gitmoji)
 * `neovim`: A text editor built upon vim
-* `gitmoji-cli`: A tool to add emojis to git commit messages
 * `Powerline-Shell`: Beautify the bash shell
 
 ### ZSH
