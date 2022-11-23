@@ -2,8 +2,8 @@
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Updating system packages:"
-sudo cat >/etc/dnf/dnf.conf <<EOL
-[main]
+sudo sh -c "echo \
+'[main]
 gpgcheck=1
 installonly_limit=2
 clean_requirements_on_remove=True
@@ -12,8 +12,9 @@ skip_if_unavailable=True
 fastestmirror=true
 max_parallel_downloads=20
 defaultyes=yes
-...
-EOL
+' > /etc/dnf/dnf.conf"
+
+cat /etc/dnf/dnf.conf
 sudo dnf update -y --refresh
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -37,14 +38,15 @@ git-lfs install
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing gitmoji-cli:"
-npm i -g gitmoji-cli
+npm install -g npm@latest
+npm install -g gitmoji-cli
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing powerline-shell for bash:"
 sudo pip3 install powerline-shell
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Installing vim-plug for vim/neovim:"
+echo "Installing vim-plug for neovim:"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
@@ -67,6 +69,7 @@ sudo dnf -y install \
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing input-remapper:"
+sudo dnf install python-devel -y
 sudo pip install evdev -U
 sudo pip install --no-binary :all: git+https://github.com/sezanzeb/input-remapper.git
 sudo systemctl enable input-remapper
