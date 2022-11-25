@@ -36,9 +36,11 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 git-lfs install
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Installing vim-plug for neovim:"
+echo "Installing vim-plug and setting up plugins for neovim:"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sudo dnf -y install nodejs
+nvim -c ':PlugInstall' -c ':qa'
 
 {{- if (or (.shell.zshenabled) (.shell.plshellenabled)) }}
 # download Nerd fonts if zsh or powerline-shell is enabled
