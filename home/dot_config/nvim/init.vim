@@ -120,12 +120,7 @@ set showmatch                           " Show matching brackets
 set nowrap                              " Display long lines as just one line
 set pumheight=10                        " Makes popup menu smaller
 set background=dark
-{{- if eq .chezmoi.username "root" }}
-colorscheme gruvbox                     " set color scheme
-{{- else }}
 colorscheme dracula                     " set color scheme
-{{- end }}
-
 
 "disable vim background to preserve terminal transparency
 hi Normal guibg=NONE ctermbg=NONE
@@ -188,13 +183,7 @@ let g:airline_powerline_fonts = 1
 " let g:airline_left_sep = ''
 " let g:airline_right_sep = ''
 
-" Switch to your current theme
-{{- if eq .chezmoi.username "root" }}
-let g:airline_theme = 'gruvbox'
-{{- else }}
 let g:airline_theme = 'violet'
-{{- end }}
-
 
     """"""""""
     " nerdtree

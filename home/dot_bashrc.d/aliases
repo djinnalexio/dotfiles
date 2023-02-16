@@ -70,7 +70,6 @@ alias vi='nvim'
 alias v='nvim'
 alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
-alias r='ranger'
 alias df='pydf'
 alias top='bpytop'
 

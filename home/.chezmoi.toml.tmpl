@@ -1,16 +1,7 @@
 # -*-mode:conf-toml-*- vim:ft=toml
 
 [data.shell]
-    {{- if ne .chezmoi.username "root" }}
-    zshenabled = {{ promptBool "Shell: Do you want the zsh shell? (y/n)" }}
-    plshellenabled = {{ promptBool "Shell: Do you want Powerline-shell customization for bash? (y/n)" }}
-    guienabled = {{ promptBool "Shell: Do you want apps in a desktop environment? (y/n)" }}
-
-    {{- else }}
-    zshenabled = false
-    plshellenabled = false
-    guienabled = false
-    {{- end }}
+    swapGnome = {{ promptBool "Shell: Do you want the favorite terminal emulator to open instead of gnome-terminal? (y/n)" }}
 
 [data.git]
     {{- if ne .chezmoi.username "root" }}

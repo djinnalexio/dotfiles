@@ -70,9 +70,9 @@ alias czd='chezmoi diff'
 alias czcd='chezmoi cd'
 
 # programs
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
+alias -g vim='nvim'
+alias -g vi='nvim'
+alias -g v='nvim'
 alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
 alias r='ranger'
