@@ -4,13 +4,6 @@
     swapGnome = {{ promptBool "Shell: Do you want the favorite terminal emulator to open instead of gnome-terminal? (y/n)" }}
 
 [data.git]
-    {{- if ne .chezmoi.username "root" }}
     name = "{{ promptString "Git: Enter your committer name" }}"
     email = "{{ promptString "Git: Enter your email address" }}"
     signingkey = "{{ promptString "Git: Enter your current GPG Key ID" }}"
-
-    {{- else }}
-    name = ""
-    email = ""
-    signingkey = ""
-    {{- end }}

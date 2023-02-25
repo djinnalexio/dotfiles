@@ -1,7 +1,3 @@
-#!/usr/bin/zsh
-
-# Source: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/zsh-syntax-highlighting.zsh
-
 # -------------------------------------------------------------------------------------------------
 # Copyright (c) 2010-2020 zsh-syntax-highlighting contributors
 # All rights reserved.
@@ -39,6 +35,20 @@ typeset zsh_highlight__aliases="$(builtin alias -Lm '[^+]*')"
 # Hence, we exclude them from unaliasing:
 builtin unalias -m '[^+]*'
 
+# Set $0 to the expected value, regardless of functionargzero.
+0=${(%):-%N}
+if true; then
+  # $0 is reliable
+  typeset -g ZSH_HIGHLIGHT_VERSION=$(<"${0:A:h}"/.version)
+  typeset -g ZSH_HIGHLIGHT_REVISION=$(<"${0:A:h}"/.revision-hash)
+  if [[ $ZSH_HIGHLIGHT_REVISION == \$Format:* ]]; then
+    # When running from a source tree without 'make install', $ZSH_HIGHLIGHT_REVISION
+    # would be set to '$Format:%H$' literally.  That's an invalid value, and obtaining
+    # the valid value (via `git rev-parse HEAD`, as Makefile does) might be costly, so:
+    ZSH_HIGHLIGHT_REVISION=HEAD
+  fi
+fi
+
 # This function takes a single argument F and returns True iff F is an autoload stub.
 _zsh_highlight__function_is_autoload_stub_p() {
   if zmodload -e zsh/parameter; then
@@ -63,8 +73,8 @@ _zsh_highlight__is_function_p() {
 # This function takes a single argument F and returns True iff F denotes the
 # name of a callable function.  A function is callable if it is fully defined
 # or if it is marked for autoloading and autoloading it at the first call to it
-# will succeed.  In particular, if a function has been marked for autoloading
-# but is not available in $fpath, then this function will return False therefor.
+# will succeed.  In particular, if F has been marked for autoloading
+# but is not available in $fpath, then calling this function on F will return False.
 #
 # See users/21671 http://www.zsh.org/cgi-bin/mla/redirect?USERNUMBER=21671
 _zsh_highlight__function_callable_p() {
@@ -148,12 +158,15 @@ _zsh_highlight()
         #
         # The memo= feature was added to zsh in commit zsh-5.8-172-gdd6e702ee.
         # The version number at the time was 5.8.0.2-dev (see Config/version.mk).
-        # Therefore, on 5.8.0.3 and newer the memo= feature is available.
+        # Therefore, on zsh master 5.8.0.3 and newer the memo= feature is available.
+        # However, there's also the zsh 5.8.1 release, which doesn't have the
+        # memo= feature.
         #
-        # On zsh version 5.8.0.2 between the aforementioned commit and the
-        # first Config/version.mk bump after it (which, at the time of writing,
-        # is yet to come), this condition will false negative.
-        if is-at-least 5.8.0.3 $ZSH_VERSION.0.0; then
+        # On zsh master 5.8.0.2 between the aforementioned commit and the
+        # first Config/version.mk bump after it (zsh-5.8-607-g75c1edde5, the
+        # bump to 5.8.1.1-dev following the backport to master of the bump
+        # to 5.8.1), this condition will false negative.
+        if is-at-least 5.8.1.1 $ZSH_VERSION.0.0; then
           integer -gr zsh_highlight__memo_feature=1
         else
           integer -gr zsh_highlight__memo_feature=0
@@ -209,7 +222,8 @@ _zsh_highlight()
   [[ -n ${ZSH_HIGHLIGHT_MAXLENGTH:-} ]] && [[ $#BUFFER -gt $ZSH_HIGHLIGHT_MAXLENGTH ]] && return $ret
 
   # Do not highlight if there are pending inputs (copy/paste).
-  [[ $PENDING -gt 0 ]] && return $ret
+  (( KEYS_QUEUED_COUNT > 0 )) && return $ret
+  (( PENDING > 0 )) && return $ret
 
   {
     local cache_place
@@ -400,11 +414,10 @@ _zsh_highlight_call_widget()
 #
 #    We check this with a plain version number check, since a functional check,
 #    as done by _zsh_highlight, can only be done from inside a widget
-#    function — a catch-22.
+#    function — a catch-22.
 #
-#    See _zsh_highlight for the magic version number.  (The use of 5.8.0.2
-#    rather than 5.8.0.3 as in the _zsh_highlight is deliberate.)
-if is-at-least 5.8.0.2 $ZSH_VERSION.0.0 && _zsh_highlight__function_callable_p add-zle-hook-widget
+#    See _zsh_highlight for the magic version number.
+if is-at-least 5.8.1.1 $ZSH_VERSION.0.0 && _zsh_highlight__function_callable_p add-zle-hook-widget
 then
   autoload -U add-zle-hook-widget
   _zsh_highlight__zle-line-finish() {
