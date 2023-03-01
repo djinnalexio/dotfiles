@@ -173,7 +173,7 @@ sudo dnf -y install zsh
 Next, change your default shell:
 
 ```bash
-sudo usermod -s $(which zsh) $USER
+sudo usermod -s $(command -v zsh) $USER
 ```
 
 ### Import Dotfiles
