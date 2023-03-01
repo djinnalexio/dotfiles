@@ -1,6 +1,6 @@
 # My Dotfiles
 
-I use `chezmoi` to manage my dotfiles and other configuration files. My current OS is Fedora 36.
+I use `chezmoi` to manage my dotfiles and other configuration files. My current OS is Fedora 37 Silverblue.
 
 Instantly apply this system configuration:
 
