@@ -5,7 +5,7 @@ I use `chezmoi` to manage my dotfiles and other configuration files. My current 
 Instantly apply this system configuration:
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply djinnalexio
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply djinnalexio
 ```
 
 ## Shell Configuration Programs
