@@ -13,11 +13,18 @@
 # I leave this file almost empty and put all the contents in sub-files that each have
 # their function/feature for easy debugging and editing.
 
+#~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~~~
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #~~~~~~~~~ Switch out of gnome-terminal which is hardcoded as default ~~~~~~~~~
 swapGnomeTerminal={{ .shell.swapGnome }}
 currentTerminal=$(< "/proc/${1:-$PPID}/comm")
 favoriteTerminal=kitty
-
 # If the alternative terminal is installed
 # and the current parent process (which should correspond to the terminal emulator) is gnome-terminal
 if command -v $favoriteTerminal &> /dev/null; then
@@ -32,34 +39,21 @@ if command -v $favoriteTerminal &> /dev/null; then
         pkill $currentTerminal
     fi
 fi
-
 unset favoriteTerminal
 unset currentTerminal
 unset swapGnomeTerminal
-
-#~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~~~
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 #~~~~~~~~~~~~~~~~~~~~~~~ Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~
 # Get files recursively in '$ZDOTDIR/zshrc.d' excluding ".md" files and source each of them
 for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
 	. "$rc"
 done
-
 unset rc
 
 #~~~~~~~~~~~~~~~~~~~ Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~
 # syntax-highlighting needs to be at the bottom of '.zshrc' so that it runs after anything
 # else that modifies the command-line buffer
 . "$ZDOTDIR/zsh-syntax-highlighting@/zsh-syntax-highlighting.zsh"
-
-# Pleasantly surprised by how fast powerlevel10k is. It also comes with
-# all the fanciness, icons, integration, and information I was looking for.
 . "$ZDOTDIR/powerlevel10k@/powerlevel10k.zsh-theme"
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

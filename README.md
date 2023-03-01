@@ -19,6 +19,7 @@ Here is the list of programs that are referenced in the shell configuration scri
 * `git-lfs`: Git Large File Storage
 * `neovim`: A text editor built upon vim
 * `zsh`: the shell I use
+* `cmatrix`: to jump into the matrix
 
 ## Chezmoi Configuration Files
 
