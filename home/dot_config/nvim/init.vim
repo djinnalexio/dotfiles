@@ -120,7 +120,7 @@ set showmatch                           " Show matching brackets
 set nowrap                              " Display long lines as just one line
 set pumheight=10                        " Makes popup menu smaller
 set background=dark
-colorscheme dracula                     " set color scheme
+"colorscheme dracula                     " set color scheme
 
 "disable vim background to preserve terminal transparency
 hi Normal guibg=NONE ctermbg=NONE
@@ -184,7 +184,7 @@ let g:airline_powerline_fonts = 1
 " let g:airline_right_sep = ''
 
 " Switch to your current theme
-let g:airline_theme = 'violet'
+"let g:airline_theme = 'violet'
 
     """"""""""
     " nerdtree
