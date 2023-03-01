@@ -1,6 +1,9 @@
 #!/usr/bin/sh
 
-# download Nerd fonts
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Installing Nerd fonts:"
+echo "Installing nerd font symbols:"
 wget "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/NerdFontsSymbolsOnly/complete/Symbols-2048-em%20Nerd%20Font%20Complete.ttf" --directory-prefix ~/.local/share/fonts/
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Enabling flathub repo"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

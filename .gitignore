@@ -4,6 +4,8 @@
 
 .vscode/
 
+*.zwc
+
 home/private_dot_bash_history
 home/dot_config/zsh/dot_zcompdump
 home/dot_config/zsh/dot_zsh_history

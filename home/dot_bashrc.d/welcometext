@@ -2,37 +2,4 @@
 
 # Welcome Message to the Shell
 
-#clear
-
-# array of chosen cowfiles
-cowfiles=(elephant eyes kitty meow tux)
-# cower default elephant eyes hellokitty
-# kitty koala meow sheep small tux
-
-# array length
-arrayLength=${#cowfiles[@]}
-
-# a random number between 1 and 'arraylength'
-randomCowfileIndex=$[ $RANDOM%${arrayLength} ]
-
-# use the random number to pick a cowfile
-currentCowfile=${cowfiles[ randomCowfileIndex ]}
-
-# Random number to pick a welcome text
-optionEvent=$[ $RANDOM%3 ] # between 0 and n-1
-
-if [ $optionEvent -le 0 ]; then
-    fortune -sa | cowsay -f $currentCowfile | lolcat -h 0.1
-else
-    if [ $optionEvent -le 1 ]; then
-        figlet "$USER" | cowsay -n -f $currentCowfile | lolcat -h 0.2
-    else
-        neofetch --logo
-    fi
-fi
-
-unset cowfiles
-unset arrayLength
-unset randomCowfileIndex
-unset currentCowfile
-unset optionEvent
+neofetch --config ~/.config/neofetch/quick.conf

@@ -25,7 +25,6 @@ alias c='clear'
 alias pls='sudo $(fc -ln -1)'
 alias diff='nvim -d'
 alias less='less -N'
-alias -g L="| less"
 
 # History
 alias h='history -E -50'
@@ -46,24 +45,13 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# package manager
-alias dnfs='dnf search'
-alias dnfg='dnf list installed | grep'
-alias update='sudo dnf update'
-alias updatey='sudo dnf update -y'
-alias updateall='sudo dnf update -y && flatpak update -y'
-
-# git
-alias gdone='git push'
-alias gs='git status -sb'
-
 # chmod
 alias chmod='chmod -v'
 
 # chezmoi aliases
 alias cz='chezmoi'
 alias czs='chezmoi status'
-alias cza='chezmoi re-add; echo "added local changes to chezmoi VCS"'
+alias cza='chezmoi add'
 alias czm='chezmoi managed'
 alias czg='chezmoi git'
 alias czd='chezmoi diff'
@@ -75,15 +63,6 @@ alias -g vi='nvim'
 alias -g v='nvim'
 alias neo='neofetch'
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
-alias r='ranger'
-alias df='pydf'
-alias top='bpytop'
-
-# Programs Configuration
-alias -g zsh_config="$ZDOTDIR"
-alias -g kitty_config="$XDG_CONFIG_HOME/kitty/kitty.conf"
-alias -g neofetch_config="$XDG_CONFIG_HOME/neofetch/config.conf"
-alias -g vi_config="$XDG_CONFIG_HOME/nvim/init.vim"
 
 # Find my Public IP Address
 alias myip='curl http://ipecho.net/plain; echo'

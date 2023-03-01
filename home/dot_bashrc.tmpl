@@ -1,0 +1,77 @@
+#!/usr/bin/bash
+
+######################################################
+#      _  _ _                   _           _        #
+#   __| |(_|_)_ __  _ __   __ _| | _____  _(_) ___   #
+#  / _` || | | '_ \| '_ \ / _` | |/ _ \ \/ / |/ _ \  #
+# | (_| || | | | | | | | | (_| | |  __/>  <| | (_) | #
+#  \__,_|/ |_|_| |_|_| |_|\__,_|_|\___/_/\_\_|\___/  #
+#      |__/                                          #
+######################################################
+
+# My BASH configuration file for interactive shells.
+
+# Switch out of gnome-terminal which is hardcoded as default
+swapGnomeTerminal={{ .shell.swapGnome }}
+currentTerminal=$(< "/proc/${1:-$PPID}/comm")
+favoriteTerminal=kitty
+
+# If the current parent process (which should correspond to the terminal emulator) is gnome-terminal
+if [[ $currentTerminal = "gnome-terminal-" && $swapGnomeTerminal ]]; then
+	# Open a new terminal while indicating the current directory
+    $favoriteTerminal --working-directory="$PWD" &
+    # Make the new process independent
+    disown
+    # in case gnome-terminal wasn't stopped, print the process that was caught instead
+    echo $currentTerminal
+    # Kill the current terminal emulator process (Kills ALL instances)
+    pkill $currentTerminal
+fi
+
+unset favoriteTerminal
+unset currentTerminal
+unset swapGnomeTerminal
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	echo # . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+export PATH
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+export TERM=xterm-256color
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
+unset rc
+
+# enable command tab-completion for some programs
+complete -cf sudo
+complete -cf tldr
+complete -cf man
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+# change directory without cd
+shopt -s autocd

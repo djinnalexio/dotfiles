@@ -1,0 +1,29 @@
+#!/usr/bin/zsh
+
+# Functions can be more rich and complex than aliases.
+# They can contain multiple lines of instructions and loops.
+# Like aliases, they are stored in memory after being sourced from a file or declared.
+# However, they can be exported to be used by scripts.
+# Shell scripts run in forked non-interactive shells.
+# A script should be independent of the environment and should stand on its own.
+
+# Update the the osu!lazer appimage and fix the desktop file
+osu-update() {
+    echo "Closing current osu! session..."
+    pkill osu\!
+
+    echo "Moving the up-to-date osu!lazer AppImage to the Applications folder..."
+    \mv -v $HOME/Downloads/osu.AppImage $HOME/Applications/osuLazer.AppImage
+
+    echo "Making the file executable..."
+    chmod -v u+x $HOME/Applications/osuLazer.AppImage
+
+    echo "Launching osu!lazer..."
+    $HOME/Applications/osuLazer.AppImage 2> /dev/null &
+
+    # Make the new process independent
+    disown
+
+    # Exit the terminal
+    exit
+}

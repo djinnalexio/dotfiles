@@ -12,51 +12,13 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply djinnalexio
 
 Here is the list of programs that are referenced in the shell configuration scripts:
 
-```sh
-sudo dnf -y install lsd conda cowsay lolcat fortune-mod \
-figlet neofetch git git-lfs neovim
-git-lfs install
-sudo pip3 install powerline-shell
-```
-
+* `autojump`: Quickly jump back to previously visited directories
 * `lsd`: An improved `ls` command that includes colors and file icons
-* `conda`: Anaconda to manage python environments
-* `cowsay`: Displays messages in speech bubbles from animals and other ascii art
-* `lolcat`: Rainbow-colored output
-* `fortune-mod`: Outputs quotes, jokes, sayings, etc.
-* `figlet`: Big lettering ascii art
+* `kitty`: the terminal I like
 * `neofetch`: Display system information
-* `git`: Version System Control
 * `git-lfs`: Git Large File Storage
 * `neovim`: A text editor built upon vim
-* `Powerline-Shell`: Beautify the bash shell
-
-### ZSH
-
-I currently use `zsh` as my default shell program.
-
-````sh
-sudo dnf -y install zsh autojump
-sudo usermod -s $(which zsh) $USER      # set it as the default shell for the current user
-````
-
-* `autojump`: Quickly jump back to previously visited directories
-
-## Other Applications
-
-* Input-remapper
-
-    Used to map the side buttons on a mouse to ALT+L and ALT+R on the keyboard
-
-    ```bash
-    sudo pip install evdev -U
-    sudo pip install --no-binary :all: git+https://github.com/sezanzeb/input-remapper.git
-    sudo systemctl enable input-remapper
-    sudo systemctl restart input-remapper
-    ```
-
-* Kitty
-* Terminator
+* `zsh`: the shell I use
 
 ## Chezmoi Configuration Files
 
@@ -92,4 +54,4 @@ user, and other conditions.
 
 ### [run_once_install-packages.sh.tmpl](https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#install-packages-with-scripts)
 
-This file contains commands to install programs when running `chezmoi apply` or `chezmoi update` for the first time. With the `run_once` prefix, the script will not run again unless its contains change.
+This file contains commands to run commands when running `chezmoi apply` or `chezmoi update` for the first time. With the `run_once` prefix, the script will not run again unless its contains change.
