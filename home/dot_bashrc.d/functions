@@ -7,7 +7,7 @@
 # Shell scripts run in forked non-interactive shells.
 # A script should be independent of the environment and should stand on its own.
 
-# Update the the osu!lazer appimage and fix the desktop file
+# Update the the osu!lazer appimage
 osu-update() {
     echo "Closing current osu! session..."
     pkill osu\!
