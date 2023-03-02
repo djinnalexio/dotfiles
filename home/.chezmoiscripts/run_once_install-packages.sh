@@ -2,13 +2,12 @@
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Setup dnf:"
-echo "fastestmirror=1\nmax_parallel_download=20\ndefaultyes=yes\n" | sudo tee -a /etc/dnf/dnf.conf
+echo "fastestmirror=1\nmax_parallel_download=20\ndefaultyes=yes\n" | sudo tee -a /etc/dnf/dnf.conf > /dev/null
 sudo dnf update -y --refresh
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing terminal tools:"
 sudo dnf install autojump cmatrix git git-lfs lsd man neofetch neovim tldr unzip zip -y
-git-lfs install
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing nerd fonts and symbols:"
