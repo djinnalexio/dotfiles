@@ -65,6 +65,10 @@
     - [Others](#others)
   - [Apps to be installed with DNF](#apps-to-be-installed-with-dnf)
   - [Silverblue Setup](#silverblue-setup)
+    - [Configure ostree](#configure-ostree)
+    - [Install packages to the base](#install-packages-to-the-base)
+    - [Enable flathub repository](#enable-flathub-repository)
+    - [Setup a distrobox](#setup-a-distrobox)
 
 ---
 
@@ -892,32 +896,85 @@ TODO: update this file
 
 ## Silverblue Setup
 
-sudo vi /etc/ostreed.conf
+### Configure ostree
+
+run `sudo vi /etc/ostreed.conf` and change the options to the following:
 
 ```text
 [Daemon]
-#AutomaticUpdatePolicy=none
-#IdleExitTimeout=60
+AutomaticUpdatePolicy=stage
+IdleExitTimeout=60
 ```
 
+Reload `ostree` and enable the automatic timer:
+
+```bash
+rpm-ostree reload
+systemctl enable rpm-ostreed-automatic.timer --now
+```
+
+### Install packages to the base
+
+Enable NVIDIA repositories:
+
+```bash
+rpm-ostree install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 rpm-ostree upgrade
+```
 
-layered packages:
+Upgrade the system:
+
+```bash
+rpm-ostree upgrade
+```
+
+Install layered packages:
+
+```bash
 rpm-ostree install distrobox git-lfs kitty neofetch neovim zsh
-rpm-ostree install kmod-nvidia xorg-x11-drv-nvidia
+rpm-ostree install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda
+# After installing nvidia drivers, blacklist nouveau drivers
 rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1
-
 rpm-ostree status -v
+```
 
+Switch the default shell from `bash` to `zsh`:
+
+```bash
 sudo vi /etc/passwd
-bash to zsh
+# and at the end of the line of your user, change bash to zsh
+```
 
-reboot
+### Enable flathub repository
 
+```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update --appstream
+flatpak update
+```
+
+Reboot the system
+
+### Setup a distrobox
+
+Initialize `git-lfs`:
+
+```bash
 git-lfs install
-distrobox create --image fedora:38 --name clearbox
-distrobox enter clearbox
+```
 
+Create a distrobox:
+
+```bash
+distrobox create --image fedora:38 --name <name>
+distrobox enter <name>
+```
+
+Inside the box, run `chezmoi`:
+
+```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply djinnalexio
+```
 
-then cz init later to change variables
+You can use `chezmoi init` later to update the variables and `chezmoi update` to pull changes from github.

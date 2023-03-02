@@ -59,9 +59,9 @@ else
     alias lt='ls -AlFht'
 fi
 if command -v nvim &> /dev/null; then
-alias -g vim='nvim'
-alias -g vi='nvim'
-alias -g v='nvim'
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
 alias diff='nvim -d'
 fi
 if command -v neofetch &> /dev/null; then

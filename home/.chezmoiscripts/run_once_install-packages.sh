@@ -24,7 +24,3 @@ echo "Installing vim-plug and setting up plugins for neovim:"
 wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
 sudo dnf install nodejs -y
 nvim -c ':PlugInstall' -c ':qa'
-
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Enabling flathub repo"
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
