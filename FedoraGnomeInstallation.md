@@ -903,7 +903,7 @@ sudo vi /etc/ostreed.conf
 rpm-ostree upgrade
 
 layered packages:
-rpm-ostree install distrobox zsh kitty
+rpm-ostree install distrobox git-lfs kitty neofetch neovim zsh
 rpm-ostree install kmod-nvidia xorg-x11-drv-nvidia
 rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1
 
@@ -914,6 +914,7 @@ bash to zsh
 
 reboot
 
+git-lfs install
 distrobox create --image fedora:38 --name clearbox
 distrobox enter clearbox
 

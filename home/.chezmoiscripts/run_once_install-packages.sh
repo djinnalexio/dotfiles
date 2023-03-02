@@ -7,7 +7,8 @@ sudo dnf update -y --refresh
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing terminal tools:"
-sudo dnf install autojump cmatrix lsd man neofetch neovim tldr unzip zip -y
+sudo dnf install autojump cmatrix git git-lfs lsd man neofetch neovim tldr unzip zip -y
+git-lfs install
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing nerd fonts and symbols:"
