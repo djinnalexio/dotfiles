@@ -64,6 +64,7 @@
     - [Tools](#tools)
     - [Others](#others)
   - [Apps to be installed with DNF](#apps-to-be-installed-with-dnf)
+  - [Silverblue Setup](#silverblue-setup)
 
 ---
 
@@ -888,3 +889,34 @@ sudo bleachbit
 - youtube-dl
 
 TODO: update this file
+
+## Silverblue Setup
+
+sudo vi /etc/ostreed.conf
+
+```text
+[Daemon]
+#AutomaticUpdatePolicy=none
+#IdleExitTimeout=60
+```
+
+rpm-ostree upgrade
+
+layered packages:
+rpm-ostree install distrobox zsh kitty
+rpm-ostree install kmod-nvidia xorg-x11-drv-nvidia
+rpm-ostree kargs --append=rd.driver.blacklist=nouveau --append=modprobe.blacklist=nouveau --append=nvidia-drm.modeset=1
+
+rpm-ostree status -v
+
+sudo vi /etc/passwd
+bash to zsh
+
+reboot
+
+distrobox create --image fedora:38 --name clearbox
+distrobox enter clearbox
+
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply djinnalexio
+
+then cz init later to change variables

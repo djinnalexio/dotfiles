@@ -23,21 +23,8 @@ alias mkdir='mkdir -vp'
 alias cp='cp -v'
 alias c='clear'
 alias pls='sudo $(fc -ln -1)'
-alias diff='nvim -d'
 alias less='less -N'
-
-# History
-alias h='history -E -50'
-alias hg='history -E 1 | grep'
-alias hf='history -E 1 | less +G' #full history
-
-# ls
-alias l='lsd -h'
-alias ls='lsd -h'
-alias la='lsd -Ah'
-alias ll='lsd -AlFh'
-alias lr='lsd -AlFhR'
-alias lt='lsd -AlFht'
+alias chmod='chmod -v'
 
 # navigation
 alias ..='cd ..'
@@ -45,8 +32,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# chmod
-alias chmod='chmod -v'
+# History
+alias h='history -E -50'
+alias hg='history -E 1 | grep'
+alias hf='history -E 1 | less +G' #full history
 
 # chezmoi aliases
 alias cz='chezmoi'
@@ -58,11 +47,33 @@ alias czd='chezmoi diff'
 alias czcd='chezmoi cd'
 
 # programs
+if command -v lsd &> /dev/null; then
+    alias l='lsd -h'
+    alias ls='lsd -h'
+    alias la='lsd -Ah'
+    alias ll='lsd -AlFh'
+    alias lr='lsd -AlFhR'
+    alias lt='lsd -AlFht'
+else
+    alias l='ls -h'
+    alias ls='ls -h'
+    alias la='ls -Ah'
+    alias ll='ls -AlFh'
+    alias lr='ls -AlFhR'
+    alias lt='ls -AlFht'
+fi
+if command -v nvim &> /dev/null; then
 alias -g vim='nvim'
 alias -g vi='nvim'
 alias -g v='nvim'
+alias diff='nvim -d'
+fi
+if command -v neofetch &> /dev/null; then
 alias neo='neofetch'
+fi
+if command -v cmatrix &> /dev/null; then
 alias cmatrix='cmatrix -ab -u 4 -C magenta'
+fi
 
 # Find my Public IP Address
 alias myip='curl http://ipecho.net/plain; echo'

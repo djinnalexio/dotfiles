@@ -22,7 +22,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #~~~~~~~~~ Switch out of gnome-terminal which is hardcoded as default ~~~~~~~~~
-swapGnomeTerminal={{ .shell.swapGnome }}
+swapGnomeTerminal={{- .shell.swapGnome -}}
 currentTerminal=$(< "/proc/${1:-$PPID}/comm")
 favoriteTerminal=kitty
 # If the alternative terminal is installed
