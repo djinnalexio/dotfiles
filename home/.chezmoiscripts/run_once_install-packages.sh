@@ -30,7 +30,7 @@ done
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "Installing vim-plug and setting up plugins for neovim:"
 if [[ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]] ; then
-        wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
+    wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
 fi
 sudo dnf install nodejs -y
 nvim -c ':PlugInstall' -c ':qa'
