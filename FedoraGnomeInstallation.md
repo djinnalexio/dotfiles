@@ -898,7 +898,7 @@ TODO: update this file
 
 ### Configure ostree
 
-run `sudo vi /etc/ostreed.conf` and change the options to the following:
+run `sudo vi /etc/rpm-ostreed.conf` and change the options to the following:
 
 ```text
 [Daemon]
@@ -920,7 +920,6 @@ Enable NVIDIA repositories:
 ```bash
 rpm-ostree install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-rpm-ostree upgrade
 ```
 
 Upgrade the system:
@@ -964,7 +963,7 @@ Initialize `git-lfs`:
 git-lfs install
 ```
 
-Create a distrobox:
+Create a box:
 
 ```bash
 distrobox create --image fedora:38 --name <name>
