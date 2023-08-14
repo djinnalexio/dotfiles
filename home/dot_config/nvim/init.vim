@@ -47,7 +47,7 @@ Plug 'preservim/nerdtree' |
 Plug 'tpope/vim-commentary'
 
 " code completion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -71,7 +71,7 @@ set updatetime=300                      " Faster completion
 set timeoutlen=1000                     " timeout on default shortcuts (ms)
 " set notimeout                           " ...or get rid of the timeout on custom shortcuts
 set encoding=UTF-8                      " set the default encoding
-set spell spelllang=en_us               " set spellfile and language
+"set spell spelllang=en_us               " set spellfile and language
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
