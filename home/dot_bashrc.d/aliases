@@ -37,6 +37,7 @@ alias hf="cat $HOME/.bash_history | less +G" #full history
 alias cz='chezmoi'
 alias czs='chezmoi status'
 alias cza='chezmoi add'
+alias czra='chezmoi re-add'
 alias czm='chezmoi managed'
 alias czg='chezmoi git'
 alias czd='chezmoi diff'
@@ -68,7 +69,7 @@ if command -v neofetch &> /dev/null; then
 alias neo='neofetch'
 fi
 if command -v cmatrix &> /dev/null; then
-alias cmatrix='cmatrix -ab -u 4 -C magenta'
+alias cmatrix='cmatrix -ab -u 4 -C green'
 fi
 
 # Find my Public IP Address
