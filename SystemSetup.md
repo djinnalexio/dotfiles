@@ -14,7 +14,8 @@
   - [Customize the Desktop](#customize-the-desktop)
     - [Adding a Background Image](#adding-a-background-image)
     - [Adding Monitor Default Settings](#adding-monitor-default-settings)
-  - [Silverblue Setup](#silverblue-setup)
+  - [Silverblue Setup](#silverblue-setup)  
+    - [Enable fractional scaling](###enable-fractional-scaling)
     - [Configure ostree](#configure-ostree)
     - [Install packages to the base](#install-packages-to-the-base)
     - [Enable flathub repository](#enable-flathub-repository)
@@ -250,6 +251,16 @@ Logout and check the changes.
 
 ## Silverblue Setup
 
+### Enable fractional scaling
+
+run:
+
+```bash
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+```
+
+Reboot
+
 ### Configure ostree
 
 run `sudo vi /etc/rpm-ostreed.conf` and change the options to the following:
@@ -310,12 +321,6 @@ flatpak update
 Reboot the system
 
 ### Setup a distrobox
-
-Initialize `git-lfs`:
-
-```bash
-git-lfs install
-```
 
 Create a box:
 
