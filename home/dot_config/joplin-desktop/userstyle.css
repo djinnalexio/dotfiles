@@ -1,0 +1,529 @@
+/* // MARK: General */
+
+:root {
+  --white: #e9edf0;
+
+  --light-grey: #b1bcc2;
+  --grey: #3D444E;
+  --dark-grey: #222222;
+
+  --black: #050017;
+
+  --red-light: #fad3d4;
+  --red: #f65354;
+  --red-dark: #FF1744;
+
+  --green-light: #c5e5b4;
+  --green: #58D68D;
+  --green-dark: #23CD60;
+
+  --yellow-light: #faf3d3;
+  --yellow: #E7AE1D;
+  --yellow-dark: #E7AE1D;
+
+  --blue-light: #bed3fc;
+  --blue: #02A4F1;
+  --blue-dark: #3a79f7;
+
+  --purple-light: #C792EA;
+  --purple: #F459F4;
+  --purple-dark: #F459F4;
+
+  --aqua-light: #70ecec;
+  --aqua: #1fdfdf;
+  --aqua-dark: #00A3A3;
+  --aqua-darker: #007c7c;
+
+  --orange-light: #faf3d3;
+  --orange: #cf7506;
+  --orange-dark: #E7AE1D;
+}
+
+
+body {
+  background-color: var(--dark-grey);
+  color: #e9edf0;
+  font-family: "Roboto", Avenir, Arial, sans-serif !important;
+}
+
+mark {
+  background: var(--aqua);
+  color: var(--black);
+  padding: 2px 4px;
+}
+
+strike, s {
+  opacity: 0.5 !important;
+}
+
+blockquote {
+  color: var(--white) !important;
+  margin: 1.5em;
+  padding: 1em;
+  border-radius: 8px;
+  border-left: 6px solid var(--aqua-dark);
+  background-color: var(--grey);
+}
+
+strong, em {
+  color: var(--aqua-light) !important;
+}
+
+blockquote strong {
+  font-style: bold !important;
+  color: var(--aqua) !important;
+}
+
+blockquote em {
+  font-style: italic !important;
+  color: var(--aqua) !important;
+}
+
+blockquote p {
+  margin: 0.6em 0;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--grey) !important;
+  margin: 2.5em 0 !important;
+}
+
+img {
+  border: none;
+}
+
+a {
+  color: var(--green-dark);
+  opacity: 1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.resource-icon {
+  background-color: var(--green) !important;
+  width: 0.9em;
+  height: 1.1em;
+  top: 0.2em;
+}
+
+a[href='#'] {
+  color: var(--green-dark);
+}
+
+abbr {
+  color: var(--aqua-light);
+  text-decoration:none;
+  border-bottom: 2px dotted var(--light-grey);
+  cursor: pointer;
+}
+
+/* // MARK: Headers */
+
+h1 {
+  color: var(--white);
+  background: var(--grey);
+  text-align: center;
+  padding: 20px 20px 15px 20px;
+  border-bottom: var(--aqua-dark) 2px solid;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+#rendered-md > h1:first-child {
+  margin-top: 5px;
+  padding-top: 20px;
+}
+
+h2 {
+  color: var(--aqua-dark);
+  margin-top: 40px;
+}
+
+h3 {
+  color: var(--aqua-dark);
+}
+
+h4, h5, h6 {
+  color: var(--white);
+}
+
+/* // MARK: Listen */
+
+ol {
+  margin: 0 0 0 1.5em;
+  padding: 0;
+}
+ol li {
+  margin: 0;
+  padding: 0 0 0 .1em;
+}
+ol li::marker {
+  color: var(--aqua-darker);
+  font-weight: bold;
+}
+
+ul {
+  margin: 0 0 0 .9em;
+  padding: 0;
+}
+ul li {
+  margin: 0;
+  padding: 0 0 0 .7em;
+}
+ul li::marker {
+  color: var(--aqua-darker);
+  content: "\2022";
+  font-weight: bold;
+}
+
+/* // MARK: Notifications */
+
+b-construction, b-error, b-success, b-notice, b-warning, b-help {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 50px;
+  border: 1px solid;
+  border-left: 5px solid;
+  border-radius: 2px;
+  word-wrap: break-word;
+  text-align: left;
+  box-shadow: 3px 3px 7px 0 rgba(0,0,0,0.3);
+  color: var(--grey);
+  background-color: transparent;
+}
+b-construction::before,
+b-error::before,
+b-success::before,
+b-notice::before,
+b-warning::before,
+b-help::before {
+  font-weight: 700;
+  font-size: 1.5em;
+  left: 30px;
+  position: absolute;
+  font-family: "Font Awesome 6 Free Regular", "Font Awesome 6 Free Solid", "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
+
+b-construction {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+b-construction::before {
+  content: "\f6e3";
+  color: var(--orange-light);
+}
+
+b-error {
+  border-color: var(--red);
+  color: var(--red);
+}
+b-error::before {
+  content: "\f071";
+  color: var(--red-light);
+}
+
+b-success {
+  border-color: var(--green-dark);
+  color: var(--green-dark);
+}
+b-success::before {
+  content: "\f00c";
+  color: var(--green-light);
+}
+
+b-warning {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+b-warning::before {
+  content: "\f1e2";
+  color: var(--orange-light);
+}
+
+b-notice {
+  border-color: var(--aqua-darker);
+  color: var(--aqua-darker);
+}
+b-notice::before {
+  content: "\f0eb";
+  color: var(--aqua-light);
+}
+
+b-help {
+  border-color: var(--blue-dark);
+  color: var(--blue-dark);
+}
+b-help::before {
+  content: "\f059";
+  color: var(--blue-light);
+}
+
+
+/* // MARK: Tables */
+
+table {
+  border-collapse: collapse;
+  overflow: hidden;
+}
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th, .jop-tinymce table th, table th {
+  background-color: var(--aqua-dark);
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+table tr td > ul:last-of-type {
+  margin-bottom: 0em;
+}
+
+/* // MARK: Checkboxes */
+
+input[type='checkbox'],
+.md-checkbox .checkbox-label-unchecked,
+.md-checkbox .checkbox-label-checked,
+li.md-checkbox {
+  cursor: pointer !important;
+}
+
+li.md-checkbox [type="checkbox"]:not(:checked),
+li.md-checkbox [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+li.md-checkbox [type="checkbox"]:not(:checked) + label,
+li.md-checkbox [type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.5em;
+  cursor: pointer;
+}
+
+li.md-checkbox [type="checkbox"]:not(:checked) + label:before,
+li.md-checkbox [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--dark-grey);
+  background: var(--light-grey);
+  border-radius: 50%;
+}
+
+li.md-checkbox [type="checkbox"]:checked + label {
+  opacity: .5 !important;
+  color: var(--white);
+}
+li.md-checkbox [type="checkbox"]:checked + label:before {
+  background: var(--aqua-darker);
+  opacity: 1 !important;
+}
+
+li.md-checkbox [type="checkbox"]:not(:checked) + label:after,
+li.md-checkbox [type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: -1px;
+  left: 3px;
+  color: var(--dark-grey);
+  font-weight: bold;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+  opacity: 1 !important;
+}
+
+li.md-checkbox [type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+li.md-checkbox [type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+ul li[class*='checkbox']::before {
+  display: none;
+}
+
+/* // MARK: Gallery */
+img.gallery {
+  border: 1px solid #00A3A3;
+  margin-right: 10px;
+}
+img.gallery:hover {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* // MARK: Copy Anchor (Headers) */
+
+h1 span.copy-anchor-icon, h2 span.copy-anchor-icon, h3 span.copy-anchor-icon {
+  visibility: hidden;
+}
+h1:hover span.copy-anchor-icon, h2:hover span.copy-anchor-icon, h3:hover span.copy-anchor-icon {
+  visibility: visible;
+}
+.cai-gf::before {
+  display: none;
+}
+
+/* // MARK: Mermaid Dark mode */
+.mermaid {
+  background-color: #282c34;
+}
+
+/* // MARK: Calendar */
+.calendar table {
+  border-spacing: 7px;
+  border-collapse: separate;
+  border: 0;
+}
+
+.calendar tr td:first-of-type {
+  color:#fff;
+  width: 20px;
+  background:rgba(255, 255, 255, .3) !important;
+  border-left:0;
+  font-weight: bold;
+}
+
+.calendar table tr th,
+.calendar table tr td {
+  border:0;
+  border-radius:5px;
+  padding:10px;
+}
+
+.calendar table tr td {
+  border-left: 30px solid #007c7c70;
+  width: 45px;
+  background: rgba(255,255,255,.1);
+}
+
+.calendar tr td em {
+  position: absolute;
+  font-weight:bold;
+  top:10px;
+  left:-25px;
+  color: #dddddd !important;
+  padding:0;
+}
+.calendar tr td em::before {
+  display:none;
+}
+
+.calendar tr td a em,
+.calendar tr td a strong {
+  color: var(--green-dark) !important;
+}
+
+.calendar tr td strong {
+  position: absolute;
+  font-weight:bold;
+  top:10px;
+  left:-25px;
+  color: var(--black) !important;
+  padding:0;
+}
+.calendar tr td strong::before {
+  display:none;
+}
+
+.calendar .resource-icon {
+  display: none;
+}
+
+/* [^1] => Add an Explanation next to an Icon */
+.calendar tr td sup {
+  font-size: 11px;
+}
+
+/* <i>[Emoji]</i> => Add an Icon */
+.calendar tr td i {
+  font-style: normal;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+}
+
+/* <m>January</m> => Write the month name */
+.calendar tr td m {
+  font-weight: bold;
+  letter-spacing: -1px;
+  position: absolute;
+  right: 5px;
+  bottom: -3px;
+  color:#aaa;
+  font-size: 80%;
+}
+
+/* <d>[Emoji]</d> => Add an Icon next to the calendar day number */
+.calendar tr td d {
+  font-weight: bold;
+  letter-spacing: -1px;
+  position: absolute;
+  left: -10px;
+  bottom: -3px;
+  font-size: 80%;
+}
+
+/* Do not show the calendar on mobile */
+@media all and (max-width: 450px) {
+  .calendar { display:none; }
+}
+
+/* // MARK: Progress Bar */
+progress {
+  float: right;
+  border-radius: 13px;
+}
+progress::-webkit-progress-bar {
+  height: 13px;
+  background: var(--grey);
+  border-radius: 15px;
+  margin-top: 2px;
+}
+progress::-webkit-progress-value {
+  height: 13px;
+  background: var(--aqua-dark);
+  border-radius: 15px;
+}
+progress:after {
+  content: attr(value) '%';
+  position: absolute;
+  color: var(--black);
+  width: 50px;
+  text-align: center;
+  margin: -20px 0 0 50px;
+  font-size: 13px;
+  font-weight: 700;
+}
