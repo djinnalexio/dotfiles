@@ -1,5 +1,9 @@
-printf '%.s-' {1..$COLUMNS}
+#!/usr/bin/sh
+
+printf '%.s-' {1..80}
+echo
 echo "Installing nerd fonts and symbols:"
+echo
 for font in NerdFontsSymbolsOnly CascadiaCode CodeNewRoman FantasqueSansMono FiraCode JetBrainsMono Meslo SourceCodePro Terminus Ubuntu VictorMono
 do
     if [[ ! -d "$HOME/.local/share/fonts/$font" ]] ; then

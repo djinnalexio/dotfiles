@@ -1,0 +1,12 @@
+{{- if (and (eq .chezmoi.osRelease.id "fedora") (eq .chezmoi.osRelease.variantID "workstation")) -}}
+{{-   include "install-packages.sh_fedora" -}}
+{{- else if eq .chezmoi.osRelease.id "ubuntu" -}}
+{{-   include "install-packages.sh_ubuntu" -}}
+#!/usr/bin/sh
+
+printf '%.s-' {1..80}
+echo
+echo "Install-Package script not defined for this desktop."
+printf '%.s-' {1..80}
+echo
+{{- end -}}

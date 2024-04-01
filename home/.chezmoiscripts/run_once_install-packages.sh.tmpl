@@ -1,5 +1,0 @@
-{{- if eq .chezmoi.osRelease.id "fedora" -}}
-{{-   include "run_once_install-packages.sh_fedora" -}}
-{{- else if eq .chezmoi.osRelease.id "ubuntu" -}}
-{{-   include "run_once_install-packages.sh_ubuntu" -}}
-{{- end -}}
