@@ -2,3 +2,10 @@
 
 # Exclude .chezmoiscripts
 .chezmoiscripts
+
+{{- if ne .shell.includeApps -}}
+# Exclude non-terminal Apps
+.config/joplin-desktop
+.config/MangoHud
+.config/retroarch
+{{- end -}}

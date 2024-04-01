@@ -2,8 +2,9 @@
 
 [data.shell]
     swapGnome = {{ promptBool "Shell: Do you want the favorite terminal emulator to open instead of gnome-terminal? (y/n)" }}
+    includeApps = {{ promptBool "Shell: Do you want to include config files for non-terminal Apps (Joplin, Retroarch, etc.)? (y/n)" }}
 
 [data.git]
-    name = "{{ promptString "Git: Enter your committer name" }}"
+    name = "{{ promptString "Git: Enter your committer username" }}"
     email = "{{ promptString "Git: Enter your email address" }}"
     signingkey = "{{ promptString "Git: Enter your current GPG Key ID" }}"

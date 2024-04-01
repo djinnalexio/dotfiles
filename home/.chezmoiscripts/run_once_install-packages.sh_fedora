@@ -1,0 +1,26 @@
+#!/usr/bin/sh
+
+printf '%.s-' {1..$COLUMNS}
+echo "Setup dnf:"
+sudo tee -a /etc/dnf/dnf.conf > /dev/null << EOT
+fastestmirror=1
+deltarpm=true
+keepcache=true
+defaultyes=yes
+max_parallel_download=20
+EOT
+cat /etc/dnf/dnf.conf
+sudo dnf update -y --refresh
+
+printf '%.s-' {1..$COLUMNS}
+echo "Installing terminal tools:"
+sudo dnf install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim tldr unzip zip zsh -y
+chsh -s /usr/bin/zsh
+
+printf '%.s-' {1..$COLUMNS}
+echo "Installing vim-plug and setting up plugins for neovim:"
+if [[ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]] ; then
+    wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
+fi
+sudo dnf install nodejs -y
+nvim -c ':PlugInstall' -c ':qa'
