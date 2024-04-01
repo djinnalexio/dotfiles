@@ -1,9 +1,3 @@
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
-
 [user]
     name = {{ .git.name }}
     email = {{ .git.email }}
@@ -27,8 +21,8 @@
     cane = commit --amend --no-edit
     a = add .
 
-[core]
-    editor = nvim
+[commit]
+    gpgsign = true
 
 [color]
     diff = auto
@@ -38,8 +32,17 @@
     ui = true
     pager = true
 
-[commit]
-    gpgsign = true
+[core]
+    editor = nvim
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [init]
     defaultBranch = main
+
+[pull]
+    rebase = true

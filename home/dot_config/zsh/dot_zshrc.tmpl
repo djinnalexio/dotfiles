@@ -50,6 +50,10 @@ for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
 done
 unset rc
 
+#~~~~~~~~~~~~~~~~~~~~~~~ Disable P10K configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# For distrobox containers with separate home directories
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+
 #~~~~~~~~~~~~~~~~~~~ Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~
 # syntax-highlighting needs to be at the bottom of '.zshrc' so that it runs after anything
 # else that modifies the command-line buffer
