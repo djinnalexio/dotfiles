@@ -26,12 +26,6 @@ Here is the list of programs that are referenced in the shell configuration scri
 Chezmoi supports the template format from Go Extended.
 See the guide [here](https://www.chezmoi.io/user-guide/templating/).
 
-### [.chezmoiroot](https://www.chezmoi.io/user-guide/advanced/customize-your-source-directory/)
-
-Placed at the root of the directory, it tells chezmoi which subdirectory to read the source state from.
-
-This way, other files placed at the root but not managed by chezmoi don't need to be included in `.chezmoiignore`.
-
 ### [.chezmoi.toml.tmpl](https://www.chezmoi.io/docs/reference/#chezmoiignore)
 
 The file `.chezmoi.<format>.tmpl` is used during `chezmoi init` to generate the configuration file at
@@ -53,6 +47,22 @@ This file contains a list of files and patterns that chezmoi will delete from th
 By adding if-statements, it is possible to include and exclude files and directories based on the target machine,
 user, and other conditions.
 
-### [run_once_install-packages.sh.tmpl](https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#install-packages-with-scripts)
+### [.chezmoiroot](https://www.chezmoi.io/user-guide/advanced/customize-your-source-directory/)
 
-This file contains commands to run commands when running `chezmoi apply` or `chezmoi update` for the first time. With the `run_once` prefix, the script will not run again unless its contains change.
+Placed at the root of the directory, it tells chezmoi which subdirectory to read the source state from.
+
+This way, other files placed at the root but not managed by chezmoi don't need to be included in `.chezmoiignore`.
+
+### [.chezmoiscripts](https://www.chezmoi.io/reference/special-files-and-directories/chezmoiscripts/)
+
+This folder contains scripts that will be run alongside chezmoi. it will not be copied to the target system.
+
+It is best practice to make sure that scripts used with `chezmoi` are idempotent (that running them repeatedly will not change the results).
+
+### [run_once_*.sh](https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#install-packages-with-scripts)
+
+These scripts contain commands to run commands when running `chezmoi apply` for the first time. There is also the `run_on_change_` prefix which sets the script to run again each time its contains change.
+
+They can be set to run again resetting the state with `chezmoi state reset`.
+
+You can even specify if you want the scripts to run before or after `chezmoi` has applied the dotfiles with the prefixes `before_` and `after_` (e.g. `run_once_before_<>.sh`)
