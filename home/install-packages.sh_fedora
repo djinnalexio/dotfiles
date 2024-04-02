@@ -33,11 +33,6 @@ git-lfs install
 
 printf "%.s-" $(seq 1 80)
 echo
-echo "Setting up ZSH as the default shell:"
-chsh -s /usr/bin/zsh
-
-printf "%.s-" $(seq 1 80)
-echo
 echo "PLEASE REBOOT AFTER THIS"
 printf "%.s-" $(seq 1 80)
 echo

@@ -17,11 +17,6 @@ git-lfs install
 
 printf "%.s-" $(seq 1 80)
 echo
-echo "Setting up ZSH as the default shell:"
-chsh -s /usr/bin/zsh
-
-printf "%.s-" $(seq 1 80)
-echo
 echo "Installing Flatpak:"
 sudo DEBIAN_FRONTEND=noninteractive apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo

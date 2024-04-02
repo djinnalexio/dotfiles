@@ -1,7 +1,7 @@
 # -*-mode:gitignore-*- vim:ft=gitignore
 
 # Exclude script templates
-install-*
+install-packages.sh_*
 
 {{- if not .shell.includeApps -}}
 # Exclude non-terminal Apps
