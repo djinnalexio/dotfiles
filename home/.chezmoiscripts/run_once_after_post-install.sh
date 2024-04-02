@@ -29,6 +29,11 @@ nvim -c ':PlugInstall' -c ':qa'
 
 printf "%.s-" $(seq 1 80)
 echo
+echo "Configure GNOME Terminal:"
+dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/gnome-terminal-profiles.dconf
+
+printf "%.s-" $(seq 1 80)
+echo
 echo "Setting up ZSH as the default shell:"
 chsh -s /usr/bin/zsh
 
