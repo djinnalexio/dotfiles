@@ -29,8 +29,12 @@ nvim -c ':PlugInstall' -c ':qa'
 
 printf "%.s-" $(seq 1 80)
 echo
-echo "Configure GNOME Terminal:"
+echo "Configure GNOME Terminal and some settings:"
 dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/gnome-terminal-profiles.dconf
+gsettings set org.gnome.desktop.background show-desktop-icons false
+gsettings set org.gnome.desktop.interface clock-format '24h'
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+gsettings set org.gnome.desktop.interface clock-show-weekday true
 
 printf "%.s-" $(seq 1 80)
 echo
