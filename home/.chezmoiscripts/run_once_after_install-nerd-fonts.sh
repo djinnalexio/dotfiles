@@ -18,3 +18,6 @@ do
         echo
     fi
 done
+
+printf '%.s-' {1..80}
+echo

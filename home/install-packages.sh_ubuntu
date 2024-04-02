@@ -4,31 +4,25 @@ printf '%.s-' {1..80}
 echo
 echo "Updating System:"
 sudo apt update -y
-sudo apt upgrade -y
-sudo apt-get autoclean -y
-sudo apt-get autoremove -y
+sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get autoclean -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get autoremove -y
 
 printf '%.s-' {1..80}
 echo
 echo "Installing terminal tools:"
-sudo apt-get --ignore-missing install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim tldr unzip zip zsh -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get --ignore-missing install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh -y
+git-lfs install
 chsh -s /usr/bin/zsh
 
 printf '%.s-' {1..80}
 echo
-echo "Installing vim-plug and setting up plugins for neovim:"
-if [[ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]] ; then
-    wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
-fi
-sudo apt install nodejs -y
-nvim -c ':PlugInstall' -c ':qa'
+echo "Installing Flatpak:"
+sudo DEBIAN_FRONTEND=noninteractive apt install flatpak gnome-software-plugin-flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 printf '%.s-' {1..80}
 echo
-echo "Installing Flatpak:"
-sudo apt install flatpak -y
-sudo apt install gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
+echo "PLEASE REBOOT AFTER THIS"
 printf '%.s-' {1..80}
 echo

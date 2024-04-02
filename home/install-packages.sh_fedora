@@ -2,8 +2,16 @@
 
 printf '%.s-' {1..80}
 echo
-echo "Setup dnf:"
-sudo tee -a /etc/dnf/dnf.conf > /dev/null << EOT
+echo "Setting up /etc/dnd/dnf.conf:"
+sudo tee /etc/dnf/dnf.conf > /dev/null << EOT
+# see \`man dnf.conf\` for defaults and possible options
+
+[main]
+gpgcheck=True
+installonly_limit=3
+clean_requirements_on_remove=True
+best=False
+skip_if_unavailable=True
 fastestmirror=1
 deltarpm=true
 keepcache=true
@@ -11,22 +19,21 @@ defaultyes=yes
 max_parallel_download=20
 EOT
 cat /etc/dnf/dnf.conf
+
+printf '%.s-' {1..80}
+echo
+echo "Updating System:"
 sudo dnf update -y --refresh
 
 printf '%.s-' {1..80}
 echo
 echo "Installing terminal tools:"
-sudo dnf install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim tldr unzip zip zsh -y
+sudo dnf install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh -y
+git-lfs install
 chsh -s /usr/bin/zsh
 
 printf '%.s-' {1..80}
 echo
-echo "Installing vim-plug and setting up plugins for neovim:"
-if [[ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]] ; then
-    wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
-fi
-sudo dnf install nodejs -y
-nvim -c ':PlugInstall' -c ':qa'
-
+echo "PLEASE REBOOT AFTER THIS"
 printf '%.s-' {1..80}
 echo
