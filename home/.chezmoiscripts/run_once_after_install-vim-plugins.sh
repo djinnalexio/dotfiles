@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
 echo "Installing vim-plug and setting up plugins for neovim:"
 if [[ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]] ; then
@@ -8,5 +8,5 @@ if [[ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]] ; then
 fi
 nvim -c ':PlugInstall' -c ':qa'
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo

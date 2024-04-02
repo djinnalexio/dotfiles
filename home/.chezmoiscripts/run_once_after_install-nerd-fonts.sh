@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
 echo "Installing nerd fonts and symbols:"
 echo
@@ -19,5 +19,5 @@ do
     fi
 done
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo

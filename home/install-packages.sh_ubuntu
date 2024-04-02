@@ -1,28 +1,33 @@
 #!/usr/bin/sh
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
 echo "Updating System:"
-sudo apt update -y
-sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
-sudo DEBIAN_FRONTEND=noninteractive apt-get autoclean -y
-sudo DEBIAN_FRONTEND=noninteractive apt-get autoremove -y
+for action in update upgrade autoclean autoremove; do
+    sudo DEBIAN_FRONTEND=noninteractive apt $action -y
+done
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
 echo "Installing terminal tools:"
-sudo DEBIAN_FRONTEND=noninteractive apt-get --ignore-missing install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh -y
+for package in autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh; do
+    sudo DEBIAN_FRONTEND=noninteractive apt install  $package -y
+done
 git-lfs install
+
+printf "%.s-" $(seq 1 80)
+echo
+echo "Setting up ZSH as the default shell:"
 chsh -s /usr/bin/zsh
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
 echo "Installing Flatpak:"
 sudo DEBIAN_FRONTEND=noninteractive apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
 echo "PLEASE REBOOT AFTER THIS"
-printf '%.s-' {1..80}
+printf "%.s-" $(seq 1 80)
 echo
