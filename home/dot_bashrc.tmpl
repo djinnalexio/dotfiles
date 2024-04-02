@@ -12,7 +12,7 @@
 # My BASH configuration file for interactive shells.
 
 # Switch out of gnome-terminal which is hardcoded as default
-swapGnomeTerminal={{- .shell.swapGnome -}}
+swapGnomeTerminal={{- .shell.swapGnome }}
 currentTerminal=$(< "/proc/${1:-$PPID}/comm")
 favoriteTerminal=kitty
 
