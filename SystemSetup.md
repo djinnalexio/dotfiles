@@ -1,6 +1,6 @@
-# Software Setup Notes for Gnome
+# Software Setup Notes for GNOME
 
-- [Software Setup Notes for Gnome](#software-setup-notes-for-gnome)
+- [Software Setup Notes for GNOME](#software-setup-notes-for-gnome)
   - [Primary Setup](#primary-setup)
     - [Z-shell](#z-shell)
     - [Import Dotfiles](#import-dotfiles)
@@ -149,7 +149,7 @@ Finally, clean up by deleting the script, `.deb` package, and `synology-drive` f
 
     `extractgst.sh`:
 
-    ```bash
+    ```sh
     #!/bin/sh
     gst=/usr/share/gnome-shell/gnome-shell-theme.gresource
     workdir=${HOME}/shell-theme

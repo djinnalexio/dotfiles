@@ -1,6 +1,6 @@
-#!/usr/bin/sh
+#!/bin/sh
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Setting up /etc/dnd/dnf.conf:"
 sudo tee /etc/dnf/dnf.conf > /dev/null << EOT
@@ -20,19 +20,19 @@ max_parallel_download=20
 EOT
 cat /etc/dnf/dnf.conf
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Updating System:"
 sudo dnf update -y --refresh
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing terminal tools:"
 sudo dnf install autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh -y
 git-lfs install
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "PLEASE REBOOT AFTER THIS"
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo

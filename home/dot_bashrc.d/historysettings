@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # Bash history settings
 
@@ -31,4 +31,3 @@ if [[ ! $PROMPT_COMMAND =~ 'history -a' ]]; then
     # 3) re-read the history from file
     #PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 fi
-

@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 # Functions can be more rich and complex than aliases.
 # They can contain multiple lines of instructions and loops.

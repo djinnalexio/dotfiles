@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 # Source: https://github.com/zsh-users/zsh-history-substring-search/blob/master/zsh-history-substring-search.zsh
 

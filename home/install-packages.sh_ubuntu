@@ -1,13 +1,13 @@
-#!/usr/bin/sh
+#!/bin/sh
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Updating System:"
 for action in update upgrade autoclean autoremove; do
     sudo DEBIAN_FRONTEND=noninteractive apt $action -y
 done
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing terminal tools:"
 for package in autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh; do
@@ -15,14 +15,14 @@ for package in autojump bash-completion cmatrix git git-lfs kitty lsd man neofet
 done
 git-lfs install
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing Flatpak:"
 sudo DEBIAN_FRONTEND=noninteractive apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "PLEASE REBOOT AFTER THIS"
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo

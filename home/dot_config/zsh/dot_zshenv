@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 # The first zsh config file to be read.
 # Used to set environment variables.
