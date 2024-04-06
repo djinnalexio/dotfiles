@@ -59,6 +59,9 @@ This folder contains scripts that will be run alongside chezmoi. it will not be 
 
 It is best practice to make sure that scripts used with `chezmoi` are idempotent (that running them repeatedly will not change the results).
 
+>Scripts will normally run with their working directory set to their equivalent location in the destination directory.
+>If the equivalent location in the destination directory either does not exist or is not a directory, then chezmoi will walk up the script's directory hierarchy and run the script in the first directory that exists and is a directory.
+
 ### [run_once_*.sh](https://www.chezmoi.io/user-guide/use-scripts-to-perform-actions/#install-packages-with-scripts)
 
 These scripts contain commands to run commands when running `chezmoi apply` for the first time. There is also the `run_on_change_` prefix which sets the script to run again each time its contains change.

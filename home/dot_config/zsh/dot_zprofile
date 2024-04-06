@@ -1,3 +1,4 @@
 #/usr/bin/zsh
 
-# Script launched at login
+# Script launched at start of login shells
+#  (login to an account at start like ssh sessions or systems without graphical environment)

@@ -1,10 +1,10 @@
-#!/usr/bin/sh
+#!/bin/sh
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing nerd fonts and symbols:"
 echo
-for font in NerdFontsSymbolsOnly CascadiaCode CodeNewRoman FantasqueSansMono FiraCode JetBrainsMono Meslo SourceCodePro Terminus Ubuntu VictorMono
+for font in NerdFontsSymbolsOnly CascadiaCode CodeNewRoman FiraCode JetBrainsMono Meslo SourceCodePro UbuntuMono VictorMono
 do
     if [ ! -d "$HOME/.local/share/fonts/$font" ] ; then
         wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$font.zip" --directory-prefix ~/.local/share/fonts
@@ -19,7 +19,7 @@ do
     fi
 done
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing vim-plug and setting up plugins for neovim:"
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ] ; then
@@ -27,19 +27,19 @@ if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ] ; then
 fi
 nvim -c ':PlugInstall' -c ':qa'
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
-echo "Configure GNOME Terminal and some settings:"
-dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/gnome-terminal-profiles.dconf
 gsettings set org.gnome.desktop.background show-desktop-icons false
+echo "Disabled icons on GNOME desktop."
 gsettings set org.gnome.desktop.interface clock-format '24h'
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface clock-show-weekday true
+echo "Set clock format."
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Setting up ZSH as the default shell:"
 chsh -s /usr/bin/zsh
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo

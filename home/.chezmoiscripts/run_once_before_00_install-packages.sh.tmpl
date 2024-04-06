@@ -3,11 +3,11 @@
 {{- else if eq .chezmoi.osRelease.id "ubuntu" -}}
 {{-   include "install-packages.sh_ubuntu" -}}
 {{- else -}}
-#!/usr/bin/sh
+#!/bin/sh
 
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Install-Package script not defined for this desktop. Remember to update your packages and install what you need."
-printf "%.s-" $(seq 1 80)
+printf "%.s=" $(seq 1 $(tput cols))
 echo
 {{- end -}}

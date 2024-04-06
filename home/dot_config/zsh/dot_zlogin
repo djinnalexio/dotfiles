@@ -1,9 +1,10 @@
 #!/usr/bin/zsh
 
-# Script launched at login
+# Script launched at start of login shells
+#  (login to an account at start like ssh sessions or systems without graphical environment)
 
 # It does basically the same thing as 'zprofile' except that
 # zlogin is derived is a derivative of CSH's .login whereas
 # zprofile is a derivative of bash's .bash_profile.
 
-# Let's stick with zprofile since .bash_profile is more familiar.
+# Let's stick with zprofile since that's what Bourne-type shells use.

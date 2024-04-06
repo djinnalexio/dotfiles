@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 ######################################################
 #      _  _ _                   _           _        #
@@ -13,7 +13,7 @@
 # I leave this file almost empty and put all the contents in sub-files that each have
 # their function/feature for easy debugging and editing.
 
-#~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~~~~
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -21,14 +21,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#~~~~~~~~~ Switch out of gnome-terminal which is hardcoded as default ~~~~~~~~~
-swapGnomeTerminal={{- .shell.swapGnome }}
+#~~~~~~~~~ Switch out of gnome-terminal which is hardcoded as default ~~~~~~~~~~
+swapGNOMEterminal={{- .shell.swapGNOME }}
 currentTerminal=$(< "/proc/${1:-$PPID}/comm")
 favoriteTerminal=kitty
 # If the alternative terminal is installed
 # and the current parent process (which should correspond to the terminal emulator) is gnome-terminal
 if command -v $favoriteTerminal &> /dev/null; then
-    if [[ $currentTerminal = "gnome-terminal-" && $swapGnomeTerminal = true ]]; then
+    if [[ $currentTerminal = "gnome-terminal-" && $swapGNOMEterminal = true ]]; then
     	# Open a new terminal while indicating the current directory
         $favoriteTerminal --working-directory="$PWD" &
         # Make the new process independent
@@ -39,23 +39,29 @@ if command -v $favoriteTerminal &> /dev/null; then
         pkill $currentTerminal
     fi
 fi
-unset favoriteTerminal
-unset currentTerminal
-unset swapGnomeTerminal
 
-#~~~~~~~~~~~~~~~~~~~~~~~ Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~ Save GNOME Terminal profiles on exit ~~~~~~~~~~~~~~~~~~~~
+save_GNOME_profiles() {
+    if [[ $currentTerminal = "gnome-terminal-" ]]; then
+        dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/.config/gnome_terminal_profiles_dump.dconf
+    fi
+}
+trap 'save_GNOME_profiles' EXIT
+
+#~~~~~~~~~~~~~~~~~~~~~~~ Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~~
 # Get files recursively in '$ZDOTDIR/zshrc.d' excluding ".md" files and source each of them
 for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
 	. "$rc"
 done
 unset rc
 
-#~~~~~~~~~~~~~~~~~~~~~~~ Disable P10K configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~~~~~~~ Disable P10K configuration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # For distrobox containers with separate home directories
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
-#~~~~~~~~~~~~~~~~~~~ Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~
-# syntax-highlighting needs to be at the bottom of '.zshrc' so that it runs after anything
+
+#~~~~~~~~~~~~~~~~~~~ Source Imported plugins not in zshrc.d ~~~~~~~~~~~~~~~~~~~~
+# Syntax-highlighting needs to be at the bottom of '.zshrc' so that it runs after anything
 # else that modifies the command-line buffer
 . "$ZDOTDIR/zsh-syntax-highlighting@/zsh-syntax-highlighting.zsh"
 . "$ZDOTDIR/powerlevel10k@/powerlevel10k.zsh-theme"

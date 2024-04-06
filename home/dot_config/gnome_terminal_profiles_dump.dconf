@@ -1,0 +1,37 @@
+[/]
+default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '8b1f8642-ff13-4412-b988-cb099095e191']
+
+[:8b1f8642-ff13-4412-b988-cb099095e191]
+background-color='rgb(90,50,0)'
+background-transparency-percent=30
+bold-is-bright=true
+cursor-blink-mode='on'
+default-size-columns=100
+default-size-rows=30
+font='UbuntuMono Nerd Font Mono 12'
+foreground-color='rgb(255,240,230)'
+scrollback-lines=100000
+scrollback-unlimited=true
+text-blink-mode='focused'
+title=''
+use-system-font=false
+use-theme-colors=false
+use-transparent-background=true
+visible-name='Fall'
+
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-transparency-percent=20
+bold-is-bright=true
+cursor-blink-mode='on'
+default-size-columns=100
+default-size-rows=30
+font='UbuntuMono Nerd Font Mono 12'
+scrollback-lines=100000
+scrollback-unlimited=true
+text-blink-mode='focused'
+title=''
+use-system-font=false
+use-theme-colors=true
+use-transparent-background=true
+visible-name='Default'
