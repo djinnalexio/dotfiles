@@ -1,10 +1,10 @@
 [/]
-default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
+default='8b1f8642-ff13-4412-b988-cb099095e191'
 list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '8b1f8642-ff13-4412-b988-cb099095e191']
 
 [:8b1f8642-ff13-4412-b988-cb099095e191]
 background-color='rgb(90,50,0)'
-background-transparency-percent=30
+background-transparency-percent=15
 bold-is-bright=true
 cursor-blink-mode='on'
 default-size-columns=100

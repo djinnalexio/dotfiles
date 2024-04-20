@@ -1,8 +1,14 @@
-#/usr/bin/zsh
+# .bash_profile
 
 # Script launched at start of login shells
 #  (login to an account at start like desktops or ssh sessions)
 
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
 # Make apps use simple sort order (comparison of code point values of characters)
 export LC_COLLATE=C
 
+# User specific environment and startup programs
