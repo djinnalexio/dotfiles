@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# dconf file hash:{{ include "dot_config/gnome_terminal_profiles_dump.dconf" | sha256sum }}
+# dconf file hash:{{ include "dot_config/gnome_terminal_profiles.dconf" | sha256sum }}
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 dconf reset -f /org/gnome/terminal/legacy/profiles:/
-dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/gnome_terminal_profiles_dump.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/gnome_terminal_profiles.dconf
 echo "Applied GNOME terminal profiles."
 
 printf "%.s=" $(seq 1 $(tput cols))

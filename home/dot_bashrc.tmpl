@@ -34,7 +34,7 @@ fi
 # Save GNOME Terminal profiles on exit
 save_GNOME_profiles() {
     if [[ $currentTerminal = "gnome-terminal-" ]]; then
-        dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/.config/gnome_terminal_profiles_dump.dconf
+        dconf dump /org/gnome/terminal/legacy/profiles:/ > ~/.config/gnome_terminal_profiles.dconf
     fi
 }
 trap 'save_GNOME_profiles' EXIT
