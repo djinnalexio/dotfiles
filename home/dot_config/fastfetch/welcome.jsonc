@@ -1,0 +1,168 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    // "logo": {
+    //     "type": "builtin",
+    //     "source": "Linux" // uses system logo by default
+    // },
+    "display": {
+        "separator": "   "
+
+
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "╭───────────«« \u001b[1m\u001b[31m- - - - - - - - HARDWARE - - - - - - - -\u001b[0m »»───────────╮"
+        },
+        {
+            "type": "host",
+            "key": " 󰌢 Machine    ",
+            "keyColor": "cyan",
+            "format": "{5} {2} {3}"
+        },
+        {
+            "type": "bios",
+            "key": " 󰘚 Firmware   ",
+            "keyColor": "dim_blue",
+            "format": "({5}) {2}"
+        },
+        {
+            "type": "cpu",
+            "key": " 󰻠 CPU        ",
+            "keyColor": "blue",
+            "temp": true
+        },
+        {
+            "type": "gpu",
+            "key": " 󰍛 GPU        ",
+            "keyColor": "dim_green",
+            "temp": true,
+            "driverSpecific": true
+        },
+        {
+            "type": "memory",
+            "key": " 󰑭 Memory     ",
+            "keyColor": "red",
+            "percent": {"green": 60, "yellow": 85}
+        },
+        {
+            "type": "physicaldisk",
+            "key": " 󱛟 Disk       ",
+            "keyColor": "white",
+            "format": "{2} ({5}) [{7}]",
+            "temp":true
+        },
+        {
+            "type": "disk",
+            "key": "  Drive      ",
+            "keyColor": "magenta",
+            "showExternal": true,
+            "showHidden": false,
+            "showReadOnly": true,
+            "showSubvolumes": false,
+            "showUnknown": false,
+            "percent": {"green": 60,"yellow": 85}
+        },
+        {
+            "type": "display",
+            "key": " 󰍹 Resolution ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "gamepad",
+            "key": "  Gamepad    ",
+            "keyColor": "dim_red"
+        },
+        {
+            "type": "custom",
+            "format": "├───────────«« \u001b[1m\u001b[34m- - - - - - - - SOFTWARE - - - - - - - -\u001b[0m »»───────────┤"
+        },
+        {
+            "type": "title",
+            "key": "  User       ",
+            "keyColor": "magenta",
+            "format": "{6}{7}{8}",
+            "color": {"user": "magenta", "host": "magenta"}
+        },
+        {
+            "type": "os",
+            "key": "  OS         ",
+            "keyColor": "bright_yellow"
+        },
+        {
+            "type": "kernel",
+            "key": "  Kernel     ",
+            "keyColor": "red"
+        },
+        {
+            "type": "de",
+            "key": "  DE         ",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "wm",
+            "key": "  WM         ",
+            "keyColor": "dim_cyan"
+        },
+        {
+            "type": "theme",
+            "key": " 󰉼 Theme      ",
+            "keyColor": "green"
+        },
+        {
+            "type": "icons",
+            "key": " 󰀻 Icon Pack  ",
+            "keyColor": "dim_green"
+        },
+        {
+            "type": "wallpaper",
+            "key": " 󰸉 Wallpaper  ",
+            "keyColor": "dim_green"
+        },
+        {
+            "type": "terminalfont",
+            "key": "  Font       ",
+            "keyColor": "white"
+        },
+        {
+            "type": "shell",
+            "key": "  Shell      ",
+            "keyColor": "dim_blue",
+            "format": "{6} {4}"
+        },
+        {
+            "type": "terminal",
+            "key": "  Terminal   ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": " 󰏖 Packages   ",
+            "keyColor": "bright_cyan"
+        },
+        {
+            "type": "uptime",
+            "key": " 󰅐 Uptime     ",
+            "keyColor": "red"
+        },
+        {
+            "type": "player",
+            "key": " 󰌳 player     ",
+            "keyColor": "dim_yellow"
+        },
+        {
+            "type": "media",
+            "key": " 󰝚 Media      ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "╰───────────»» \u001b[1m\u001b[33m- - - - - - -╰─〔❨ ✧ ✧ ❩〕─╯- - - - - - -\u001b[0m ««──────────╯"
+        },
+        {
+            "type": "colors",
+            "symbol": "star",
+            "paddingLeft": 28
+        }
+    ]
+}

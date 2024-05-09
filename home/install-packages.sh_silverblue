@@ -1,0 +1,51 @@
+#!/bin/sh
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+echo "Setting up /etc/rpm-ostreed.conf:"
+sudo tee /etc/rpm-ostreed.conf > /dev/null << EOT
+# Entries in this file show the compile time defaults.
+# You can change settings by editing this file.
+# For option meanings, see rpm-ostreed.conf(5).
+
+[Daemon]
+AutomaticUpdatePolicy=stage
+IdleExitTimeout=60
+EOT
+cat /etc/rpm-ostreed.conf
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+echo 'Reload `ostree` and enable the automatic timer:'
+rpm-ostree reload
+systemctl enable rpm-ostreed-automatic.timer --now
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+echo "Upgrade the system:"
+rpm-ostree upgrade
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+echo "Install layered packages:"
+rpm-ostree install autojump-zsh cmatrix distrobox ecryptfs-utils fastfetch kitty langpacks-core-fr langpacks-fr lsd neovim tldr zsh
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+cat << EOT
+It is recommended to leave the root image alone as much as possible.
+To perform various tasks that would require root access without compromising
+the base system or simply use it as if it wasn't immutable, use distrobox
+to create a container that can act as a layer for your home directory.
+
+distrobox create --image <distro>:latest --name <name>
+
+By creating a box without specifying a home directory, it will use the
+user home directory by default, working with the same user files as the
+main system.
+
+Now,please reboot your system to move to the new image.
+EOT
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo

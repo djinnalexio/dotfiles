@@ -25,7 +25,11 @@ echo "Installing vim-plug and setting up plugins for neovim:"
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ] ; then
     wget "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" --directory-prefix ~/.local/share/nvim/site/autoload/
 fi
-nvim -c ':PlugInstall' -c ':qa'
+if command -v nvim &> /dev/null; then
+    nvim -c ':PlugInstall' -c ':qa'
+else
+    echo 'Neovim is not installed yet. Run `:PlugInstall` the first time you use it to install the plugins.'
+fi
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo
@@ -35,11 +39,30 @@ gsettings set org.gnome.desktop.interface clock-format '24h'
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 echo "Set clock format."
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'variable-refresh-rate']"
+echo "Enabled V-Sync and fractional scaling."
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Setting up ZSH as the default shell:"
 chsh -s /usr/bin/zsh
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+echo "Enabling flathub repository:"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update --appstream
+flatpak update
+
+printf "%.s=" $(seq 1 $(tput cols))
+echo
+echo "Installing Pywal and some alternative backends for color parsing:"
+if command -v pip3 &> /dev/null; then
+    pip3 install --user pywal16 colorz haishoku colorthief
+    echo 'Run `wal --cols16 --alpha 75 --saturate 1 -i <path/to/img>` to create and apply a new color scheme.'
+else
+    echo '`pip` not found. Pywal was not installed.'
+fi
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo

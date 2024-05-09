@@ -30,11 +30,14 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " themes
-Plug 'morhetz/gruvbox'
-Plug 'wadackel/vim-dogrun'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'rigellute/shades-of-purple.vim'
-Plug 'dracula/vim'
+Plug 'uZer/pywal16.nvim', { 'as': 'pywal16' }
+"Plug 'dylanaraps/wal.vim'
+
+"Plug 'morhetz/gruvbox'
+"Plug 'wadackel/vim-dogrun'
+"Plug 'drewtempelmeyer/palenight.vim'
+"Plug 'rigellute/shades-of-purple.vim'
+"Plug 'dracula/vim'
 
 " file explorer & icons & highlighting | use fonts from https://www.nerdfonts.com/font-download
 Plug 'preservim/nerdtree' |
@@ -120,7 +123,7 @@ set showmatch                           " Show matching brackets
 set nowrap                              " Display long lines as just one line
 set pumheight=10                        " Makes popup menu smaller
 set background=dark
-"colorscheme dracula                     " set color scheme
+colorscheme pywal16                      " set color scheme
 
 "disable vim background to preserve terminal transparency
 hi Normal guibg=NONE ctermbg=NONE
@@ -339,7 +342,7 @@ nmap <leader>dp :diffput<CR>
 nmap <leader>dg :diffget<CR>
 
 " COC completion
-inoremap <silent><expr> <c-space> coc#refresh()
+" inoremap <silent><expr> <c-space> coc#refresh()
 
 " FZF
 map <leader>f :Files<CR>

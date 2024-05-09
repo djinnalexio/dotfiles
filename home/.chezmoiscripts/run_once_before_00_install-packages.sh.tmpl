@@ -1,5 +1,7 @@
 {{- if (and (eq .chezmoi.osRelease.id "fedora") (eq .chezmoi.osRelease.variantID "workstation")) -}}
 {{-   include "install-packages.sh_fedora" -}}
+{{- else if (and (eq .chezmoi.osRelease.id "fedora") (eq .chezmoi.osRelease.variantID "silverblue")) -}}
+{{-   include "install-packages.sh_silverblue" -}}
 {{- else if eq .chezmoi.osRelease.id "ubuntu" -}}
 {{-   include "install-packages.sh_ubuntu" -}}
 {{- else -}}
@@ -8,6 +10,8 @@
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Install-Package script not defined for this desktop. Remember to update your packages and install what you need."
+echo "Packages that would have been installed: cmatrix ecryptfs-utils git fastfetch kitty lsd neovim tldr zsh ..."
+
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 {{- end -}}

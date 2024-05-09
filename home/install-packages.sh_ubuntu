@@ -10,16 +10,14 @@ done
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing terminal tools:"
-for package in autojump bash-completion cmatrix git git-lfs kitty lsd man neofetch neovim nodejs tldr unzip zip zsh; do
+for package in autojump-zsh bash-completion cmatrix ecryptfs-utils git kitty lsd man fastfetch neovim nodejs tldr unzip zip zsh; do
     sudo DEBIAN_FRONTEND=noninteractive apt install  $package -y
 done
-git-lfs install
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing Flatpak:"
 sudo DEBIAN_FRONTEND=noninteractive apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo

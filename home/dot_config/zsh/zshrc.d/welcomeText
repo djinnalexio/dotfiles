@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-# Welcome Message to the Shell
-
-clear -x
-
-if command -v neofetch &> /dev/null; then
-    neofetch --config ~/.config/neofetch/quick.conf
-fi

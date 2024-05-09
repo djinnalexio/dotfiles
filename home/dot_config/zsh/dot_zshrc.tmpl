@@ -13,12 +13,25 @@
 # I leave this file almost empty and put all the contents in sub-files that each have
 # their function/feature for easy debugging and editing.
 
+#~~~~~~~~~~~~~~~~~~~~~~~~ Welcome Message to the Shell ~~~~~~~~~~~~~~~~~~~~~~~~~
+# Placing it at the top because P10k messes it when it pipes it
+clear -x
+if command -v fastfetch &> /dev/null; then
+    fastfetch -c ~/.config/fastfetch/welcome.jsonc --processing-timeout 5
+fi
+
 #~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~~~~
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~ Apply Pywal colorscheme ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# For distrobox containers with separate home directories
+if [[ -f ~/.cache/wal/sequences ]]; then
+    (cat ~/.cache/wal/sequences &)
 fi
 
 #~~~~~~~~~ Switch out of gnome-terminal which is hardcoded as default ~~~~~~~~~~
@@ -49,8 +62,8 @@ save_GNOME_profiles() {
 trap 'save_GNOME_profiles' EXIT
 
 #~~~~~~~~~~~~~~~~~~~~~~~ Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~~
-# Get files recursively in '$ZDOTDIR/zshrc.d' excluding ".md" files and source each of them
-for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
+# Get files recursively in '$ZDOTDIR/.zshrc.d' excluding ".md" files and source each of them
+for rc in $(find $ZDOTDIR/.zshrc.d -type f -not -name "*.md"); do
 	. "$rc"
 done
 unset rc

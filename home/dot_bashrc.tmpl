@@ -47,10 +47,8 @@ fi
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
 fi
-
-export PATH
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -59,6 +57,13 @@ export TERM=xterm-256color
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
+
+# Welcome Message to the Shell
+clear -x
+
+if command -v fastfetch &> /dev/null; then
+    fastfetch -c ~/.config/fastfetch/welcome.jsonc --processing-timeout 5
+fi
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
@@ -82,3 +87,8 @@ complete -cf man
 
 # change directory without cd
 shopt -s autocd
+
+# Apply Pywal colorscheme
+if [[ -f ~/.cache/wal/sequences ]]; then
+    (cat ~/.cache/wal/sequences &)
+fi

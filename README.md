@@ -10,16 +10,18 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin init --apply djinnal
 
 ## Shell Configuration Programs
 
-Here is the list of programs that are referenced in the shell configuration scripts:
+Here some of the programs that are installed by the shell configuration scripts:
 
 * `autojump`: Quickly jump back to previously visited directories
-* `lsd`: An improved `ls` command that includes colors and file icons
-* `kitty`: the terminal I like
-* `neofetch`: Display system information
-* `git-lfs`: Git Large File Storage
-* `neovim`: A text editor built upon vim
-* `zsh`: the shell I use
 * `cmatrix`: to jump into the matrix
+* `distrobox`: to create containers in immutable systems
+* `pywal16`: create terminal color schemes from wallpapers
+* `fastfetch`: Display system information
+* `kitty`: the terminal I like
+* `lsd`: An improved `ls` command that includes colors and file icons
+* `neovim`: A text editor built upon vim
+* `tldr`: short, highlighted man pages with examples
+* `zsh`: the shell I use
 
 ## Chezmoi Configuration Files
 
