@@ -28,7 +28,7 @@ sudo dnf update -y --refresh
 printf "%.s=" $(seq 1 $(tput cols))
 echo
 echo "Installing terminal tools:"
-sudo dnf install autojump-zsh bash-completion cmatrix ecryptfs-utils git kitty lsd man fastfetch neovim nodejs tldr unzip zip zsh -y
+sudo dnf install autojump-zsh bash-completion cmatrix ecryptfs-utils git kitty lsd man fastfetch neovim nodejs pip tldr unzip zip zsh -y
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo

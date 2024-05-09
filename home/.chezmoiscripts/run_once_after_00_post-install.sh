@@ -59,10 +59,11 @@ echo
 echo "Installing Pywal and some alternative backends for color parsing:"
 if command -v pip3 &> /dev/null; then
     pip3 install --user pywal16 colorz haishoku colorthief
-    echo 'Run `wal --cols16 --alpha 75 --saturate 1 -i <path/to/img>` to create and apply a new color scheme.'
 else
     echo '`pip` not found. Pywal was not installed.'
 fi
+echo 'With Pywal16, you can run `wal --cols16 -a 75 --saturate 1 -n -i <path/to/img>` to create and apply a new color scheme.'
+echo "'-a' for opacity and '-n' to disable changing the current wallpaper."
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo
