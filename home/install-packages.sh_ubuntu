@@ -9,6 +9,10 @@ done
 
 printf "%.s=" $(seq 1 $(tput cols))
 echo
+echo "Adding repository for fastfetch"
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo apt update
+echo
 echo "Installing terminal tools:"
 for package in autojump-zsh bash-completion cmatrix ecryptfs-utils git kitty lsd man fastfetch neovim nodejs tldr unzip zip zsh; do
     sudo DEBIAN_FRONTEND=noninteractive apt install  $package -y
