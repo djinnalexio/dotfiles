@@ -68,7 +68,7 @@ alias diff='nvim -d'
 fi
 
 if command -v fastfetch &> /dev/null; then
-alias fetch='fastfetch -c ~/.config/fastfetch/welcome.jsonc'
+alias fetch='fastfetch -c ~/.config/fastfetch/long.jsonc'
 fi
 if command -v cmatrix &> /dev/null; then
 alias cmatrix='cmatrix -ab -u 4 -C green'
@@ -80,4 +80,3 @@ alias joplin-sync-unlock='\rm -f Documents/Dropbox/Apps/Joplin/locks/*'
 
 # Find my Public IP Address
 alias myip='curl http://ipecho.net/plain; echo'
-

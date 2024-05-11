@@ -17,7 +17,7 @@
 # Placing it at the top because P10k messes it when it pipes it
 clear -x
 if command -v fastfetch &> /dev/null; then
-    fastfetch -c ~/.config/fastfetch/welcome.jsonc --processing-timeout 5
+    fastfetch -c ~/.config/fastfetch/short.jsonc --processing-timeout 5 -l $(grep -r "^ID=" /etc/os-release | sed 's/ID=//')_small
 fi
 
 #~~~~~~~~~~~~~~~ Powerlevel10k Cache loading for Instant Prompt ~~~~~~~~~~~~~~~~

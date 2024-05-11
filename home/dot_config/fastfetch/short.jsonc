@@ -1,0 +1,70 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "display": {
+        "separator": "   "
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "╭──────────«« \u001b[1m\u001b[33m- - - - -╭─〔❨ ✧ ✧ ❩〕─╮- - - - -\u001b[0m »»──────────╮"
+        },
+        {
+            "type": "colors",
+            "symbol": "star",
+            "paddingLeft": 23
+        },
+        {
+            "type": "title",
+            "key": "  User       ",
+            "keyColor": "magenta",
+            "format": "{6}{7}{8}",
+            "color": {"user": "magenta", "host": "magenta"}
+        },
+        {
+            "type": "os",
+            "key": "  OS         ",
+            "keyColor": "bright_yellow"
+        },
+        {
+            "type": "kernel",
+            "key": "  Kernel     ",
+            "keyColor": "red"
+        },
+        {
+            "type": "cpu",
+            "key": " 󰻠 CPU        ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "memory",
+            "key": " 󰑭 Memory     ",
+            "keyColor": "yellow",
+            "percent": {"green": 60, "yellow": 85}
+        },
+        {
+            "type": "shell",
+            "key": "  Shell      ",
+            "keyColor": "dim_blue",
+            "format": "{6} {4}"
+        },
+        {
+            "type": "packages",
+            "key": " 󰏖 Packages   ",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "uptime",
+            "key": " 󰅐 Uptime     ",
+            "keyColor": "green"
+        },
+        {
+            "type": "colors",
+            "symbol": "star",
+            "paddingLeft": 23
+        },
+        {
+            "type": "custom",
+            "format": "╰──────────«« \u001b[1m\u001b[33m- - - - -╰─〔❨ ✧ ✧ ❩〕─╯- - - - -\u001b[0m »»──────────╯"
+        }
+    ]
+}

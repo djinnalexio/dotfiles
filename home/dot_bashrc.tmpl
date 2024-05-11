@@ -62,7 +62,7 @@ export TERM=xterm-256color
 clear -x
 
 if command -v fastfetch &> /dev/null; then
-    fastfetch -c ~/.config/fastfetch/welcome.jsonc --processing-timeout 5
+    fastfetch -c ~/.config/fastfetch/short.jsonc --processing-timeout 5 -l $(grep -r "^ID=" /etc/os-release | sed 's/ID=//')_small
 fi
 
 # User specific aliases and functions
