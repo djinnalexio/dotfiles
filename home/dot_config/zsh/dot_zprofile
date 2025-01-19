@@ -5,4 +5,3 @@
 
 # Make apps use simple sort order (comparison of code point values of characters)
 export LC_COLLATE=C
-

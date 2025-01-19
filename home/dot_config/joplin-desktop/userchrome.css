@@ -1,1 +1,235 @@
-/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+/* Theme for the entire Joplin app except the rendered Markdown */
+/* Color scheme: AUTUMN */
+
+:root {
+  /* Primaries */
+  --theme-blue: #4d97b3;
+  --theme-cyan: #69e0e9;
+  --theme-green: #acf563;
+  --theme-magenta: #e78ebf;
+  --theme-red: #ff403a;
+  --theme-yellow: #fff56b;
+
+  /* Accents */
+  --theme-accent01: #ff8b38;
+  --theme-accent02: #e4a93b;
+  --theme-accent03: #f7a691;
+  --theme-accent04: #febc52;
+  --theme-accent05: #ffc87c;
+  --theme-accent06: #edc9af;
+  --theme-accent07: #fab387;
+  --theme-accent08: #ec9707;
+
+  /* Gradient made with https://mycolor.space/gradient3 */
+  --theme-shade01: #ffdab3;
+  --theme-shade02: #f1c294;
+  --theme-shade03: #e4aa76;
+  --theme-shade04: #d69259;
+  --theme-shade05: #c87a3e;
+  --theme-shade06: #b76a31;
+  --theme-shade07: #a75a25;
+  --theme-shade08: #964a18;
+  --theme-shade09: #884217;
+  --theme-shade10: #723419;
+  --theme-shade11: #582a12;
+  --theme-shade12: #2e1508;
+
+  /* Greys */
+  --theme-lighter-grey: #f7f1eb;
+  --theme-light-grey: #e0d3c6;
+  --theme-grey: #b8a598;
+  --theme-dark-grey: #8d7a6c;
+  --theme-darker-grey: #5c4f44;
+
+  /* Background */
+  --theme-main: var(--theme-shade10);
+  --theme-main-dark: var(--theme-shade11);
+  --theme-main-darker: var(--theme-shade12);
+  --theme-text: #f5eec6;
+
+  /* Font variables */
+  --font-face: "Inter Display", Inter, Helvetica, Arial, sans-serif;
+  --font-mono: "CaskaydiaCove Nerd Font Mono", "Courier New", Courier, monospace;
+  --font-size: 14px;
+
+  /* Others */
+  --bolder: 900;
+  --button-hover-opacity: 0.8;
+}
+
+/********************************************************************************/
+/* #region GENERAL */
+
+/* Remove all borders */
+* {
+  border: 0 !important;
+}
+
+/* General panel style */
+.resizableLayoutItem {
+  background-color: var(--theme-main);
+}
+
+/* Note Title */
+.title-input {
+  color: var(--theme-text) !important;
+  /* background-color: var(--theme-main) !important; */
+}
+
+/* Scrollbars */
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-darker-grey);
+  border-radius: 0px;
+  opacity: 0.5;
+}
+
+/* Note tags */
+.tag-list > button {
+  color: var(--theme-text) !important;
+  background-color: var(--theme-main-dark) !important;
+}
+
+.tag-bar button span {
+  color: var(--theme-text);
+}
+
+.tag-bar button:hover {
+  background-color: var(--theme-shade08) !important;
+}
+
+/* Hide "Click to add tags..." at the bottom*/
+.tag-bar div span {
+  display: none !important;
+}
+
+/* #endregion */
+
+/********************************************************************************/
+/* #region SIDEBAR */
+
+.sidebar {
+  background-color: var(--theme-main-darker) !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.rli-sideBar div,
+.item-list.items ::before,
+.item-list.items div span {
+  color: var(--theme-text);
+}
+
+.item-list.items a {
+  color: var(--theme-shade05);
+}
+
+.item-list.items div:hover {
+  background-color: var(--theme-main-dark);
+}
+
+.item-list.items .selected {
+  background-color: var(--theme-main) !important;
+}
+
+/* Sync button */
+.sidebar > div:last-of-type > button {
+  background-color: var(--theme-accent07) !important;
+  text-transform: uppercase;
+  color: var(--theme-main-darker) !important;
+}
+
+.sidebar > div:last-of-type > button:hover {
+  opacity: var(--button-hover-opacity);
+}
+
+.sidebar > div:last-of-type > button > span {
+  color: var(--theme-main-darker) !important;
+  font-weight: bold;
+}
+
+/* #endregion */
+
+/********************************************************************************/
+/* #region NOTE LIST */
+
+.rli-noteList div {
+  background-color: var(--theme-main-dark);
+}
+
+/* #endregion */
+
+/********************************************************************************/
+/* #region NOTE LIST */
+
+/* Buttons */
+.rli-editor div > div > div > button {
+  background-color: var(--theme-accent07) !important;
+  color: var(--theme-main-darker) !important;
+}
+
+/* #endregion */
+
+/********************************************************************************/
+/* #region  POPUPS */
+
+dialog .content {
+  background-color: var(--theme-main-darker) !important;
+  /* color: var(--theme-text) !important; */
+  font-weight: bold;
+}
+
+/* Popup title */
+.dialog-root > div,
+.content label {
+  color: var(--theme-text) !important;
+  font-weight: bold;
+}
+
+.dialog-content {
+  background-color: var(--theme-main-dark) !important;
+  color: var(--theme-text);
+  font-weight: bold;
+}
+
+/* text field */
+.form-input-group input,
+.form-control {
+  background-color: var(--theme-main) !important;
+  color: var(--theme-text) !important;
+}
+
+/* Buttons */
+.dialog-root div button,
+.dialog-root div button span,
+.form-input-group div button,
+.content div button {
+  background-color: var(--theme-main) !important;
+  color: var(--theme-text) !important;
+  font-weight: bold;
+}
+
+.dialog-root div button:hover,
+.dialog-root div button span:hover,
+.form-input-group div button:hover,
+.content div button:hover {
+  opacity: var(--button-hover-opacity);
+}
+
+/* Tag selector */
+.tag-selector div {
+  background-color: var(--theme-main);
+  color: var(--theme-text);
+  font: lighter;
+}
+
+.tag-selector div > div > div > div,
+.tag-selector div[class$="indicatorContainer"] *:hover,
+.tag-selector div[class$="menu"] *:hover,
+.icon-selector-row > .foldericon {
+  background-color: var(--theme-main-dark) !important;
+}
+.tag-selector div[class$="indicatorSeparator"] {
+  color: var(--theme-text);
+}
+
+/* #endregion */

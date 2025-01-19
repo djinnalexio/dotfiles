@@ -14,6 +14,10 @@ export LANG=en_US.UTF-8
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Pager to display file content in terminal
+export PAGER='less -R'      #less with color interpretation and output
+export MANPAGER='nvim +Man!'      #neovim for man pages
+
 # For systems with a GUI
 export TERM=xterm-256color
 
@@ -27,14 +31,8 @@ export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_STATE_HOME=${XDG_STATE_HOME:="$HOME/.local/state"}
 
-# Pager to display file content in terminal
-export PAGER='less -R'      #less with color interpretation and output
-
-# Disable less history
-export LESSHISTFILE=-
-
-# Web Browser
-export BROWSER="firefox"
+# Change less history location
+export LESSHISTFILE="$XDG_STATE_HOME"/less/history
 
 # Add to PATH
 if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]

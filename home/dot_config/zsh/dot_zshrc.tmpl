@@ -36,7 +36,7 @@ fi
 
 #~~~~~~~~~~~~~~~~~~~~~~~ Source zsh configuration files ~~~~~~~~~~~~~~~~~~~~~~~~
 # Get files recursively in '$ZDOTDIR/.zshrc.d' excluding ".md" files and source each of them
-for rc in $(find $ZDOTDIR/.zshrc.d -type f -not -name "*.md"); do
+for rc in $(find $ZDOTDIR/zshrc.d -type f -not -name "*.md"); do
 	. "$rc"
 done
 unset rc
