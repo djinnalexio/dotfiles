@@ -21,6 +21,7 @@ alias c='clear'
 alias pls='sudo $(fc -ln -1)'
 alias less='less -N'
 alias chmod='chmod -v'
+alias xo='xdg-open'
 
 # navigation
 alias ..='cd ..'
